@@ -18,23 +18,23 @@ import models.User;
 public class UsersNewServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public UsersNewServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public UsersNewServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("_token", request.getSession().getId());
-        request.setAttribute("user", new User());
+		request.setAttribute("_token", request.getSession().getId());
+		request.setAttribute("user", new User());
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/users/new.jsp");
-        rd.forward(request, response);
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/users/new.jsp");
+		rd.forward(request, response);
 	}
 
 }
