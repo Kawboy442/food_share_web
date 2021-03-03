@@ -18,7 +18,7 @@
                     <tr class="row${status.count % 2}">
                         <td><c:out value="${user.user_name}" /></td>
                         <td>
-                           <a href="<c:url value='/employees/show?id=${user.id}' />">詳細を表示</a>
+                           <a href="<c:url value='/users/show?id=${user.id}' />">詳細を表示</a>
                         </td>
                     </tr>
                 </c:forEach>
