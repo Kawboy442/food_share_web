@@ -18,14 +18,7 @@
                     <tr class="row${status.count % 2}">
                         <td><c:out value="${user.user_name}" /></td>
                         <td>
-                            <c:choose>
-                                <c:when test="${user.delete_flag == 1}">
-                                    （削除済み）
-                                </c:when>
-                                <c:otherwise>
-                                    <a href="<c:url value='/employees/show?id=${user.id}' />">詳細を表示</a>
-                                </c:otherwise>
-                            </c:choose>
+                           <a href="<c:url value='/employees/show?id=${user.id}' />">詳細を表示</a>
                         </td>
                     </tr>
                 </c:forEach>
