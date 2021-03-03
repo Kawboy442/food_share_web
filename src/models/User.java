@@ -11,7 +11,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-@Table(name = "Users")
+@Table(name = "users")
 @NamedQueries({
     @NamedQuery(
         name = "getAllUsers",
