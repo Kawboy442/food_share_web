@@ -14,7 +14,7 @@
                     <th>ユーザー名</th>
                     <th>操作</th>
                 </tr>
-                <c:forEach var="employee" items="${users}" varStatus="status">
+                <c:forEach var="user" items="${users}" varStatus="status">
                     <tr class="row${status.count % 2}">
                         <td><c:out value="${user.user_name}" /></td>
                         <td>
