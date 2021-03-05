@@ -53,5 +53,16 @@ public class UserValidator {
         }
         return "";
     }
+	// パスワードの入力チェック
+	private static String validatePassword(String password, String againPassword, Boolean passwordCheckFlag) {
+		// 新規ユーザー登録時/パスワードを変更する場合に実行
+		if(passwordCheckFlag && (password == null || password.equals(""))) {
+			return "パスワードを入力してください。";
+		}
+		if(passwordCheckFlag && (password != againPassword)) {
+			return "入力されたパスワードが一致していません。確認して再度パスワードを入力してください。";
+		}
+		return "";
+	}
 
 }
