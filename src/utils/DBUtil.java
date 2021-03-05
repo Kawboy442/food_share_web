@@ -5,7 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class DBUtil {
-	private static final String PERSISTENCE_UNIT_NAME = "food_share";
+	private static final String PERSISTENCE_UNIT_NAME = "food_share_web";
 	private static EntityManagerFactory emf;
 
 	public static EntityManager createEntityManager() {
