@@ -55,6 +55,7 @@ public class UsersUpdateServlet extends HttpServlet {
 			// パスワードの入力値チェックを行う指定をする
 			Boolean passwordCheckFlag = true;
 			String password = request.getParameter("password");
+			String againPassword = request.getParameter("password_again");
 			if(password == null || password.equals("")) {
 				passwordCheckFlag = false;
 			} else {
@@ -70,7 +71,7 @@ public class UsersUpdateServlet extends HttpServlet {
 			u.setUpdated_at(new Timestamp(System.currentTimeMillis()));
 			u.setDelete_flag(0);
 
-			List<String> errors = UserValidator.validate(u, userNameDuplicateCheckFlag, passwordCheckFlag);
+			List<String> errors = UserValidator.validate(u, againPassword, userNameDuplicateCheckFlag, passwordCheckFlag);
 			if(errors.size() > 0) {
 				em.close();
 
