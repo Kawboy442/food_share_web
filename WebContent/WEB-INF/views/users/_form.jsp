@@ -17,5 +17,9 @@
 <input type="password" name="password" />
 <br /><br />
 
+<label for="password_again">パスワード(再入力)</label><br />
+<input type="password" name="password_again" />
+<br /><br />
+
 <input type="hidden" name="_token" value="${_token}" />
-<button type="submit">投稿</button>
+<button type="submit">作成/変更</button>

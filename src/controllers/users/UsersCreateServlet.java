@@ -49,6 +49,8 @@ public class UsersCreateServlet extends HttpServlet {
 							(String)this.getServletContext().getAttribute("pepper")
 							)
 					);
+			String againPassword = request.getParameter("password_again");
+
 			u.setAdmin_flag(0);
 
 			Timestamp currentTime = new Timestamp(System.currentTimeMillis());
@@ -56,7 +58,7 @@ public class UsersCreateServlet extends HttpServlet {
 			u.setUpdated_at(currentTime);
 			u.setDelete_flag(0);
 
-			List<String> errors = UserValidator.validate(u, true, true);
+			List<String> errors = UserValidator.validate(u, againPassword, true, true);
 			if(errors.size() > 0) {
 				em.close();
 
