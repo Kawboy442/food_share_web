@@ -4,7 +4,7 @@
     <c:param name="content">
         <c:choose>
             <c:when test="${user != null}">
-                <h2>ID: ${user.id}のユーザー情報編集ページ</h2>
+                <h2>${user.user_name}のユーザー情報編集ページ</h2>
                 <p hidden>${user.id} </p>
                 <p>（パスワードは変更する場合のみ入力してください）</p>
                 <form method="POST" action="<c:url value='/users/update' />">
