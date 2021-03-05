@@ -14,7 +14,9 @@
                 <div id="header_menu">
                     <h1><a href="<c:url value='/' />">食べ物シェア</a></h1>&nbsp;&nbsp;&nbsp;
                     <c:if test="${sessionScope.login_user != null}">
-                        <a href="<c:url value='/users/index' />">ユーザー管理</a>&nbsp;
+                    	<c:if test="${sessionScope.login_user.admin_flag == 1}">
+                        	<a href="<c:url value='/users/index' />">ユーザー管理</a>&nbsp;
+                        </c:if>
                         <a href="<c:url value='/posts/index' />">投稿管理</a>&nbsp;
                     </c:if>
                 </div>
