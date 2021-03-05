@@ -13,44 +13,44 @@ import javax.persistence.Table;
 
 @Table(name = "users")
 @NamedQueries({
-    @NamedQuery(
-        name = "getAllUsers",
-        query = "SELECT u FROM User AS u ORDER BY u.id DESC"
-    ),
-    @NamedQuery(
-        name = "getUsersCount",
-        query = "SELECT COUNT(u) FROM User AS u"
-    ),
-    @NamedQuery(
-            name = "checkRegisteredUser",
-            query = "SELECT COUNT(u) FROM User AS u WHERE u.user_name = :name"
-        ),
-    @NamedQuery(
-        name = "checkUserNameAndPassword",
-        query = "SELECT u FROM User AS u WHERE u.delete_flag = 0 AND u.user_name = :name AND u.password = :pass"
-    )
+	@NamedQuery(
+			name = "getAllUsers",
+			query = "SELECT u FROM User AS u ORDER BY u.id DESC"
+			),
+	@NamedQuery(
+			name = "getUsersCount",
+			query = "SELECT COUNT(u) FROM User AS u"
+			),
+	@NamedQuery(
+			name = "checkRegisteredUser",
+			query = "SELECT COUNT(u) FROM User AS u WHERE u.user_name = :name"
+			),
+	@NamedQuery(
+			name = "checkUserNameAndPassword",
+			query = "SELECT u FROM User AS u WHERE u.delete_flag = 0 AND u.user_name = :name AND u.password = :pass"
+			)
 })
 @Entity
 public class User {
 	@Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 
-    @Column(name = "user_name", nullable = false)
-    private String user_name;
+	@Column(name = "user_name", nullable = false)
+	private String user_name;
 
-    @Column(name = "password", length = 64, nullable = false)
-    private String password;
+	@Column(name = "password", length = 64, nullable = false)
+	private String password;
 
-    @Column(name = "created_at", nullable = false)
-    private Timestamp created_at;
+	@Column(name = "created_at", nullable = false)
+	private Timestamp created_at;
 
-    @Column(name = "updated_at", nullable = false)
-    private Timestamp updated_at;
+	@Column(name = "updated_at", nullable = false)
+	private Timestamp updated_at;
 
-    @Column(name = "delete_flag", nullable = false)
-    private Integer delete_flag;
+	@Column(name = "delete_flag", nullable = false)
+	private Integer delete_flag;
 
 	public Integer getId() {
 		return id;
