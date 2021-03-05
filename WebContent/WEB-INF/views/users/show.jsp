@@ -6,7 +6,7 @@
         <c:choose>
             <c:when test="${user != null}">
                 <h2>id : ${user.id} のユーザー情報 詳細ページ</h2>
-
+				<p hidden>${user.id} </p>
                 <table>
                     <tbody>
                         <tr>
