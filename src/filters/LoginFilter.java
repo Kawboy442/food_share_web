@@ -61,12 +61,6 @@ public class LoginFilter implements Filter {
 					((HttpServletResponse)response).sendRedirect(context_path + "/");
 					return;
 				}
-
-				// 一般ユーザーが自分以外のユーザー情報を閲覧・編集できないようにする
-				if(!servlet_path.matches("/users/edit?id=" + u.getId().toString()) && u.getAdmin_flag() == 0) {
-					((HttpServletResponse)response).sendRedirect(context_path + "/");
-					return;
-				}
 			} else {                                    // ログイン画面について
 				// ログインしているのにログイン画面を表示させようとした場合は
 				// システムのトップページにリダイレクト
