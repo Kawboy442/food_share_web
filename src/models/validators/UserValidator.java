@@ -12,14 +12,14 @@ public class UserValidator {
 	public static List<String> validate(User u, int pageId, String againPassword, Boolean unauthorizedAccessCheckFlag, Boolean userNameDuplicateCheckFlag, Boolean passwordCheckFlag) {
 		List<String> errors = new ArrayList<String>();
 
-		String code_error = validateUserName(u.getUser_name(), userNameDuplicateCheckFlag);
-		if(!code_error.equals("")) {
-			errors.add(code_error);
 		String id_error = validateId(u.getId(), pageId, unauthorizedAccessCheckFlag);
 		if(!id_error.equals("")) {
 			errors.add(id_error);
 		}
 
+		String user_name_error = validateUserName(u.getUser_name(), userNameDuplicateCheckFlag);
+		if(!user_name_error.equals("")) {
+			errors.add(user_name_error);
 		}
 
 		String password_error = validatePassword(u.getPassword(), againPassword, passwordCheckFlag);
