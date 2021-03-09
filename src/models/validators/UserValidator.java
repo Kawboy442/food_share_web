@@ -9,12 +9,17 @@ import models.User;
 import utils.DBUtil;
 
 public class UserValidator {
-	public static List<String> validate(User u, String againPassword, Boolean userNameDuplicateCheckFlag, Boolean passwordCheckFlag) {
+	public static List<String> validate(User u, int pageId, String againPassword, Boolean unauthorizedAccessCheckFlag, Boolean userNameDuplicateCheckFlag, Boolean passwordCheckFlag) {
 		List<String> errors = new ArrayList<String>();
 
 		String code_error = validateUserName(u.getUser_name(), userNameDuplicateCheckFlag);
 		if(!code_error.equals("")) {
 			errors.add(code_error);
+		String id_error = validateId(u.getId(), pageId, unauthorizedAccessCheckFlag);
+		if(!id_error.equals("")) {
+			errors.add(id_error);
+		}
+
 		}
 
 		String password_error = validatePassword(u.getPassword(), againPassword, passwordCheckFlag);
@@ -23,6 +28,16 @@ public class UserValidator {
 		}
 
 		return errors;
+	}
+
+	// IDチェック
+	private static String validateId(int sessionId, int pageId, Boolean unauthorizedAccessCheckFlag) {
+		// 異なるユーザー情報をへアクセスしていないかチェック
+		if(sessionId != pageId && unauthorizedAccessCheckFlag) {
+			return "異なるユーザー情報にはアクセスできません。";
+		}
+
+		return "";
 	}
 
 	// ユーザー名
