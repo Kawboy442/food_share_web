@@ -69,6 +69,7 @@ public class UserValidator {
 		if(passwordCheckFlag && (password != againPassword)) {
 			return "入力されたパスワードが一致していません。確認して再度パスワードを入力してください。";
 		}
+
 		return "";
 	}
 
