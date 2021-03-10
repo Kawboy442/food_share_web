@@ -54,7 +54,7 @@ public class UserValidator {
 		if(passwordCheckFlag && (password == null || password.equals(""))) {
 			return "パスワードを入力してください。";
 		}
-		if(passwordCheckFlag && (password != againPassword)) {
+		if(passwordCheckFlag && (!password.equals(againPassword))) {
 			return "入力されたパスワードが一致していません。確認して再度パスワードを入力してください。";
 		}
 		return "";
