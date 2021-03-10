@@ -3,6 +3,9 @@
 <c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
         <c:choose>
+        	<c:when test="${user.id != sessionScope.login_user.id}">
+            	<h2>異なるユーザー情報にはアクセスできません。</h2>
+            </c:when>
             <c:when test="${user != null}">
                 <h2>${user.user_name}のユーザー情報編集ページ</h2>
                 <p hidden>${user.id} </p>
@@ -23,9 +26,6 @@
                         }
                     }
                 </script>
-            </c:when>
-            <c:when test="${user.id != sessionScope.login_user.id}">
-            	<h2>異なるユーザー情報にはアクセスできません。</h2>
             </c:when>
             <c:otherwise>
                 <h2>お探しのデータは見つかりませんでした。</h2>
