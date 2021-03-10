@@ -17,6 +17,7 @@
                     	<c:if test="${sessionScope.login_user.admin_flag == 1}">
                         	<a href="<c:url value='/users/index' />">ユーザー管理</a>&nbsp;
                         </c:if>
+                        <a href="<c:url value='/users/edit?id=${sessionScope.login_user.id}' />">ユーザー情報管理</a>
                         <a href="<c:url value='/posts/index' />">投稿管理</a>&nbsp;
                     </c:if>
                 </div>

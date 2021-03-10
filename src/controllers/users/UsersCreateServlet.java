@@ -43,13 +43,14 @@ public class UsersCreateServlet extends HttpServlet {
 			User u = new User();
 
 			u.setUser_name(request.getParameter("user_name"));
+			String password = request.getParameter("password");
+			String againPassword = request.getParameter("password_again");
 			u.setPassword(
 					EncryptUtil.getPasswordEncrypt(
 							request.getParameter("password"),
 							(String)this.getServletContext().getAttribute("pepper")
 							)
 					);
-			String againPassword = request.getParameter("password_again");
 
 			u.setAdmin_flag(0);
 
@@ -58,7 +59,7 @@ public class UsersCreateServlet extends HttpServlet {
 			u.setUpdated_at(currentTime);
 			u.setDelete_flag(0);
 
-			List<String> errors = UserValidator.validate(u, againPassword, true, true);
+			List<String> errors = UserValidator.validate(u, password, againPassword, true, true);
 			if(errors.size() > 0) {
 				em.close();
 
