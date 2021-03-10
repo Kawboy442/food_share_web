@@ -59,11 +59,7 @@ public class UsersCreateServlet extends HttpServlet {
 			u.setUpdated_at(currentTime);
 			u.setDelete_flag(0);
 
-<<<<<<< HEAD
-			List<String> errors = UserValidator.validate(u, Integer.parseInt(request.getSession().getId()), againPassword, false, true, true);
-=======
-			List<String> errors = UserValidator.validate(u, password, againPassword, true, true);
->>>>>>> main
+			List<String> errors = UserValidator.validate(u, Integer.parseInt(request.getSession().getId()), password, againPassword, false, true, true);
 			if(errors.size() > 0) {
 				em.close();
 

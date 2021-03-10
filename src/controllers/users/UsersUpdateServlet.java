@@ -78,11 +78,7 @@ public class UsersUpdateServlet extends HttpServlet {
 			u.setUpdated_at(new Timestamp(System.currentTimeMillis()));
 			u.setDelete_flag(0);
 
-<<<<<<< HEAD
-			List<String> errors = UserValidator.validate(u, u.getId(), againPassword, unauthorizedAccessCheckFlag, userNameDuplicateCheckFlag, passwordCheckFlag);
-=======
-			List<String> errors = UserValidator.validate(u, password, againPassword, userNameDuplicateCheckFlag, passwordCheckFlag);
->>>>>>> main
+			List<String> errors = UserValidator.validate(u, u.getId(), password, againPassword, unauthorizedAccessCheckFlag, userNameDuplicateCheckFlag, passwordCheckFlag);
 			if(errors.size() > 0) {
 				em.close();
 
