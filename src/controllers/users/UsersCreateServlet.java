@@ -44,10 +44,7 @@ public class UsersCreateServlet extends HttpServlet {
 
 			u.setUser_name(request.getParameter("user_name"));
 			String password = request.getParameter("password");
-			System.out.println("入力したパスワード: " + request.getParameter("password"));
 			String againPassword = request.getParameter("password_again");
-			System.out.println("入力したパスワード(再入力): " + request.getParameter("password_again"));
-			System.out.println(password.equals(againPassword));
 			u.setPassword(
 					EncryptUtil.getPasswordEncrypt(
 							request.getParameter("password"),

@@ -47,9 +47,6 @@ public class UserValidator {
 
 	// パスワードの入力チェック
 	private static String validatePassword(String password, String againPassword, Boolean passwordCheckFlag) {
-		System.out.println("バリデーションでのパスワード: " + password);
-		System.out.println("バリデーションでのパスワード(再入力): " + againPassword);
-		System.out.println(password.equals(againPassword));
 		// 新規ユーザー登録時/パスワードを変更する場合に実行
 		if(passwordCheckFlag && (password == null || password.equals(""))) {
 			return "パスワードを入力してください。";
