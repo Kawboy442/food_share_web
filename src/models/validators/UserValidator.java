@@ -9,7 +9,7 @@ import models.User;
 import utils.DBUtil;
 
 public class UserValidator {
-	public static List<String> validate(User u, String againPassword, Boolean userNameDuplicateCheckFlag, Boolean passwordCheckFlag) {
+	public static List<String> validate(User u, String password, String againPassword, Boolean userNameDuplicateCheckFlag, Boolean passwordCheckFlag) {
 		List<String> errors = new ArrayList<String>();
 
 		String code_error = validateUserName(u.getUser_name(), userNameDuplicateCheckFlag);
@@ -17,7 +17,7 @@ public class UserValidator {
 			errors.add(code_error);
 		}
 
-		String password_error = validatePassword(u.getPassword(), againPassword, passwordCheckFlag);
+		String password_error = validatePassword(password, againPassword, passwordCheckFlag);
 		if(!password_error.equals("")) {
 			errors.add(password_error);
 		}
