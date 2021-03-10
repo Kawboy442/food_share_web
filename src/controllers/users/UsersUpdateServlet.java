@@ -58,6 +58,7 @@ public class UsersUpdateServlet extends HttpServlet {
 			System.out.println("入力したパスワード: " + request.getParameter("password"));
 			String againPassword = request.getParameter("password_again");
 			System.out.println("入力したパスワード(再入力): " + request.getParameter("password_again"));
+			System.out.println(password.equals(againPassword));
 			if(password == null || password.equals("")) {
 				passwordCheckFlag = false;
 			} else {
