@@ -42,13 +42,6 @@ public class UsersUpdateServlet extends HttpServlet {
 
 			User u = em.find(User.class, (Integer)(request.getSession().getAttribute("user_id")));
 
-			// ログインしているユーザー以外の情報を編集しようとしていないか
-			// 不正アクセスのチェックを行う
-			Boolean unauthorizedAccessCheckFlag = true;
-			if(u.getId().equals(request.getParameter("sessionScope.login_user.id"))) {
-				unauthorizedAccessCheckFlag = false;
-			}
-
 			// 現在の値と異なるユーザー名が入力されていたら
 			// 重複チェックを行う指定をする
 			Boolean userNameDuplicateCheckFlag = true;
@@ -78,7 +71,7 @@ public class UsersUpdateServlet extends HttpServlet {
 			u.setUpdated_at(new Timestamp(System.currentTimeMillis()));
 			u.setDelete_flag(0);
 
-			List<String> errors = UserValidator.validate(u, u.getId(), password, againPassword, unauthorizedAccessCheckFlag, userNameDuplicateCheckFlag, passwordCheckFlag);
+			List<String> errors = UserValidator.validate(u, password, againPassword, userNameDuplicateCheckFlag, passwordCheckFlag);
 			if(errors.size() > 0) {
 				em.close();
 
