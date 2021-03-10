@@ -12,9 +12,9 @@ public class UserValidator {
 	public static List<String> validate(User u, String password, String againPassword, Boolean userNameDuplicateCheckFlag, Boolean passwordCheckFlag) {
 		List<String> errors = new ArrayList<String>();
 
-		String code_error = validateUserName(u.getUser_name(), userNameDuplicateCheckFlag);
-		if(!code_error.equals("")) {
-			errors.add(code_error);
+		String user_name_error = validateUserName(u.getUser_name(), userNameDuplicateCheckFlag);
+		if(!user_name_error.equals("")) {
+			errors.add(user_name_error);
 		}
 
 		String password_error = validatePassword(password, againPassword, passwordCheckFlag);
