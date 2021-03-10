@@ -9,6 +9,7 @@ import models.User;
 import utils.DBUtil;
 
 public class UserValidator {
+<<<<<<< HEAD
 	public static List<String> validate(User u, int pageId, String againPassword, Boolean unauthorizedAccessCheckFlag, Boolean userNameDuplicateCheckFlag, Boolean passwordCheckFlag) {
 		List<String> errors = new ArrayList<String>();
 
@@ -17,12 +18,17 @@ public class UserValidator {
 			errors.add(id_error);
 		}
 
+=======
+	public static List<String> validate(User u, String password, String againPassword, Boolean userNameDuplicateCheckFlag, Boolean passwordCheckFlag) {
+		List<String> errors = new ArrayList<String>();
+
+>>>>>>> main
 		String user_name_error = validateUserName(u.getUser_name(), userNameDuplicateCheckFlag);
 		if(!user_name_error.equals("")) {
 			errors.add(user_name_error);
 		}
 
-		String password_error = validatePassword(u.getPassword(), againPassword, passwordCheckFlag);
+		String password_error = validatePassword(password, againPassword, passwordCheckFlag);
 		if(!password_error.equals("")) {
 			errors.add(password_error);
 		}
@@ -66,7 +72,7 @@ public class UserValidator {
 		if(passwordCheckFlag && (password == null || password.equals(""))) {
 			return "パスワードを入力してください。";
 		}
-		if(passwordCheckFlag && (password != againPassword)) {
+		if(passwordCheckFlag && (!password.equals(againPassword))) {
 			return "入力されたパスワードが一致していません。確認して再度パスワードを入力してください。";
 		}
 
