@@ -3,6 +3,7 @@ package models;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,6 +25,7 @@ import javax.persistence.Table;
 			query = "SELECT COUNT(p) FROM Post AS p"
 			),
 })
+@Entity
 public class Post {
 	@Id
 	@Column(name = "id")
