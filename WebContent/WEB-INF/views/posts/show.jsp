@@ -34,7 +34,19 @@
                             </td>
                         </tr>
                     </tbody>
-                </table>
+               </table>
+
+                <p><a href="#" onclick="confirmDestroy();">この投稿を削除する</a></p>
+                <form method="POST" action="<c:url value='/posts/destroy' />">
+                    <input type="hidden" name="_token" value="${_token}" />
+                </form>
+                <script>
+                    function confirmDestroy() {
+                        if(confirm("本当に削除してよろしいですか？")) {
+                            document.forms[1].submit();
+                        }
+                    }
+                </script>
             </c:when>
             <c:otherwise>
                 <h2>お探しのデータは見つかりませんでした。</h2>
