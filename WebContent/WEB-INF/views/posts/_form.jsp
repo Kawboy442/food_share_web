@@ -14,10 +14,6 @@
 <input type="text" name="store_name" value="${post.store_name}" />
 <br /><br />
 
-<label for="created_at">投稿日時</label><br />
-<fmt:formatDate value='${post.created_at}' pattern='yyyy-MM-dd HH:mm' />
-<br /><br />
-
 <label for="evaluation">評価</label><br />
 <select name="evaluation">
     <option value="0"<c:if test="${post.evaluation == 0}"> selected</c:if>>選択してください</option>
