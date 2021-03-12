@@ -14,6 +14,7 @@
                 <tr>
                     <th class="post_store_name">店名</th>
                     <th class="post_created_at">投稿日時</th>
+                    <th class="post_evaluation">評価</th>
                     <th class="post_title">タイトル</th>
                     <th class="post_action">操作</th>
                 </tr>
@@ -21,6 +22,7 @@
                     <tr class="row${status.count % 2}">
                         <td class="post_store_name"><c:out value="${post.store_name}" /></td>
                         <td class="post_created_at"><fmt:formatDate value='${post.created_at}' pattern='yyyy-MM-dd HH:mm' /></td>
+                        <td class="post_evaluation"><c:out value="${post.evaluation}" /></td>
                         <td class="post_title">${post.title}</td>
                         <td class="post_action"><a href="<c:url value='/posts/show?id=${post.id}' />">詳細を見る</a></td>
                     </tr>
