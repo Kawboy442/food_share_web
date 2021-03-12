@@ -53,6 +53,8 @@ public class PostsCreateServlet extends HttpServlet {
 			Timestamp currentTime = new Timestamp(System.currentTimeMillis());
 			p.setCreated_at(currentTime);
 
+			p.setDelete_flag(0);
+
 			List<String> errors = PostValidator.validate(p);
 			if(errors.size() > 0) {
 				em.close();
