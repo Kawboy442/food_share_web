@@ -24,7 +24,16 @@
                         <td class="post_created_at"><fmt:formatDate value='${post.created_at}' pattern='yyyy-MM-dd HH:mm' /></td>
                         <td class="post_evaluation"><c:out value="${post.evaluation}" /></td>
                         <td class="post_title">${post.title}</td>
-                        <td class="post_action"><a href="<c:url value='/posts/show?id=${post.id}' />">詳細を見る</a></td>
+                        <td>
+                            <c:choose>
+                                <c:when test="${post.delete_flag == 1}">
+                                    （削除済み）
+                                </c:when>
+                                <c:otherwise>
+                                    <a href="<c:url value='/posts/show?id=${post.id}' />">詳細を表示</a>
+                                </c:otherwise>
+                            </c:choose>
+                        </td>
                     </tr>
                 </c:forEach>
             </tbody>
