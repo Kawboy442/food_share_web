@@ -39,6 +39,7 @@
                 <p><a href="#" onclick="confirmDestroy();">この投稿を削除する</a></p>
                 <form method="POST" action="<c:url value='/posts/destroy' />">
                     <input type="hidden" name="_token" value="${_token}" />
+                    <input type="hidden" name="id" value="${post.id}" />
                 </form>
                 <script>
                     function confirmDestroy() {
