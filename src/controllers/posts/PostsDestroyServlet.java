@@ -35,7 +35,7 @@ public class PostsDestroyServlet extends HttpServlet {
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
 
-            Post p = em.find(Post.class, (Integer)(request.getSession().getAttribute("id")));
+            Post p = em.find(Post.class, Integer.parseInt(request.getParameter("id")));
             p.setDelete_flag(1);
 
             em.getTransaction().begin();
