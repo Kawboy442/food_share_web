@@ -21,7 +21,15 @@
                         </tr>
                         <tr>
                             <th>評価</th>
-                            <td><c:out value="${post.evaluation}" /></td>
+                            <td>
+                               <c:choose>
+                                    <c:when test="${post.evaluation == 1}">⭐</c:when>
+                                    <c:when test="${post.evaluation == 2}">⭐⭐</c:when>
+                                    <c:when test="${post.evaluation == 3}">⭐⭐⭐</c:when>
+                                    <c:when test="${post.evaluation == 4}">⭐⭐⭐⭐</c:when>
+                                    <c:when test="${post.evaluation == 5}">⭐⭐⭐⭐⭐</c:when>
+                                </c:choose>
+                            </td>
                         </tr>
                         <tr>
                             <th>タイトル</th>

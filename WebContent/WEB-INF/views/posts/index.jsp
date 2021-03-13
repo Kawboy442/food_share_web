@@ -22,7 +22,15 @@
                     <tr class="row${status.count % 2}">
                         <td class="post_store_name"><c:out value="${post.store_name}" /></td>
                         <td class="post_created_at"><fmt:formatDate value='${post.created_at}' pattern='yyyy-MM-dd HH:mm' /></td>
-                        <td class="post_evaluation"><c:out value="${post.evaluation}" /></td>
+                        <td class="post_evaluation">
+                       		<c:choose>
+                            	<c:when test="${post.evaluation == 1}">⭐</c:when>
+                                <c:when test="${post.evaluation == 2}">⭐⭐</c:when>
+                                <c:when test="${post.evaluation == 3}">⭐⭐⭐</c:when>
+                                <c:when test="${post.evaluation == 4}">⭐⭐⭐⭐</c:when>
+                                <c:when test="${post.evaluation == 5}">⭐⭐⭐⭐⭐</c:when>
+                            </c:choose>
+                        </td>
                         <td class="post_title">${post.title}</td>
                         <td>
                             <c:choose>
