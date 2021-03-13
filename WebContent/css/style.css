@@ -133,3 +133,26 @@ select {
 h1 a {
     color: #eeeeee;
 }
+table#post_list th {
+    font-weight: bold;
+    padding: 10px 2%;
+}
+
+table#post_list .post_store_name {
+    width: 20%;
+    padding: 10px 2%;
+}
+table#post_list .post_created_at {
+    width: 20%;
+}
+
+table#post_list .post_title {
+    width: 37%;
+}
+
+table#post_list .post_action {
+    width: 13%;
+}
+pre {
+    font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
+}

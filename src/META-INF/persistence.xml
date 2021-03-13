@@ -3,6 +3,7 @@
 	<persistence-unit name="food_share_web" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<class>models.User</class>
+		<class>models.Post</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/food_share?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8"/>
