@@ -48,7 +48,7 @@ public class LoginFilter implements Filter {
 			// セッションスコープに保存されたユーザー情報を取得
 			User u = (User)session.getAttribute("login_user");
 
-			if(!servlet_path.equals("/login") || !servlet_path.equals("/index.html")) { // ログイン画面と投稿一覧画面について
+			if(!servlet_path.equals("/login") || !servlet_path.equals("/index.html")) { // ログイン画面とトップ画面について
 				// ログアウトしている状態であれば
 				// ログイン画面にリダイレクト
 				if(u == null) {
