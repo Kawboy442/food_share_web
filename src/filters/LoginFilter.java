@@ -64,13 +64,7 @@ public class LoginFilter implements Filter {
 					((HttpServletResponse)response).sendRedirect(context_path + "/login");
 					return;
 				}
-
-				// 従業員管理の機能は管理者のみが閲覧できるようにする
-				if((servlet_path.matches("/users/index") || servlet_path.matches("/users/show")) && u.getAdmin_flag() == 0) {
-					((HttpServletResponse)response).sendRedirect(context_path + "/");
-					return;
-				}
-			} else {                                    // ログイン画面について
+			} else if (servlet_path.equals("/login")) {                                    // ログイン画面について
 				// ログインしているのにログイン画面を表示させようとした場合は
 				// システムのトップページにリダイレクト
 				if(u != null) {
