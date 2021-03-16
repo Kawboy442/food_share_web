@@ -48,7 +48,16 @@ public class LoginFilter implements Filter {
 			// セッションスコープに保存されたユーザー情報を取得
 			User u = (User)session.getAttribute("login_user");
 
-			if(!servlet_path.equals("/login") || !servlet_path.equals("/index.html")) { // ログイン画面とトップ画面について
+			Boolean isLogin = false;
+
+			switch (servlet_path) {
+				case "/login":
+				case "index.html":
+					isLogin = true;
+					break;
+			}
+
+			if(isLogin == false) { // ログイン画面とトップ画面について
 				// ログアウトしている状態であれば
 				// ログイン画面にリダイレクト
 				if(u == null) {
