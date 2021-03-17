@@ -48,26 +48,27 @@ public class LoginFilter implements Filter {
 			// セッションスコープに保存されたユーザー情報を取得
 			User u = (User)session.getAttribute("login_user");
 
-			if(!servlet_path.equals("/login")) {        // ログイン画面以外について
-				// ログアウトしている状態であれば
-				// ログイン画面にリダイレクト
-				if(u == null) {
-					((HttpServletResponse)response).sendRedirect(context_path + "/login");
-					return;
-				}
-
-				// 従業員管理の機能は管理者のみが閲覧できるようにする
-				if((servlet_path.matches("/users/index") || servlet_path.matches("/users/show")) && u.getAdmin_flag() == 0) {
-					((HttpServletResponse)response).sendRedirect(context_path + "/");
-					return;
-				}
-			} else {                                    // ログイン画面について
+			switch (servlet_path) {
+			case "/index.html":
+			case "/posts/index":
+			case "/posts/show":
+				break;
+			case "/login":  // ログイン画面について
 				// ログインしているのにログイン画面を表示させようとした場合は
 				// システムのトップページにリダイレクト
 				if(u != null) {
 					((HttpServletResponse)response).sendRedirect(context_path + "/");
 					return;
 				}
+				break;
+			default: // それ以外の画面について
+				// ログアウトしている状態であれば
+				// ログイン画面にリダイレクト
+				if(u == null) {
+					((HttpServletResponse)response).sendRedirect(context_path + "/login");
+					return;
+				}
+				break;
 			}
 		}
 
