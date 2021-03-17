@@ -49,7 +49,7 @@ public class LoginFilter implements Filter {
 			User u = (User)session.getAttribute("login_user");
 
 			switch (servlet_path) {
-			case "index.html":
+			case "/index.html":
 			case "/posts/index":
 			case "/posts/show":
 				break;
