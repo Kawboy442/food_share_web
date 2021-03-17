@@ -29,6 +29,7 @@
                 </c:if>
                 <c:if test="${sessionScope.login_user == null}">
                     <div id="logout">
+                    	<a href="<c:url value='/users/new' />">会員登録</a>
                         <a href="<c:url value='/login' />">ログイン</a>
                     </div>
                 </c:if>
