@@ -22,9 +22,15 @@
                     </c:if>
                 </div>
                 <c:if test="${sessionScope.login_user != null}">
-                    <div id="user_name">
+                    <div id="right_header_menu">
                         <c:out value="${sessionScope.login_user.user_name}" />&nbsp;さん&nbsp;&nbsp;&nbsp;
                         <a href="<c:url value='/logout' />">ログアウト</a>
+                    </div>
+                </c:if>
+                <c:if test="${sessionScope.login_user == null}">
+                    <div id="right_header_menu">
+                    	<a href="<c:url value='/users/new' />">会員登録</a>
+                        <a href="<c:url value='/login' />">ログイン</a>
                     </div>
                 </c:if>
             </div>
