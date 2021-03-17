@@ -27,6 +27,11 @@
                         <a href="<c:url value='/logout' />">ログアウト</a>
                     </div>
                 </c:if>
+                <c:if test="${sessionScope.login_user == null}">
+                    <div id="logout">
+                        <a href="<c:url value='/login' />">ログイン</a>
+                    </div>
+                </c:if>
             </div>
             <div id="content">
                 ${param.content}
