@@ -50,6 +50,7 @@ public class LoginFilter implements Filter {
 
 			switch (servlet_path) {
 			case "/index.html":
+			case "/users/new":
 			case "/posts/index":
 			case "/posts/show":
 				break;
