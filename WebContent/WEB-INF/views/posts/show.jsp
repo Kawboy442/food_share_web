@@ -44,7 +44,7 @@
                     </tbody>
                </table>
 			  <c:if test="${sessionScope.login_user != null}">
-			  	<c:if test="${sessionScope.login_user.id == post.user_id}">
+			  	<c:if test="${sessionScope.login_user.id == post.user.id}">
                 	<p><a href="#" onclick="confirmDestroy();">この投稿を削除する</a></p>
                 	<form method="POST" action="<c:url value='/posts/destroy' />">
                     	<input type="hidden" name="_token" value="${_token}" />
