@@ -31,6 +31,14 @@ import javax.persistence.Table;
 	@NamedQuery(
 			name = "getActivePostsCount",
 			query = "SELECT COUNT(p) FROM Post AS p WHERE p.delete_flag = 0"
+			),
+	@NamedQuery(
+			name = "getAllMyActivePosts",
+			query = "SELECT p FROM Post AS p WHERE p.delete_flag = 0 AND p.user.id = :user_id ORDER BY p.id DESC"
+			),
+	@NamedQuery(
+			name = "getMyActivePostsCount",
+			query = "SELECT COUNT(p) FROM Post AS p WHERE p.delete_flag = 0 AND p.user.id = :user_id"
 			)
 })
 @Entity
