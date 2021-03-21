@@ -24,10 +24,10 @@
                             <td>
                                <c:choose>
                                     <c:when test="${post.evaluation == 1}"><img src="<c:url value='/images/star.png'  />"/></c:when>
-                                    <c:when test="${post.evaluation == 2}"><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/></c:when>
-                                    <c:when test="${post.evaluation == 3}"><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/></c:when>
-                                    <c:when test="${post.evaluation == 4}"><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/></c:when>
-                                    <c:when test="${post.evaluation == 5}"><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/></c:when>
+                                    <c:when test="${post.evaluation == 2}"><img src="<c:url value='/images/star_double.png'  />"/></c:when>
+                                    <c:when test="${post.evaluation == 3}"><img src="<c:url value='/images/star_triple.png'  />"/></c:when>
+                                    <c:when test="${post.evaluation == 4}"><img src="<c:url value='/images/star_fourfold.png'  />"/></c:when>
+                                    <c:when test="${post.evaluation == 5}"><img src="<c:url value='/images/star_fivetimes.png'  />"/></c:when>
                                 </c:choose>
                             </td>
                         </tr>
