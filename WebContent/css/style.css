@@ -156,3 +156,25 @@ table#post_list .post_action {
 pre {
     font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
 }
+
+select.icon-menu option {
+	background-repeat:no-repeat;
+	background-position:bottom left;
+	padding-left:30px;
+}
+
+select#star_evaluation option[value="1"]   {
+	background-image:url(star.png);
+}
+select#star_evaluation option[value="2"] {
+	background-image:url(star_double.png);
+}
+select#star_evaluation option[value="3"] {
+	background-image:url(star_triple.png);
+}
+select#star_evaluation option[value="4"] {
+	background-image:url(star_fourfold.png);
+}
+select#star_evaluation option[value="5"] {
+	background-image:url(star_fivetimes.png);
+}
