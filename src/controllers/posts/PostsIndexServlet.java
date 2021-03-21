@@ -42,6 +42,9 @@ public class PostsIndexServlet extends HttpServlet {
 		} catch(Exception e) {
 			page = 1;
 		}
+
+		User u = em.find(User.class, (Integer)(request.getSession().getAttribute("sessionScope.login_user.id")));
+
 		List<Post> posts = em.createNamedQuery("getAllMyActivePosts", Post.class)
 				.setParameter("user_id", u.getId())
 				.setFirstResult(15 * (page - 1))
