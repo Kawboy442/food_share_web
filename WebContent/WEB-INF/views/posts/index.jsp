@@ -24,11 +24,11 @@
                         <td class="post_created_at"><fmt:formatDate value='${post.created_at}' pattern='yyyy-MM-dd HH:mm' /></td>
                         <td class="post_evaluation">
                        		<c:choose>
-                            	<c:when test="${post.evaluation == 1}">⭐</c:when>
-                                <c:when test="${post.evaluation == 2}">⭐⭐</c:when>
-                                <c:when test="${post.evaluation == 3}">⭐⭐⭐</c:when>
-                                <c:when test="${post.evaluation == 4}">⭐⭐⭐⭐</c:when>
-                                <c:when test="${post.evaluation == 5}">⭐⭐⭐⭐⭐</c:when>
+                            	<c:when test="${post.evaluation == 1}"><img src="<c:url value='/images/star.png'  />"/></c:when>
+                                <c:when test="${post.evaluation == 2}"><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/></c:when>
+                                <c:when test="${post.evaluation == 3}"><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/></c:when>
+                                <c:when test="${post.evaluation == 4}"><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/></c:when>
+                                <c:when test="${post.evaluation == 5}"><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/><img src="<c:url value='/images/star.png'  />"/></c:when>
                             </c:choose>
                         </td>
                         <td class="post_title">${post.title}</td>
