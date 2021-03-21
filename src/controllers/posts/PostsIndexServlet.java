@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Post;
+import models.User;
 import utils.DBUtil;
 
 /**
@@ -41,12 +42,17 @@ public class PostsIndexServlet extends HttpServlet {
 		} catch(Exception e) {
 			page = 1;
 		}
-		List<Post> posts = em.createNamedQuery("getAllPosts", Post.class)
+
+		User u = (User)(request.getSession().getAttribute("login_user"));
+
+		List<Post> posts = em.createNamedQuery("getAllMyActivePosts", Post.class)
+				.setParameter("user_id", u.getId())
 				.setFirstResult(15 * (page - 1))
 				.setMaxResults(15)
 				.getResultList();
 
-		long posts_count = (long)em.createNamedQuery("getPostsCount", Long.class)
+		long posts_count = (long)em.createNamedQuery("getMyActivePostsCount", Long.class)
+				.setParameter("user_id", u.getId())
 				.getSingleResult();
 
 		em.close();
