@@ -54,6 +54,15 @@ public class LoginFilter implements Filter {
 			case "/posts/index":
 			case "/posts/show":
 				break;
+			case "users/index":
+			case "users/show":
+				if(u != null) {
+					if(u.getAdmin_flag() == 0) {
+						((HttpServletResponse)response).sendRedirect(context_path + "/");
+						return;
+					}
+				}
+				break;
 			case "/login":  // ログイン画面について
 				// ログインしているのにログイン画面を表示させようとした場合は
 				// システムのトップページにリダイレクト

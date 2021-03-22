@@ -4,6 +4,9 @@
 <c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
         <c:choose>
+        	<c:when test="${user.id != sessionScope.login_user.id && sessionScope.login_user.admin_flag == 0}">
+            	<h2>異なるユーザー情報にはアクセスできません。</h2>
+            </c:when>
             <c:when test="${user != null}">
                 <h2>${user.user_name}のユーザー情報 詳細ページ</h2>
 				<p hidden>${user.id} </p>
@@ -35,6 +38,6 @@
             </c:otherwise>
         </c:choose>
 
-        <p><a href="<c:url value='/users/index' />">一覧に戻る</a></p>
+        <p><a href="<c:url value='/index.html' />">トップに戻る</a></p>
     </c:param>
 </c:import>

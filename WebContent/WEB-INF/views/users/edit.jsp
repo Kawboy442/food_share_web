@@ -32,6 +32,6 @@
             </c:otherwise>
         </c:choose>
 
-        <p><a href="<c:url value='/users/index' />">一覧に戻る</a></p>
+        <p><a href="<c:url value='/index.html' />">トップに戻る</a></p>
     </c:param>
 </c:import>
