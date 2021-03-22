@@ -23,11 +23,11 @@
                             <th>評価</th>
                             <td>
                                <c:choose>
-                                    <c:when test="${post.evaluation == 1}">⭐</c:when>
-                                    <c:when test="${post.evaluation == 2}">⭐⭐</c:when>
-                                    <c:when test="${post.evaluation == 3}">⭐⭐⭐</c:when>
-                                    <c:when test="${post.evaluation == 4}">⭐⭐⭐⭐</c:when>
-                                    <c:when test="${post.evaluation == 5}">⭐⭐⭐⭐⭐</c:when>
+                                    <c:when test="${post.evaluation == 1}"><img src="<c:url value='/images/star.png'  />" height=30/></c:when>
+                                    <c:when test="${post.evaluation == 2}"><img src="<c:url value='/images/star_double.png'  />" height=30/></c:when>
+                                    <c:when test="${post.evaluation == 3}"><img src="<c:url value='/images/star_triple.png'  />" height=30/></c:when>
+                                    <c:when test="${post.evaluation == 4}"><img src="<c:url value='/images/star_fourfold.png'  />" height=30/></c:when>
+                                    <c:when test="${post.evaluation == 5}"><img src="<c:url value='/images/star_fivetimes.png'  />" height=30/></c:when>
                                 </c:choose>
                             </td>
                         </tr>
