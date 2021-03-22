@@ -56,9 +56,11 @@ public class LoginFilter implements Filter {
 				break;
 			case "users/index":
 			case "users/show":
-				if(u.getAdmin_flag() == 0) {
-					((HttpServletResponse)response).sendRedirect(context_path + "/");
-					return;
+				if(u != null) {
+					if(u.getAdmin_flag() == 0) {
+						((HttpServletResponse)response).sendRedirect(context_path + "/");
+						return;
+					}
 				}
 				break;
 			case "/login":  // ログイン画面について
