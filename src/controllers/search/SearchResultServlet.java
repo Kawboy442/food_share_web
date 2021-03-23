@@ -43,6 +43,9 @@ public class SearchResultServlet extends HttpServlet {
 		}
 
 		StringBuilder postQueryBuilder = new StringBuilder("SELECT p FROM Post AS p WHERE p.delete_flag = 0 ORDER BY p.id DESC");
+		String storeName = request.getParameter("store_name");
+		String userName = request.getParameter("user_name");
+		int evaluation = Integer.parseInt(request.getParameter("evaluation"));
 		String postQuery = postQueryBuilder.toString();
 
 		List<Post> posts = em.createQuery(postQuery, Post.class)
