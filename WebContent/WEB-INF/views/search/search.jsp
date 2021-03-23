@@ -6,6 +6,7 @@
 		<label for="store_name">店名</label><br />
 		<input type="text" name="store_name" value="${post.store_name}" />
 		<br /><br />
+    	<form method="POST" action="<c:url value='/search/result' />">
 
 		<label for="user_name">ユーザー名</label><br />
 		<input type="text" name="user_name" value="${post.user_name}" />
@@ -23,5 +24,6 @@
 		<br /><br />
 
 		<button type="submit">検索</button>
+		</form>
     </c:param>
 </c:import>
