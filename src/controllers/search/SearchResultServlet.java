@@ -49,9 +49,9 @@ public class SearchResultServlet extends HttpServlet {
 
 		StringBuilder postQueryBuilder = new StringBuilder("SELECT p FROM Post AS p WHERE p.delete_flag = 0 ");
 		if(!storeName.equals("")) {
-			postQueryBuilder.append("AND store_name like " + storeName + " ");
+			postQueryBuilder.append("AND store_name LIKE " + storeName + " ");
 		} else if(!userName.equals("")) {
-			postQueryBuilder.append("AND user.user_name like " + userName + " ");
+			postQueryBuilder.append("AND user.user_name LIKE " + userName + " ");
 		} else if (evaluation != 0) {
 			postQueryBuilder.append("AND p.evaluation = " + evaluation + " ");
 		}
@@ -64,9 +64,9 @@ public class SearchResultServlet extends HttpServlet {
 
 		StringBuilder postCountQueryBuilder = new StringBuilder("SELECT COUNT(p) FROM Post AS p WHERE p.delete_flag = 0 ");
 		if(!storeName.equals("")) {
-			postQueryBuilder.append("AND store_name like " + storeName + " ");
+			postQueryBuilder.append("AND store_name LIKE " + storeName + " ");
 		} else if(!userName.equals("")) {
-			postQueryBuilder.append("AND user.user_name like " + userName + " ");
+			postQueryBuilder.append("AND user.user_name LIKE " + userName + " ");
 		} else if (evaluation != 0) {
 			postQueryBuilder.append("AND p.evaluation = " + evaluation + " ");
 		}
