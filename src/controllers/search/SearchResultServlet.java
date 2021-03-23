@@ -1,6 +1,7 @@
 package controllers.search;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.servlet.RequestDispatcher;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.Post;
 import utils.DBUtil;
 
 /**
@@ -39,6 +41,20 @@ public class SearchResultServlet extends HttpServlet {
 		} catch(Exception e) {
 			page = 1;
 		}
+
+		StringBuilder postQueryBuilder = new StringBuilder("SELECT p FROM Post AS p WHERE p.delete_flag = 0 ORDER BY p.id DESC");
+		String postQuery = postQueryBuilder.toString();
+
+		List<Post> posts = em.createQuery(postQuery, Post.class)
+				.setFirstResult(15 * (page - 1))
+				.setMaxResults(15)
+				.getResultList();
+
+		StringBuilder postCountQueryBuilder = new StringBuilder("SELECT COUNT(p) FROM Post AS p WHERE p.delete_flag = 0");
+		String postCountQuery = postCountQueryBuilder.toString();
+
+		long posts_count = (long)em.createQuery(postCountQuery, Long.class)
+				.getSingleResult();
 
 		em.close();
 
