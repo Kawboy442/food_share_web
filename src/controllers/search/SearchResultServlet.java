@@ -47,6 +47,13 @@ public class SearchResultServlet extends HttpServlet {
 		int evaluation = Integer.parseInt(request.getParameter("evaluation"));
 
 		StringBuilder postQueryBuilder = new StringBuilder("SELECT p FROM Post AS p WHERE p.delete_flag = 0 ");
+		if(!storeName.equals("")) {
+			postQueryBuilder.append("AND name like " + storeName + " ");
+		} else if(!userName.equals("")) {
+			postQueryBuilder.append("AND name like " + userName + " ");
+		} else if (evaluation != 0) {
+			postQueryBuilder.append("AND WHERE p.evaluation = " + evaluation + " ");
+		}
 		String postQuery = postQueryBuilder.toString();
 
 		List<Post> posts = em.createQuery(postQuery, Post.class)
@@ -55,6 +62,13 @@ public class SearchResultServlet extends HttpServlet {
 				.getResultList();
 
 		StringBuilder postCountQueryBuilder = new StringBuilder("SELECT COUNT(p) FROM Post AS p WHERE p.delete_flag = 0 ");
+		if(!storeName.equals("")) {
+			postQueryBuilder.append("AND name like " + storeName + " ");
+		} else if(!userName.equals("")) {
+			postQueryBuilder.append("AND name like " + userName + " ");
+		} else if (evaluation != 0) {
+			postQueryBuilder.append("AND WHERE p.evaluation = " + evaluation + " ");
+		}
 		String postCountQuery = postCountQueryBuilder.toString();
 
 		long posts_count = (long)em.createQuery(postCountQuery, Long.class)
