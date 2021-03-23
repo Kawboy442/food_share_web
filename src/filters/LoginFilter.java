@@ -55,6 +55,7 @@ public class LoginFilter implements Filter {
 			case "/posts/index":
 			case "/posts/show":
 			case "/search":
+			case "/search/result":
 				break;
 			case "users/index":
 			case "users/show":
