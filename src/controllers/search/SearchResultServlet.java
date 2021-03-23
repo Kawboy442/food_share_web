@@ -53,7 +53,7 @@ public class SearchResultServlet extends HttpServlet {
 		} else if(!userName.equals("")) {
 			postQueryBuilder.append("AND user.user_name like " + userName + " ");
 		} else if (evaluation != 0) {
-			postQueryBuilder.append("AND WHERE p.evaluation = " + evaluation + " ");
+			postQueryBuilder.append("AND p.evaluation = " + evaluation + " ");
 		}
 		String postQuery = postQueryBuilder.toString();
 
@@ -68,7 +68,7 @@ public class SearchResultServlet extends HttpServlet {
 		} else if(!userName.equals("")) {
 			postQueryBuilder.append("AND user.user_name like " + userName + " ");
 		} else if (evaluation != 0) {
-			postQueryBuilder.append("AND WHERE p.evaluation = " + evaluation + " ");
+			postQueryBuilder.append("AND p.evaluation = " + evaluation + " ");
 		}
 		String postCountQuery = postCountQueryBuilder.toString();
 
