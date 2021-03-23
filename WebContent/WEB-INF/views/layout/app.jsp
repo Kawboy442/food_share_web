@@ -13,7 +13,7 @@
             <div id="header">
                 <div id="header_menu">
                     <h1><a href="<c:url value='/' />">食べ物シェア</a></h1>&nbsp;&nbsp;&nbsp;
-                    <a href="<c:url value='/search/search' />">検索</a>&nbsp;
+                    <a href="<c:url value='/search' />">検索</a>&nbsp;
                     <c:if test="${sessionScope.login_user != null}">
                     	<c:if test="${sessionScope.login_user.admin_flag == 1}">
                         	<a href="<c:url value='/users/index' />">ユーザー管理</a>&nbsp;
