@@ -33,11 +33,7 @@
                         </td>
                         <td class="post_title">${post.title}</td>
                         <td>
-                            <c:choose>
-                                <c:otherwise>
-                                    <a href="<c:url value='/posts/show?id=${post.id}' />">詳細を表示</a>
-                                </c:otherwise>
-                            </c:choose>
+                        	<a href="<c:url value='/posts/show?id=${post.id}' />">詳細を表示</a>
                         </td>
                     </tr>
                 </c:forEach>
