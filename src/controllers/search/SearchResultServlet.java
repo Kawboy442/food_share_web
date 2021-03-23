@@ -42,10 +42,11 @@ public class SearchResultServlet extends HttpServlet {
 			page = 1;
 		}
 
-		StringBuilder postQueryBuilder = new StringBuilder("SELECT p FROM Post AS p WHERE p.delete_flag = 0 ORDER BY p.id DESC");
 		String storeName = request.getParameter("store_name");
 		String userName = request.getParameter("user_name");
 		int evaluation = Integer.parseInt(request.getParameter("evaluation"));
+
+		StringBuilder postQueryBuilder = new StringBuilder("SELECT p FROM Post AS p WHERE p.delete_flag = 0 ");
 		String postQuery = postQueryBuilder.toString();
 
 		List<Post> posts = em.createQuery(postQuery, Post.class)
@@ -53,7 +54,7 @@ public class SearchResultServlet extends HttpServlet {
 				.setMaxResults(15)
 				.getResultList();
 
-		StringBuilder postCountQueryBuilder = new StringBuilder("SELECT COUNT(p) FROM Post AS p WHERE p.delete_flag = 0");
+		StringBuilder postCountQueryBuilder = new StringBuilder("SELECT COUNT(p) FROM Post AS p WHERE p.delete_flag = 0 ");
 		String postCountQuery = postCountQueryBuilder.toString();
 
 		long posts_count = (long)em.createQuery(postCountQuery, Long.class)
