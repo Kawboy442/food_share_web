@@ -21,13 +21,13 @@ import utils.DBUtil;
 public class SearchResultServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SearchResultServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public SearchResultServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -45,6 +45,7 @@ public class SearchResultServlet extends HttpServlet {
 		String storeName = request.getParameter("store_name");
 		String userName = request.getParameter("user_name");
 		int evaluation = Integer.parseInt(request.getParameter("evaluation"));
+
 
 		StringBuilder postQueryBuilder = new StringBuilder("SELECT p FROM Post AS p WHERE p.delete_flag = 0 ");
 		if(!storeName.equals("")) {
