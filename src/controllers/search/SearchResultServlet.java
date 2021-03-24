@@ -47,7 +47,7 @@ public class SearchResultServlet extends HttpServlet {
 		int evaluation = Integer.parseInt(request.getParameter("evaluation"));
 
 
-		StringBuilder postQueryBuilder = new StringBuilder("SELECT p FROM posts AS p WHERE p.delete_flag = 0 ");
+		StringBuilder postQueryBuilder = new StringBuilder("SELECT p FROM Post AS p WHERE p.delete_flag = 0 ");
 		if(!storeName.equals("")) {
 			postQueryBuilder.append("AND store_name LIKE " + storeName + " ");
 		} else if(!userName.equals("")) {
@@ -62,7 +62,7 @@ public class SearchResultServlet extends HttpServlet {
 				.setMaxResults(15)
 				.getResultList();
 
-		StringBuilder postCountQueryBuilder = new StringBuilder("SELECT COUNT(p) FROM posts AS p WHERE p.delete_flag = 0 ");
+		StringBuilder postCountQueryBuilder = new StringBuilder("SELECT COUNT(p) FROM Post AS p WHERE p.delete_flag = 0 ");
 		if(!storeName.equals("")) {
 			postQueryBuilder.append("AND store_name LIKE " + storeName + " ");
 		} else if(!userName.equals("")) {
