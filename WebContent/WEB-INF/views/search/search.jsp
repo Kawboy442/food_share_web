@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
         <link rel="stylesheet" href="<c:url value='/css/style.css' />">
         <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js?ver=1.11.3'></script>
+        <script type="text/javascript" src="search.js"></script>
     </head>
     <body>
         <div id="wrapper">
