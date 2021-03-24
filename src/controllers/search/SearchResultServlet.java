@@ -46,7 +46,6 @@ public class SearchResultServlet extends HttpServlet {
 		String userName = request.getParameter("user_name");
 		int evaluation = Integer.parseInt(request.getParameter("evaluation"));
 
-
 		StringBuilder postQueryBuilder = new StringBuilder("SELECT p FROM Post AS p WHERE p.delete_flag = 0 ");
 		if(!storeName.equals("")) {
 			postQueryBuilder.append("AND p.store_name LIKE " + storeName + " ");
