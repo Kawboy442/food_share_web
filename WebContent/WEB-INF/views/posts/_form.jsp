@@ -26,7 +26,7 @@
 <br /><br />
 
 <label for="images">写真</label><br />
-<input type="file" name="images" />
+<input type="file" name="images" accept=".png, .jpg, .jpeg"/>
 <br /><br />
 
 <label for="title">タイトル</label><br />
