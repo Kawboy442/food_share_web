@@ -26,7 +26,7 @@
 <br /><br />
 
 <label for="images">写真</label><br />
-<input type="file" name="images" value="${post.images}" />
+<input type="file" name="images" />
 <br /><br />
 
 <label for="title">タイトル</label><br />
