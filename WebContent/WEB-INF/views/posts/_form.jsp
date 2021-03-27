@@ -25,6 +25,10 @@
 </select>
 <br /><br />
 
+<label for="images">写真</label><br />
+<input type="file" name="images" value="${post.images}" />
+<br /><br />
+
 <label for="title">タイトル</label><br />
 <input type="text" name="title" value="${post.title}" />
 <br /><br />
