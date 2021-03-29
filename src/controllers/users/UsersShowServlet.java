@@ -34,7 +34,6 @@ public class UsersShowServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		EntityManager em = DBUtil.createEntityManager();
 
-		System.out.println("ユーザー名: " + request.getParameter("id"));
 		User u = em.find(User.class, Integer.parseInt(request.getParameter("id")));
 
 		em.close();
