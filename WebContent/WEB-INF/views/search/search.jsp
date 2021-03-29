@@ -41,8 +41,8 @@
 
 			evaluation.addEventListener('change', function () {
 				  const form = document.search_form.evaluation;
-				  const options = evaluation.selectedIndex;
-				  const value = form.options[options].value;
+				  const select = evaluation.selectedIndex;
+				  const value = form.options[select].value;
 				  if(value != 0) {
 					  button.disabled = false
 				  }
