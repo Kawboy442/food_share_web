@@ -13,13 +13,13 @@
 			<br /><br />
 
 			<label for="evaluation">評価</label><br />
-			<select id="user_name" id="evaluation" name="eval">
-    			<option value="0"<c:if test="${post.evaluation == 0}"> selected</c:if>>選択してください</option>
-    			<option value="1"<c:if test="${post.evaluation == 1}"> selected</c:if>>⭐</option>
-    			<option value="2"<c:if test="${post.evaluation == 2}"> selected</c:if>>⭐⭐</option>
-    			<option value="3"<c:if test="${post.evaluation == 3}"> selected</c:if>>⭐⭐⭐</option>
-    			<option value="4"<c:if test="${post.evaluation == 4}"> selected</c:if>>⭐⭐⭐⭐</option>
-    			<option value="5"<c:if test="${post.evaluation == 5}"> selected</c:if>>⭐⭐⭐⭐⭐</option>
+			<select id="user_name" id="eval">
+    			<option value="0"<c:if test="${post.evaluation == 0}">selected</c:if>>選択してください</option>
+    			<option value="1"<c:if test="${post.evaluation == 1}"></c:if>>⭐</option>
+    			<option value="2"<c:if test="${post.evaluation == 2}"></c:if>>⭐⭐</option>
+    			<option value="3"<c:if test="${post.evaluation == 3}"></c:if>>⭐⭐⭐</option>
+    			<option value="4"<c:if test="${post.evaluation == 4}"></c:if>>⭐⭐⭐⭐</option>
+    			<option value="5"<c:if test="${post.evaluation == 5}"></c:if>>⭐⭐⭐⭐⭐</option>
 			</select>
 			<br /><br />
 
