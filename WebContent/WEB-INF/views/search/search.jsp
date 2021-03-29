@@ -23,7 +23,7 @@
 			</select>
 			<br /><br />
 
-			<button type="submit" id="search_btn">検索</button>
+			<button type="submit" id="search_btn" disabled>検索</button>
 		    </form>
     </c:param>
 </c:import>
