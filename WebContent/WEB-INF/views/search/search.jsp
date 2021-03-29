@@ -39,8 +39,13 @@
 				button.disabled = false
 			});
 
-			evaluation.addEventListener('change', () => {
-				button.disabled = false
+			evaluation.addEventListener('change', function () {
+				  const form = document.search_form.evaluation;
+				  const options = evaluation.selectedIndex;
+				  const value = form.options[options].value;
+				  if(value != 0) {
+					  button.disabled = false
+				  }
 			});
 			</script>
 		    </form>
