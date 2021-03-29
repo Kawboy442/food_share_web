@@ -24,6 +24,25 @@
 			<br /><br />
 
 			<button type="submit" id="search_btn" disabled>検索</button>
+			<script>
+			//各種タグの取得
+			const storeName = document.querySelector("#store_name");
+			const userName = document.querySelector("#user_name");
+			const evaluation = document.querySelector("#evaluation");
+			const button = document.querySelector("#search_btn");
+
+			storeName.addEventListener('input', () => {
+				button.disabled = false
+			});
+
+			userName.addEventListener('input', () => {
+				button.disabled = false
+			});
+
+			evaluation.addEventListener('change', () => {
+				button.disabled = false
+			});
+			</script>
 		    </form>
     </c:param>
 </c:import>
