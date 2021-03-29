@@ -13,7 +13,7 @@
 			<br /><br />
 
 			<label for="evaluation">評価</label><br />
-			<select id="user_name" id="eval">
+			<select id="evaluation" name="eval">
     			<option value="0"<c:if test="${post.evaluation == 0}">selected</c:if>>選択してください</option>
     			<option value="1"<c:if test="${post.evaluation == 1}"></c:if>>⭐</option>
     			<option value="2"<c:if test="${post.evaluation == 2}"></c:if>>⭐⭐</option>
