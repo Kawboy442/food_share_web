@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
         <link rel="stylesheet" href="<c:url value='/css/style.css' />">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript" src="food_share_web/js/search.js"></script>
+        <script type="text/javascript" src="/js/search.js"></script>
     </head>
     <body>
         <div id="wrapper">
