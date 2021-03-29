@@ -31,11 +31,11 @@
 			const evaluation = document.querySelector("#evaluation");
 			const button = document.querySelector("#search_btn");
 
-			storeName.addEventListener('input', () => {
+			storeName.addEventListener('keydown', () => {
 				button.disabled = false
 			});
 
-			userName.addEventListener('input', () => {
+			userName.addEventListener('keydown', () => {
 				button.disabled = false
 			});
 
