@@ -5,15 +5,15 @@
     <c:param name="content">
             <form method="POST" action="<c:url value='/search/result' />" id="search_form" name="search_form">
 			<label for="store_name">店名</label><br />
-			<input type="text" id="store_name" name="store_name"/>
+			<input type="text" id="store_name" name="store"/>
 			<br /><br />
 
 			<label for="user_name">ユーザー名</label><br />
-			<input type="text" id="user_name" name="user_name"/>
+			<input type="text" id="user_name" name="user"/>
 			<br /><br />
 
 			<label for="evaluation">評価</label><br />
-			<select id="user_name" id="evaluation" name="evaluation">
+			<select id="user_name" id="evaluation" name="eval">
     			<option value="0"<c:if test="${post.evaluation == 0}"> selected</c:if>>選択してください</option>
     			<option value="1"<c:if test="${post.evaluation == 1}"> selected</c:if>>⭐</option>
     			<option value="2"<c:if test="${post.evaluation == 2}"> selected</c:if>>⭐⭐</option>
