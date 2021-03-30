@@ -25,8 +25,12 @@
 </select>
 <br /><br />
 
-<label for="images">写真</label><br />
-<input type="file" name="images" accept=".png, .jpg, .jpeg" multiple/>
+<label for="images01">写真</label><br />
+<input type="file" name="images01" accept=".png, .jpg, .jpeg"/>
+<br /><br />
+
+<label for="images02">写真</label><br />
+<input type="file" name="images02" accept=".png, .jpg, .jpeg"/>
 <br /><br />
 
 <label for="title">タイトル</label><br />
