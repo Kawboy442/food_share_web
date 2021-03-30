@@ -25,11 +25,11 @@
 </select>
 <br /><br />
 
-<label for="images01">写真</label><br />
+<label for="images01">写真その1</label><br />
 <input type="file" name="images01" accept=".png, .jpg, .jpeg"/>
 <br /><br />
 
-<label for="images02">写真</label><br />
+<label for="images02">写真その2</label><br />
 <input type="file" name="images02" accept=".png, .jpg, .jpeg"/>
 <br /><br />
 
