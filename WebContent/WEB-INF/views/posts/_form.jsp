@@ -39,3 +39,7 @@
 
 <input type="hidden" name="_token" value="${_token}" />
 <button type="submit" id="post">投稿</button>
+
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+<script src='https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js'></script>
+<script src="/food_share_web/js/photoUpload.js"></script>
