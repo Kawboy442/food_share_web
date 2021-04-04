@@ -1,37 +1,24 @@
-$(function() {
-        var s3_client = function() {
-            AWS.config.region = "us-east-1";
-            AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-                IdentityPoolId: "us-east-1:074228e7-6d1b-4221-9673-d2b62afbde09"
-            });
-            AWS.config.credentials.get(function(err) {
-                if (!err) {
-                    console.log("Cognito Identify Id: " + AWS.config.credentials.identityId);
-                }
-            });
-            return new AWS.S3({
-                params: {
-                    Bucket: "foodshareweb"
-                }
-            });
-        };
-        $("#apply-upload").click(function() {
-            var file = $("#upload-file").prop("files")[0];
-            var timestamp = new Date().getTime();
-            var filename = "file" + timestamp + ".jpg";
-            s3_client().putObject({
-                Key: filename,
-                ContentType: file.type,
-                Body: file,
-                ACL: "public-read"
-            }, function(err, data) {
-                // if failed, alert
-                if (data !== null) {
-                    alert("アップロード成功!");
-                } else {
-                    alert("アップロード失敗.");
-                }
-            });
-        });
-    )
-};
+    //firebase初期化
+    var firebaseConfig = {
+      apiKey: 'AIzaSyBZHohuKk5NhVMjA1spuJEkU30ZBcLUcb4',
+      projectId: 'foodshare-341e7',
+      storageBucket: 'foodshare-341e7.appspot.com',
+    }
+    firebase.initializeApp(firebaseConfig);
+
+    //formのsubmitにイベント設定
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var imgs = form.querySelector('#images');
+      var uploads = [];
+      for (var file of imgs.files) {
+          //選択したファイルのファイル名を使うが、場合によってはかぶるので注意
+        var storageRef = firebase.storage().ref('form-uploaded/' + file.name);
+        uploads.push(storageRef.put(file));
+      }
+      //すべての画像のアップロード完了を待つ
+      Promise.all(uploads).then(function () {
+        console.log('アップロード完了');
+      });
+    });
