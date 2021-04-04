@@ -10,7 +10,7 @@
 
     //formのsubmitにイベント設定
     var form = document.querySelector('form');
-    form.addEventListener('submit', uploadPhoto);
+    form.addEventListener('submit', uploadPhoto, true);
     function uploadPhoto(e) {
       e.preventDefault();
       var imgs = form.querySelector('#images');
