@@ -1,4 +1,6 @@
-    //firebase初期化
+    // https://kido0617.github.io/js/2019-12-01-firebase-form-upload/
+
+	//firebase初期化
     var firebaseConfig = {
       apiKey: 'AIzaSyBZHohuKk5NhVMjA1spuJEkU30ZBcLUcb4',
       projectId: 'foodshare-341e7',
