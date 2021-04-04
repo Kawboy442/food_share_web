@@ -38,5 +38,4 @@
 <br /><br />
 
 <input type="hidden" name="_token" value="${_token}" />
-<button type="submit">投稿</button>
-<script src="/food_share_web/js/photoUpload.js"></script>
+<script src="/food_share_web/js/photoUpload.js"></script><button type="submit" id="post">投稿</button>
