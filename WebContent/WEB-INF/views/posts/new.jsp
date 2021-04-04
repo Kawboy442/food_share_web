@@ -8,7 +8,7 @@
             <c:import url="_form.jsp" />
             <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
             <script src='https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js'></script>
- 			<script src="/food_share_web/js/photoUpload.js"></script>
+            <script src="/food_share_web/js/photoUpload.js"></script>
         </form>
 
         <p><a href="<c:url value='/posts/index' />">投稿一覧に戻る</a></p>
