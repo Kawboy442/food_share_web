@@ -25,11 +25,16 @@
 </select>
 <br /><br />
 
-<label for="images">写真</label><br />
-<input type="file" id="images" accept=".png, .jpg, .jpeg" onchange="uploadPhoto()"/>
+<label for="images1">写真その1</label><br />
+<input type="file" id="images1" accept=".png, .jpg, .jpeg" onchange="uploadPhoto1()"/>
 <br /><br />
 
-<p hidden id="photoURL"></p>
+<label for="images2">写真その2</label><br />
+<input type="file" id="images2" accept=".png, .jpg, .jpeg" onchange="uploadPhoto2()"/>
+<br /><br />
+
+<p hidden id="photoUrl1"></p>
+<p hidden id="photoUrl2"></p>
 
 <label for="title">タイトル</label><br />
 <input type="text" name="title" value="${post.title}" />

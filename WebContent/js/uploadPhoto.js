@@ -8,19 +8,36 @@
     }
     firebase.initializeApp(firebaseConfig);
 
-    function uploadPhoto() {
-      var imgs = document.querySelector('#images');
+    function uploadPhoto1() {
+      var imgs = document.querySelector('#images1');
       var uploads = [];
       for (var file of imgs.files) {
           //選択したファイルのファイル名を使うが、場合によってはかぶるので注意
         var storageRef = firebase.storage().ref('form-uploaded/' + file.name);
         uploads.push(storageRef.put(file));
         var url = 'https://storage.googleapis.com/' + storageRef;
-        var photoUrl = document.querySelector('#photoUrl');
+        var photoUrl = document.querySelector('#photoUrl1');
         photoUrl.innerHTML = "<p>" + url + "</p>"
       }
       //すべての画像のアップロード完了を待つ
       Promise.all(uploads).then(function () {
-        console.log('アップロード完了');
+        console.log('写真その1アップロード完了');
       });
     }
+
+    function uploadPhoto2() {
+        var imgs = document.querySelector('#images2');
+        var uploads = [];
+        for (var file of imgs.files) {
+            //選択したファイルのファイル名を使うが、場合によってはかぶるので注意
+          var storageRef = firebase.storage().ref('form-uploaded/' + file.name);
+          uploads.push(storageRef.put(file));
+          var url = 'https://storage.googleapis.com/' + storageRef;
+          var photoUrl = document.querySelector('#photoUrl2');
+          photoUrl.innerHTML = "<p>" + url + "</p>"
+        }
+        //すべての画像のアップロード完了を待つ
+        Promise.all(uploads).then(function () {
+          console.log('写真その2アップロード完了');
+        });
+      }
