@@ -8,11 +8,8 @@
     }
     firebase.initializeApp(firebaseConfig);
 
-    //formのsubmitにイベント設定
-    var form = document.querySelector('form');
-    form.addEventListener('submit', uploadPhoto, true);
     function uploadPhoto() {
-      var imgs = form.querySelector('#images');
+      var imgs = document.querySelector('#images');
       var uploads = [];
       for (var file of imgs.files) {
           //選択したファイルのファイル名を使うが、場合によってはかぶるので注意
