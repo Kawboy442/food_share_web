@@ -65,6 +65,12 @@ public class Post {
 	@Column(name = "evaluation", nullable = false)
 	private Integer evaluation;
 
+	@Column(name = "photoUrl1", length = 1000, nullable = true)
+	private String photoUrl1;
+
+	@Column(name = "photoUrl2", length = 1000, nullable = true)
+	private String photoUrl2;
+
 	@Column(name = "created_at", nullable = false)
 	private Timestamp created_at;
 
@@ -117,6 +123,22 @@ public class Post {
 
 	public void setEvaluation(Integer evaluation) {
 		this.evaluation = evaluation;
+	}
+
+	public String getPhotoUrl1() {
+		return photoUrl1;
+	}
+
+	public void setPhotoUrl1(String photoUrl1) {
+		this.photoUrl1 = photoUrl1;
+	}
+
+	public String getPhotoUrl2() {
+		return photoUrl2;
+	}
+
+	public void setPhotoUrl2(String photoUrl2) {
+		this.photoUrl2 = photoUrl2;
 	}
 
 	public Timestamp getCreated_at() {
