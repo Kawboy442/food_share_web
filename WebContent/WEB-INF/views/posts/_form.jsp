@@ -29,6 +29,8 @@
 <input type="file" id="images" accept=".png, .jpg, .jpeg" onchange="uploadPhoto()"/>
 <br /><br />
 
+<p hidden id="photoURL"></p>
+
 <label for="title">タイトル</label><br />
 <input type="text" name="title" value="${post.title}" />
 <br /><br />
