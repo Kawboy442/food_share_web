@@ -15,9 +15,9 @@
           //選択したファイルのファイル名を使うが、場合によってはかぶるので注意
         var storageRef = firebase.storage().ref('form-uploaded/' + file.name);
         uploads.push(storageRef.put(file));
-
-        var url = document.querySelector('#photoURL');
-        url.innerHTML = "<p>" + storageRef + "</p>"
+        var url = 'https://storage.googleapis.com/' + storageRef;
+        var photoUrl = document.querySelector('#photoUrl');
+        photoUrl.innerHTML = "<p>" + url + "</p>"
       }
       //すべての画像のアップロード完了を待つ
       Promise.all(uploads).then(function () {
