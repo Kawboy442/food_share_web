@@ -52,7 +52,6 @@ public class PostsCreateServlet extends HttpServlet {
 
 			String photoUrl1 = request.getParameter("photoUrl1");
 			String photoUrl2 = request.getParameter("photoUrl2");
-
 			p.setPhotoUrl1(photoUrl1.replace("gs://", ""));
 			p.setPhotoUrl2(photoUrl2.replace("gs://", ""));
 
