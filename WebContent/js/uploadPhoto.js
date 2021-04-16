@@ -16,8 +16,7 @@
         var storageRef = firebase.storage().ref('form-uploaded/' + file.name);
         uploads.push(storageRef.put(file));
         var url = 'https://storage.googleapis.com/' + storageRef;
-        var photoUrl = document.querySelector('#photoUrl1');
-        photoUrl.innerHTML = "<p>" + url + "</p>"
+        document.querySelector('#photoUrl1').value = url;
       }
       //すべての画像のアップロード完了を待つ
       Promise.all(uploads).then(function () {
@@ -33,8 +32,7 @@
           var storageRef = firebase.storage().ref('form-uploaded/' + file.name);
           uploads.push(storageRef.put(file));
           var url = 'https://storage.googleapis.com/' + storageRef;
-          var photoUrl = document.querySelector('#photoUrl2');
-          photoUrl.innerHTML = "<p>" + url + "</p>"
+          document.querySelector('#photoUrl2').value = url;
         }
         //すべての画像のアップロード完了を待つ
         Promise.all(uploads).then(function () {
