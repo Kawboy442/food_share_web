@@ -33,8 +33,8 @@
 <input type="file" id="images2" accept=".png, .jpg, .jpeg" onchange="uploadPhoto2()"/>
 <br /><br />
 
-<p hidden id="photoUrl1"></p>
-<p hidden id="photoUrl2"></p>
+<input hidden id="photoUrl1" name="photoUrl1" />
+<input hidden id="photoUrl2" name="photoUrl2" />
 
 <label for="title">タイトル</label><br />
 <input type="text" name="title" value="${post.title}" />
