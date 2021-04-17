@@ -10,20 +10,20 @@
     firebase.initializeApp(firebaseConfig);
 
     function uploadPhoto1(target) {
-      var reader = new FileReader();
+      const reader = new FileReader();
       reader.onload = function (e) {
     	  document.querySelector("#preview1").setAttribute('src', e.target.result);
       }
       reader.readAsDataURL(target.files[0]);
 
-      var uploads = [];
-      for (var file of document.querySelector('#images1').files) {
+      const uploads = [];
+      for (const file of document.querySelector('#images1').files) {
           //選択したファイルのファイル名を使うが、場合によってはかぶるので注意
-    	var userName = document.querySelector('#user_name').value;
-    	var date = new Date();
-        var storageRef = firebase.storage().ref(userName + '/' + date.toLocaleString() + '_' + file.name);
+    	const userName = document.querySelector('#user_name').value;
+    	const date = new Date();
+    	const storageRef = firebase.storage().ref(userName + '/' + date.toLocaleString() + '_' + file.name);
         uploads.push(storageRef.put(file));
-        var url = 'https://storage.googleapis.com/' + storageRef;
+        const url = 'https://storage.googleapis.com/' + storageRef;
         document.querySelector('#photoUrl1').value = url;
       }
       //すべての画像のアップロード完了を待つ
@@ -33,20 +33,20 @@
     }
 
     function uploadPhoto2(target) {
-        var reader = new FileReader();
+    	const reader = new FileReader();
         reader.onload = function (e) {
         	document.querySelector("#preview2").setAttribute('src', e.target.result);
         }
         reader.readAsDataURL(target.files[0]);
 
-        var uploads = [];
-        for (var file of document.querySelector('#images2').files) {
+        const uploads = [];
+        for (const file of document.querySelector('#images2').files) {
             //選択したファイルのファイル名を使うが、場合によってはかぶるので注意
-          var userName = document.querySelector('#user_name').value;
-          var date = new Date();
-          var storageRef = firebase.storage().ref(userName + '/' + date.toLocaleString() + '_' + file.name);
+          const userName = document.querySelector('#user_name').value;
+          const date = new Date();
+          const storageRef = firebase.storage().ref(userName + '/' + date.toLocaleString() + '_' + file.name);
           uploads.push(storageRef.put(file));
-          var url = 'https://storage.googleapis.com/' + storageRef;
+          const url = 'https://storage.googleapis.com/' + storageRef;
           document.querySelector('#photoUrl2').value = url;
         }
         //すべての画像のアップロード完了を待つ
