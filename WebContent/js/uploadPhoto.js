@@ -20,7 +20,8 @@
       for (var file of document.querySelector('#images1').files) {
           //選択したファイルのファイル名を使うが、場合によってはかぶるので注意
     	var userName = document.querySelector('#user_name').value;
-        var storageRef = firebase.storage().ref(userName + '/' + file.name);
+    	var date = new Date();
+        var storageRef = firebase.storage().ref(userName + '/' + date.toLocaleString() + '_' + file.name);
         uploads.push(storageRef.put(file));
         var url = 'https://storage.googleapis.com/' + storageRef;
         document.querySelector('#photoUrl1').value = url;
@@ -42,7 +43,8 @@
         for (var file of document.querySelector('#images2').files) {
             //選択したファイルのファイル名を使うが、場合によってはかぶるので注意
           var userName = document.querySelector('#user_name').value;
-          var storageRef = firebase.storage().ref(userName + '/' + file.name);
+          var date = new Date();
+          var storageRef = firebase.storage().ref(userName + '/' + date.toLocaleString() + '_' + file.name);
           uploads.push(storageRef.put(file));
           var url = 'https://storage.googleapis.com/' + storageRef;
           document.querySelector('#photoUrl2').value = url;
