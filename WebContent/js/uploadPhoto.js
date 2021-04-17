@@ -13,7 +13,7 @@
 
       var reader = new FileReader();
       reader.onload = function (e) {
-    	  document.getElementById("preview1").setAttribute('src', e.target.result);
+    	  document.querySelector("#preview1").setAttribute('src', e.target.result);
       }
       reader.readAsDataURL(target.files[0]);
 
@@ -36,7 +36,7 @@
 
         var reader = new FileReader();
         reader.onload = function (e) {
-        	document.getElementById("preview2").setAttribute('src', e.target.result);
+        	document.querySelector("#preview2").setAttribute('src', e.target.result);
         }
         reader.readAsDataURL(target.files[0]);
 
