@@ -9,8 +9,6 @@
     firebase.initializeApp(firebaseConfig);
 
     function uploadPhoto1(target) {
-      var imgs = document.querySelector('#images1');
-
       var reader = new FileReader();
       reader.onload = function (e) {
     	  document.querySelector("#preview1").setAttribute('src', e.target.result);
@@ -18,7 +16,7 @@
       reader.readAsDataURL(target.files[0]);
 
       var uploads = [];
-      for (var file of imgs.files) {
+      for (var file of document.querySelector('#images1').files) {
           //選択したファイルのファイル名を使うが、場合によってはかぶるので注意
         var storageRef = firebase.storage().ref('form-uploaded/' + file.name);
         uploads.push(storageRef.put(file));
@@ -32,8 +30,6 @@
     }
 
     function uploadPhoto2(target) {
-        var imgs = document.querySelector('#images2');
-
         var reader = new FileReader();
         reader.onload = function (e) {
         	document.querySelector("#preview2").setAttribute('src', e.target.result);
@@ -41,7 +37,7 @@
         reader.readAsDataURL(target.files[0]);
 
         var uploads = [];
-        for (var file of imgs.files) {
+        for (var file of document.querySelector('#images2').files) {
             //選択したファイルのファイル名を使うが、場合によってはかぶるので注意
           var storageRef = firebase.storage().ref('form-uploaded/' + file.name);
           uploads.push(storageRef.put(file));
