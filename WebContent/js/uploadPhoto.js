@@ -8,8 +8,15 @@
     }
     firebase.initializeApp(firebaseConfig);
 
-    function uploadPhoto1() {
+    function uploadPhoto1(target) {
       var imgs = document.querySelector('#images1');
+
+      var reader = new FileReader();
+      reader.onload = function (e) {
+    	  document.getElementById("preview1").setAttribute('src', e.target.result);
+      }
+      reader.readAsDataURL(target.files[0]);
+
       var uploads = [];
       for (var file of imgs.files) {
           //選択したファイルのファイル名を使うが、場合によってはかぶるので注意
@@ -24,8 +31,15 @@
       });
     }
 
-    function uploadPhoto2() {
+    function uploadPhoto2(target) {
         var imgs = document.querySelector('#images2');
+
+        var reader = new FileReader();
+        reader.onload = function (e) {
+        	document.getElementById("preview2").setAttribute('src', e.target.result);
+        }
+        reader.readAsDataURL(target.files[0]);
+
         var uploads = [];
         for (var file of imgs.files) {
             //選択したファイルのファイル名を使うが、場合によってはかぶるので注意
