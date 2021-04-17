@@ -18,7 +18,7 @@
 
       const uploads = [];
       for (const file of document.querySelector('#images1').files) {
-          //選択したファイルのファイル名を使うが、場合によってはかぶるので注意
+    	// ユーザー名のフォルダに置き、ファイル名はファイル追加時刻+ファイル名としてアップロード
     	const userName = document.querySelector('#user_name').value;
     	const date = new Date();
     	const storageRef = firebase.storage().ref(userName + '/' + date.toLocaleString() + '_' + file.name);
@@ -41,7 +41,7 @@
 
         const uploads = [];
         for (const file of document.querySelector('#images2').files) {
-            //選択したファイルのファイル名を使うが、場合によってはかぶるので注意
+          // ユーザー名のフォルダに置き、ファイル名はファイル追加時刻+ファイル名としてアップロード
           const userName = document.querySelector('#user_name').value;
           const date = new Date();
           const storageRef = firebase.storage().ref(userName + '/' + date.toLocaleString() + '_' + file.name);
@@ -49,7 +49,7 @@
           const url = 'https://storage.googleapis.com/' + storageRef;
           document.querySelector('#photoUrl2').value = url;
         }
-        //すべての画像のアップロード完了を待つ
+        // すべての画像のアップロード完了を待つ
         Promise.all(uploads).then(function () {
           console.log('写真その2アップロード完了');
         });
