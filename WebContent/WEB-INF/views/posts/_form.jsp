@@ -25,7 +25,7 @@
 </select>
 <br /><br />
 
-<input hidden name="user_name" value="${sessionScope.login_user.user_name}"/>
+<input hidden id="user_name" value="${sessionScope.login_user.user_name}"/>
 
 <label for="images1">写真その1</label><br />
 <input type="file" id="images1" accept=".png, .jpg, .jpeg" onchange="uploadPhoto1(this)" onclick="this.value = '';"/>
