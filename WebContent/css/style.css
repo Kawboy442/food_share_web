@@ -156,3 +156,9 @@ table#post_list .post_action {
 pre {
     font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
 }
+
+img.imgPreview{
+  object-fit: contain;
+  width: 400px;
+  height: 300px;
+}
