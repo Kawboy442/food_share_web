@@ -29,8 +29,14 @@
 <input type="file" id="images1" accept=".png, .jpg, .jpeg" onchange="uploadPhoto1()"/>
 <br /><br />
 
+<img id="preview1">
+<br /><br />
+
 <label for="images2">写真その2</label><br />
 <input type="file" id="images2" accept=".png, .jpg, .jpeg" onchange="uploadPhoto2()"/>
+<br /><br />
+
+<img id="preview2">
 <br /><br />
 
 <input hidden id="photoUrl1" name="photoUrl1" />
