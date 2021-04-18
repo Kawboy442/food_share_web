@@ -32,6 +32,13 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>写真</th>
+                            <td>
+                            	<img class="imgPreview" src="<c:url value="${post.photoUrl1}" />" />
+                            	<img class="imgPreview" src="<c:url value="${post.photoUrl2}" />" />
+                            </td>
+                        </tr>
+                        <tr>
                             <th>タイトル</th>
                             <td><c:out value="${post.title}" /></td>
                         </tr>
