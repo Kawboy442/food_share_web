@@ -25,6 +25,25 @@
 </select>
 <br /><br />
 
+<input hidden id="user_name" value="${sessionScope.login_user.user_name}"/>
+
+<label for="images1">写真その1</label><br />
+<input type="file" id="images1" accept=".png, .jpg, .jpeg" onchange="uploadPhoto1(this)" onclick="this.value = '';"/>
+<br /><br />
+
+<img id="preview1" class="imgPreview">
+<br /><br />
+
+<label for="images2">写真その2</label><br />
+<input type="file" id="images2" accept=".png, .jpg, .jpeg" onchange="uploadPhoto2(this)" onclick="this.value = '';"/>
+<br /><br />
+
+<img id="preview2" class="imgPreview">
+<br /><br />
+
+<input hidden id="photoUrl1" name="photoUrl1" />
+<input hidden id="photoUrl2" name="photoUrl2" />
+
 <label for="title">タイトル</label><br />
 <input type="text" name="title" value="${post.title}" />
 <br /><br />
@@ -34,4 +53,8 @@
 <br /><br />
 
 <input type="hidden" name="_token" value="${_token}" />
-<button type="submit">投稿</button>
+<button type="submit" id="post">投稿</button>
+
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+<script src='https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js'></script>
+<script src="/food_share_web/js/uploadPhoto.js"></script>

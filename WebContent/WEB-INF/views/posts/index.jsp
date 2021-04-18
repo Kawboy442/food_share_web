@@ -16,6 +16,7 @@
                     <th class="post_created_at">投稿日時</th>
                     <th class="post_evaluation">評価</th>
                     <th class="post_title">タイトル</th>
+                    <th class="post_photo">写真</th>
                     <th class="post_action">操作</th>
                 </tr>
                 <c:forEach var="post" items="${posts}" varStatus="status">
@@ -32,6 +33,7 @@
                             </c:choose>
                         </td>
                         <td class="post_title">${post.title}</td>
+                        <td class="post_photo"><img class="imgPreview" src="<c:url value="${post.photoUrl1}" />" /></td>
                         <td>
                             <c:choose>
                                 <c:when test="${post.delete_flag == 1}">
