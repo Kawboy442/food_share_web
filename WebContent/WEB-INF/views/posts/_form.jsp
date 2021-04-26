@@ -14,6 +14,12 @@
 <input type="text" name="store_name" value="${post.store_name}" />
 <br /><br />
 
+<p>お店の場所検索</p>
+<input type="text" id="keyword"><button id="search">検索</button><button id="clear">結果クリア</button>
+<div id="mapPreview"></div>
+<script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyAtu232QYXc_IhZ89bQymfFeG5noMdbhi0&callback=initMap" async defer></script>
+<script src="/food_share_web/js/searchMap.js"></script>
+
 <label for="evaluation">評価</label><br />
 <select name="evaluation">
     <option value="0"<c:if test="${post.evaluation == 0}"> selected</c:if>>選択してください</option>
