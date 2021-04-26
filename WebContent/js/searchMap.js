@@ -13,7 +13,7 @@ function initMap() {
             // 取得成功した場合
             function(position) {
                 // マップ初期表示の位置設定
-                var target = document.getElementById("mapPreview");
+                var target = document.querySelector("#mapPreview");
                 // 緯度・経度を変数に格納
                 var mapLatLng = new google.maps.LatLng(
                     position.coords.latitude,
@@ -61,7 +61,7 @@ function initMap() {
 }
 
 function searchMap() {
-    var place = document.getElementById("placeKeyword").value;
+    var place = document.querySelector("#placeKeyword").value;
     var geocoder = new google.maps.Geocoder(); // geocoderのコンストラクタ
 
     geocoder.geocode({
