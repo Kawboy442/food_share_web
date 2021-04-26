@@ -15,7 +15,7 @@
 <br /><br />
 
 <p>お店の場所検索</p>
-<input type="text" id="keyword">
+<input type="text" id="placeKeyword" oninput="searchMap()">
 <div id="mapPreview"></div>
 <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyAtu232QYXc_IhZ89bQymfFeG5noMdbhi0&callback=initMap" async defer></script>
 <script src="/food_share_web/js/searchMap.js"></script>

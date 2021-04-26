@@ -31,43 +31,6 @@ function initMap() {
                     map: map, // 対象の地図オブジェクト
                     position: mapLatLng, // 緯度・経度
                 });
-                // 検索実行ボタンが押下されたとき
-                document.getElementById("search").addEventListener("click", function() {
-                        var place = document.getElementById("keyword").value;
-                        var geocoder = new google.maps.Geocoder(); // geocoderのコンストラクタ
-
-                        geocoder.geocode({
-                                address: place,
-                            },
-                            function(results, status) {
-                                if (status == google.maps.GeocoderStatus.OK) {
-                                    var bounds = new google.maps.LatLngBounds();
-
-                                    for (var i in results) {
-                                        if (results[0].geometry) {
-                                            // 緯度経度を取得
-                                            var latlng = results[0].geometry.location;
-                                            // 住所を取得
-                                            var address = results[0].formatted_address;
-                                            // 検索結果地が含まれるように範囲を拡大
-                                            bounds.extend(latlng);
-                                            // マーカーのセット
-                                            setMarker(latlng);
-                                            // マーカーへの吹き出しの追加
-                                            setInfoW(place, latlng, address);
-                                            // マーカーにクリックイベントを追加
-                                            markerEvent();
-                                        }
-                                    }
-                                } else if (status == google.maps.GeocoderStatus.ZERO_RESULTS) {
-                                    alert("見つかりません");
-                                } else {
-                                    console.log(status);
-                                    alert("エラー発生");
-                                }
-                            }
-                        );
-                    });
                 // 結果クリアーボタン押下時
                 document.getElementById("clear").addEventListener("click", function() {
                     deleteMakers();
@@ -95,6 +58,43 @@ function initMap() {
     } else {
         alert("この端末では位置情報が取得できません");
     }
+}
+
+function searchMap() {
+    var place = document.getElementById("placeKeyword").value;
+    var geocoder = new google.maps.Geocoder(); // geocoderのコンストラクタ
+
+    geocoder.geocode({
+            address: place,
+        },
+        function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var bounds = new google.maps.LatLngBounds();
+
+                for (var i in results) {
+                    if (results[0].geometry) {
+                        // 緯度経度を取得
+                        var latlng = results[0].geometry.location;
+                        // 住所を取得
+                        var address = results[0].formatted_address;
+                        // 検索結果地が含まれるように範囲を拡大
+                        bounds.extend(latlng);
+                        // マーカーのセット
+                        setMarker(latlng);
+                        // マーカーへの吹き出しの追加
+                        setInfoW(place, latlng, address);
+                        // マーカーにクリックイベントを追加
+                        markerEvent();
+                    }
+                }
+            } else if (status == google.maps.GeocoderStatus.ZERO_RESULTS) {
+                alert("見つかりません");
+            } else {
+                console.log(status);
+                alert("エラー発生");
+            }
+        }
+    );
 }
 
 // マーカーのセットを実施する
