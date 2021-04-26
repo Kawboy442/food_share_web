@@ -1,4 +1,5 @@
-// https://qiita.com/yoshi_yast/items/521c1f36306a180f45dd
+// マップ表示、検索機能: https://qiita.com/yoshi_yast/items/521c1f36306a180f45dd
+// 現在地表示: https://qiita.com/akkey2475/items/29a5e5ab0e0ca04f4169
 
 var map;
 var marker;
