@@ -162,3 +162,8 @@ img.imgPreview{
   width: 400px;
   height: 300px;
 }
+
+#mapPreview {
+  width: 600px;
+  height: 350px;
+}
