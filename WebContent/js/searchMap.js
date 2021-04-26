@@ -31,10 +31,6 @@ function initMap() {
                     map: map, // 対象の地図オブジェクト
                     position: mapLatLng, // 緯度・経度
                 });
-                // 結果クリアーボタン押下時
-                document.getElementById("clear").addEventListener("click", function() {
-                    deleteMakers();
-                });
             },
             // 取得失敗した場合
             function(error) {
