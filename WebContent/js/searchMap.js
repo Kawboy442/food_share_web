@@ -5,58 +5,95 @@ var marker;
 var infoWindow;
 
 function initMap() {
-    //マップ初期表示の位置設定
-    var target = document.getElementById("mapPreview");
-    var centerp = { lat: 37.67229496806523, lng: 137.88838989062504 };
+    // Geolocation APIに対応している
+    if (navigator.geolocation) {
+        // 現在地を取得
+        navigator.geolocation.getCurrentPosition(
+            // 取得成功した場合
+            function(position) {
+                // マップ初期表示の位置設定
+                var target = document.getElementById("mapPreview");
+                // 緯度・経度を変数に格納
+                var mapLatLng = new google.maps.LatLng(
+                    position.coords.latitude,
+                    position.coords.longitude
+                );
 
-    //マップ表示
-    map = new google.maps.Map(target, {
-        center: centerp,
-        zoom: 15,
-    });
+                // マップ表示
+                map = new google.maps.Map(target, {
+                    center: mapLatLng,
+                    zoom: 15,
+                });
 
-    // 検索実行ボタンが押下されたとき
-    document.getElementById("search").addEventListener("click", function() {
-        var place = document.getElementById("keyword").value;
-        var geocoder = new google.maps.Geocoder(); // geocoderのコンストラクタ
+                // マップにマーカーを表示する
+                var marker = new google.maps.Marker({
+                    map: map, // 対象の地図オブジェクト
+                    position: mapLatLng, // 緯度・経度
+                });
+                // 検索実行ボタンが押下されたとき
+                document.getElementById("search").addEventListener("click", function() {
+                        var place = document.getElementById("keyword").value;
+                        var geocoder = new google.maps.Geocoder(); // geocoderのコンストラクタ
 
-        geocoder.geocode({
-                address: place,
+                        geocoder.geocode({
+                                address: place,
+                            },
+                            function(results, status) {
+                                if (status == google.maps.GeocoderStatus.OK) {
+                                    var bounds = new google.maps.LatLngBounds();
+
+                                    for (var i in results) {
+                                        if (results[0].geometry) {
+                                            // 緯度経度を取得
+                                            var latlng = results[0].geometry.location;
+                                            // 住所を取得
+                                            var address = results[0].formatted_address;
+                                            // 検索結果地が含まれるように範囲を拡大
+                                            bounds.extend(latlng);
+                                            // マーカーのセット
+                                            setMarker(latlng);
+                                            // マーカーへの吹き出しの追加
+                                            setInfoW(place, latlng, address);
+                                            // マーカーにクリックイベントを追加
+                                            markerEvent();
+                                        }
+                                    }
+                                } else if (status == google.maps.GeocoderStatus.ZERO_RESULTS) {
+                                    alert("見つかりません");
+                                } else {
+                                    console.log(status);
+                                    alert("エラー発生");
+                                }
+                            }
+                        );
+                    });
+                // 結果クリアーボタン押下時
+                document.getElementById("clear").addEventListener("click", function() {
+                    deleteMakers();
+                });
             },
-            function(results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    var bounds = new google.maps.LatLngBounds();
-
-                    for (var i in results) {
-                        if (results[0].geometry) {
-                            // 緯度経度を取得
-                            var latlng = results[0].geometry.location;
-                            // 住所を取得
-                            var address = results[0].formatted_address;
-                            // 検索結果地が含まれるように範囲を拡大
-                            bounds.extend(latlng);
-                            // マーカーのセット
-                            setMarker(latlng);
-                            // マーカーへの吹き出しの追加
-                            setInfoW(place, latlng, address);
-                            // マーカーにクリックイベントを追加
-                            markerEvent();
-                        }
-                    }
-                } else if (status == google.maps.GeocoderStatus.ZERO_RESULTS) {
-                    alert("見つかりません");
-                } else {
-                    console.log(status);
-                    alert("エラー発生");
+            // 取得失敗した場合
+            function(error) {
+                // エラーメッセージを表示
+                switch (error.code) {
+                    case 1: // PERMISSION_DENIED
+                        alert("位置情報の利用が許可されていません");
+                        break;
+                    case 2: // POSITION_UNAVAILABLE
+                        alert("現在位置が取得できませんでした");
+                        break;
+                    case 3: // TIMEOUT
+                        alert("タイムアウトになりました");
+                        break;
+                    default:
+                        alert("その他のエラー(エラーコード:" + error.code + ")");
+                        break;
                 }
             }
         );
-    });
-
-    // 結果クリアーボタン押下時
-    document.getElementById("clear").addEventListener("click", function() {
-        deleteMakers();
-    });
+    } else {
+        alert("この端末では位置情報が取得できません");
+    }
 }
 
 // マーカーのセットを実施する
