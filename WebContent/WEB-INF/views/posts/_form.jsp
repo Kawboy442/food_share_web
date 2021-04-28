@@ -14,7 +14,7 @@
 <input type="text" name="store_name" value="${post.store_name}" />
 <br /><br />
 
-<p>お店の場所検索</p>
+<label for="store_place">お店の場所検索</label><br />
 <input type="search" id="placeKeyword" onChange="searchMap()">
 <div id="mapPreview"></div>
 <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyAtu232QYXc_IhZ89bQymfFeG5noMdbhi0&callback=initMap" async defer></script>
