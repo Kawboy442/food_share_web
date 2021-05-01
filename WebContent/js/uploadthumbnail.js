@@ -21,7 +21,7 @@
     	// ユーザー名のフォルダに置き、ファイルはthumbnail/(ユーザー名)/ファイル名の構成でアップロード
     	const userName = document.querySelector('#user_name').value;
     	const date = new Date();
-    	const storageRef = firebase.storage().ref("thumbnail" + "/" + userName + '/' + file.name);
+    	const storageRef = firebase.storage().ref("thumbnail" + "/" + file.name);
         uploads.push(storageRef.put(file));
         const url = 'https://storage.googleapis.com/' + storageRef;
         document.querySelector('#thumbnailUrl').value = url;
