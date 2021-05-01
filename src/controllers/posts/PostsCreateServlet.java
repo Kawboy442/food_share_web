@@ -50,10 +50,8 @@ public class PostsCreateServlet extends HttpServlet {
 
 			p.setEvaluation(Integer.parseInt(request.getParameter("evaluation")));
 
-			String photoUrl1 = request.getParameter("photoUrl1");
-			String photoUrl2 = request.getParameter("photoUrl2");
-			p.setPhotoUrl1(photoUrl1.replace("gs://", ""));
-			p.setPhotoUrl2(photoUrl2.replace("gs://", ""));
+			p.setPhotoUrl1(request.getParameter("photoUrl1").replace("gs://", ""));
+			p.setPhotoUrl2(request.getParameter("photoUrl2").replace("gs://", ""));
 
 			Timestamp currentTime = new Timestamp(System.currentTimeMillis());
 			p.setCreated_at(currentTime);
