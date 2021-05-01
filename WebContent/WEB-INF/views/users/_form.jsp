@@ -9,6 +9,15 @@
     </div>
 </c:if>
 
+<label for="thumbnail">ユーザー画像</label><br />
+<input type="file" id="thumbnailPhoto" accept=".png, .jpg, .jpeg" onchange="uploadthumbnail(this)" onclick="this.value = '';"/>
+<br /><br />
+
+<img id="thumbnail" class="imgPreview">
+<br /><br />
+
+<input hidden id="thumbnailUrl" name="thumbnailUrl" />
+
 <label for="username">ユーザー名</label><br />
 <input type="text" name="user_name" value="${user.user_name}" />
 <br /><br />
