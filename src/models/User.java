@@ -40,6 +40,9 @@ public class User {
 	@Column(name = "user_name", nullable = false)
 	private String user_name;
 
+	@Column(name = "thumbnailUrl", length = 1000, nullable = true)
+	private String thumbnailUrl;
+
 	@Column(name = "password", length = 64, nullable = false)
 	private String password;
 
@@ -69,6 +72,14 @@ public class User {
 
 	public void setUser_name(String user_name) {
 		this.user_name = user_name;
+	}
+
+	public String getThumbnailUrl() {
+		return thumbnailUrl;
+	}
+
+	public void setThumbnailUrl(String thumbnailUrl) {
+		this.thumbnailUrl = thumbnailUrl;
 	}
 
 	public String getPassword() {

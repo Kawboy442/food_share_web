@@ -17,6 +17,12 @@
                             <td><c:out value="${user.user_name}" /></td>
                         </tr>
                         <tr>
+                            <th>ユーザー画像</th>
+                            <td>
+                            	<img class="imgPreview" src="<c:url value="${user.thumbnailUrl}" />" />
+                            </td>
+                        </tr>
+                        <tr>
                             <th>登録日時</th>
                             <td>
                                 <fmt:formatDate value="${user.created_at}" pattern="yyyy-MM-dd HH:mm:ss" />

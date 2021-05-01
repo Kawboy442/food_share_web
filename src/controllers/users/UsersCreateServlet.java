@@ -43,6 +43,9 @@ public class UsersCreateServlet extends HttpServlet {
 			User u = new User();
 
 			u.setUser_name(request.getParameter("user_name"));
+
+			u.setThumbnailUrl(request.getParameter("thumbnailUrl").replace("gs://", ""));
+
 			String password = request.getParameter("password");
 			String againPassword = request.getParameter("password_again");
 			u.setPassword(

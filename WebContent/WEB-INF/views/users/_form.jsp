@@ -9,6 +9,15 @@
     </div>
 </c:if>
 
+<label for="thumbnail">ユーザー画像</label><br />
+<input type="file" id="thumbnailPhoto" accept=".png, .jpg, .jpeg" onchange="uploadthumbnail(this)" onclick="this.value = '';"/>
+<br /><br />
+
+<img id="thumbnail" class="imgPreview">
+<br /><br />
+
+<input hidden id="thumbnailUrl" name="thumbnailUrl" />
+
 <label for="username">ユーザー名</label><br />
 <input type="text" name="user_name" value="${user.user_name}" />
 <br /><br />
@@ -23,3 +32,7 @@
 
 <input type="hidden" name="_token" value="${_token}" />
 <button type="submit">作成/変更</button>
+
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+<script src='https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js'></script>
+<script src="/food_share_web/js/uploadthumbnail.js"></script>
