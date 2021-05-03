@@ -27,7 +27,7 @@
                                     <tr>
                                         <th>フォロー有無</th>
                                         <td>
-                                            <input type="checkbox" value="1"/>フォロー
+                                            <input type="checkbox" name="followed" value="1"/>フォロー
                                         </td>
                                     </tr>
                                     <tr>
