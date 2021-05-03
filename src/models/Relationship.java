@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Relationship {
@@ -17,11 +17,11 @@ public class Relationship {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@ManyToMany
+	@ManyToOne
 	@JoinColumn(name = "follower_user_id", nullable = false)
 	private User followerUser;
 
-	@ManyToMany
+	@ManyToOne
 	@JoinColumn(name = "followed_user_id", nullable = false)
 	private User followedUser;
 
