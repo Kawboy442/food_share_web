@@ -25,6 +25,12 @@
                                         </td>
                                     </tr>
                                     <tr>
+                                        <th>フォロー有無</th>
+                                        <td>
+                                            <input type="checkbox" value="1"/>フォロー
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <th>登録日時</th>
                                         <td>
                                             <fmt:formatDate value="${user.created_at}" pattern="yyyy-MM-dd HH:mm:ss" />
