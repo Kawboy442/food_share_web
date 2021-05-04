@@ -27,7 +27,7 @@
                                     <tr>
                                         <th>フォロー有無</th>
                                         <td>
-                                            <input type="checkbox" name="followed" value="1"/>フォロー
+                                            <a href="/relationship?action=sample">フォロー</a>
                                         </td>
                                     </tr>
                                     <tr>
