@@ -27,7 +27,7 @@
                                     <tr>
                                         <th>フォロー有無</th>
                                         <td>
-                                            <a href="/relationship?action=sample">フォロー</a>
+                                            <a href="/relationship?action=follow">フォロー</a>
                                         </td>
                                     </tr>
                                     <tr>
