@@ -71,6 +71,9 @@ public class Post {
 	@Column(name = "photoUrl2", length = 1000, nullable = true)
 	private String photoUrl2;
 
+	@Column(name = "likeCount", nullable = false)
+	private Integer likeCount;
+
 	@Column(name = "created_at", nullable = false)
 	private Timestamp created_at;
 
@@ -139,6 +142,14 @@ public class Post {
 
 	public void setPhotoUrl2(String photoUrl2) {
 		this.photoUrl2 = photoUrl2;
+	}
+
+	public Integer getLikeCount() {
+		return likeCount;
+	}
+
+	public void setLikeCount(Integer likeCount) {
+		this.likeCount = likeCount;
 	}
 
 	public Timestamp getCreated_at() {
