@@ -6,6 +6,8 @@
         <head>
             <meta charset="UTF-8">
             <title>食べ物シェア</title>
+            <meta name="viewport" content="width=devicewidth, initialscale=1, shrinktofit=no">
+            <link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css' />">
             <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
             <link rel="stylesheet" href="<c:url value='/css/style.css' />">
         </head>
@@ -44,6 +46,8 @@
                     by Ryosuke Ito.
                 </div>
             </div>
+            <script src="js/jquery-3.6.0.slim.min.js"></script>
+            <script src="js/bootstrap.bundle.min.js"></script>
         </body>
 
         </html>
