@@ -6,7 +6,7 @@
         <head>
             <meta charset="UTF-8">
             <title>食べ物シェア</title>
-            <meta name="viewport" content="width=devicewidth, initialscale=1, shrinktofit=no">
+            <meta name="viewport" content="width=device-width, initialscale=1.0">
             <link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css' />">
             <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
             <link rel="stylesheet" href="<c:url value='/css/style.css' />">
