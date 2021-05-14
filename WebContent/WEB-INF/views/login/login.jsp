@@ -12,18 +12,15 @@
                         <c:out value="${flush}"></c:out>
                     </div>
                 </c:if>
-                <h2>ログイン</h2>
-                <form method="POST" action="<c:url value='/login' />">
-                    <label for="code">ユーザー名</label><br />
-                    <input type="text" name="user_name" value="${user_name}" />
-                    <br /><br />
-
-                    <label for="password">パスワード</label><br />
-                    <input type="password" name="password" />
-                    <br /><br />
-
+                <h1 class="h3 mt-2 mb-3 font-weight-normal">ログイン</h1>
+                <form class="w-25 mx-auto" th:action="<c:url value='/login' />" method="post">
+                    <label for="code" class="sr-only"></label>
+                    <input class="form-control" id="username" type="text" name="user_name" value="${user_name}" placeholder="ユーザID" required autofocus />
+                    <label for="password" class="sr-only"></label>
+                    <input class="form-control" id="password" type="password" name="password" placeholder="パスワード" required />
                     <input type="hidden" name="_token" value="${_token}" />
-                    <button type="submit">ログイン</button>
+                    <input class="btn btn-outline-primary my-1" type="submit" value="Sign In" />
                 </form>
+                </body>
             </c:param>
         </c:import>
