@@ -4,7 +4,7 @@
             <c:import url="/WEB-INF/views/layout/app.jsp">
                 <c:param name="content">
                     <c:if test="${flush != null}">
-                        <div id="flush_success">
+                        <div class="alert alert-primary" role="alert">
                             <c:out value="${flush}"></c:out>
                         </div>
                     </c:if>

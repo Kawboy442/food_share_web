@@ -2,16 +2,18 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <c:import url="/WEB-INF/views/layout/app.jsp">
             <c:param name="content">
-                <c:if test="${hasError}">
-                    <div id="flush_error">
-                        ユーザー名かパスワードが間違っています。
-                    </div>
-                </c:if>
-                <c:if test="${flush != null}">
-                    <div id="flush_success">
-                        <c:out value="${flush}"></c:out>
-                    </div>
-                </c:if>
+
+                <body class="text-center">
+                    <c:if test="${hasError}">
+                        <div class="alert alert-danger" role="alert">
+                            ユーザIDとパスワードが一致しません。
+                        </div>
+                    </c:if>
+                    <c:if test="${flush != null}">
+                        <div class="alert alert-primary" role="alert">
+                            <c:out value="${flush}"></c:out>
+                        </div>
+                    </c:if>
 
                     <!-- レイアウト: https://loglog.xyz/programming/bootstrap_login -->
                     <h1 class="h3 mt-2 mb-3 font-weight-normal">ログイン</h1>
