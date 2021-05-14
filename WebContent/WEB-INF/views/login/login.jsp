@@ -12,6 +12,7 @@
                         <c:out value="${flush}"></c:out>
                     </div>
                 </c:if>
+                <!-- レイアウト: https://loglog.xyz/programming/bootstrap_login -->
                 <h1 class="h3 mt-2 mb-3 font-weight-normal">ログイン</h1>
                 <form class="w-25 mx-auto" th:action="<c:url value='/login' />" method="post">
                     <label for="code" class="sr-only"></label>
