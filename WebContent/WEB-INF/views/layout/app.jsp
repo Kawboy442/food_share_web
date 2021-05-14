@@ -13,38 +13,59 @@
         </head>
 
         <body>
-            <div id="wrapper">
-                <div id="header">
-                    <div id="header_menu">
-                        <h1><a href="<c:url value='/' />">食べ物シェア</a></h1>&nbsp;&nbsp;&nbsp;
-                        <a href="<c:url value='/search' />">検索</a>&nbsp;
-                        <c:if test="${sessionScope.login_user != null}">
-                            <c:if test="${sessionScope.login_user.admin_flag == 1}">
-                                <a href="<c:url value='/users/index' />">ユーザー管理</a>&nbsp;
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container">
+                    <a class="navbar-brand " href="<c:url value='/' />">食べ物シェア</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="<c:url value='/search' />">検索</a>
+                            </li>
+                            <c:if test="${sessionScope.login_user != null}">
+                                <c:if test="${sessionScope.login_user.admin_flag == 1}">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="<c:url value='/users/index' />">ユーザー管理</a>
+                                    </li>
+                                </c:if>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<c:url value='/users/edit?id=${sessionScope.login_user.id}' />">ユーザー情報管理</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<c:url value='/posts/index' />">投稿管理</a>
+                                </li>
                             </c:if>
-                            <a href="<c:url value='/users/edit?id=${sessionScope.login_user.id}' />">ユーザー情報管理</a>
-                            <a href="<c:url value='/posts/index' />">投稿管理</a>&nbsp;
-                        </c:if>
+                        </ul>
+
+                        <ul class="navbar-nav">
+                            <c:if test="${sessionScope.login_user != null}">
+                                <li class="nav-item">
+                                    <c:out value="${sessionScope.login_user.user_name}" />&nbsp;さん&nbsp;&nbsp;&nbsp;
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<c:url value='/logout' />">ログアウト</a>
+                                </li>
+                            </c:if>
+                            <c:if test="${sessionScope.login_user == null}">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<c:url value='/users/new' />">会員登録</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<c:url value='/login' />">ログイン</a>
+                                </li>
+                            </c:if>
+                        </ul>
                     </div>
-                    <c:if test="${sessionScope.login_user != null}">
-                        <div id="right_header_menu">
-                            <c:out value="${sessionScope.login_user.user_name}" />&nbsp;さん&nbsp;&nbsp;&nbsp;
-                            <a href="<c:url value='/logout' />">ログアウト</a>
-                        </div>
-                    </c:if>
-                    <c:if test="${sessionScope.login_user == null}">
-                        <div id="right_header_menu">
-                            <a href="<c:url value='/users/new' />">会員登録</a>
-                            <a href="<c:url value='/login' />">ログイン</a>
-                        </div>
-                    </c:if>
                 </div>
-                <div id="content">
-                    ${param.content}
-                </div>
-                <div id="footer">
-                    by Ryosuke Ito.
-                </div>
+            </nav>
+            <div id="content">
+                ${param.content}
+            </div>
+            <div id="footer">
+                by Ryosuke Ito.
             </div>
             <script src="js/jquery-3.6.0.slim.min.js"></script>
             <script src="js/bootstrap.bundle.min.js"></script>
