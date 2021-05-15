@@ -42,11 +42,13 @@
 
                         <ul class="navbar-nav">
                             <c:if test="${sessionScope.login_user != null}">
-                                <li class="nav-item">
-                                    <p class="text-light"><c:out value="${sessionScope.login_user.user_name}" />さん</p>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<c:url value='/logout' />">ログアウト</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <c:out value="${sessionScope.login_user.user_name}" />さん
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="<c:url value='/logout' />">ログアウト</a>
+                                    </div>
                                 </li>
                             </c:if>
                             <c:if test="${sessionScope.login_user == null}">
