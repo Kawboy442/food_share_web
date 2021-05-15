@@ -16,6 +16,7 @@
                     </c:if>
 
                     <!-- レイアウト: https://loglog.xyz/programming/bootstrap_login -->
+                    <!-- CSS: https://getbootstrap.jp/docs/4.3/examples/sign-in/ -->
                     <form class="form-signin" th:action="<c:url value='/login' />" method="post">
                     <h1 class="h3 mt-2 mb-3 font-weight-normal">ログイン</h1>
                         <label for="code" class="sr-only"></label>
