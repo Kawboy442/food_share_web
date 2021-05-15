@@ -18,7 +18,7 @@
                     <!-- レイアウト: https://loglog.xyz/programming/bootstrap_login -->
                     <!-- CSS: https://getbootstrap.jp/docs/4.3/examples/sign-in/ -->
                     <form class="form-signin" th:action="<c:url value='/login' />" method="post">
-                    <h1 class="h3 mt-2 mb-3 font-weight-normal">ログイン</h1>
+                    <h1 class="h3 mt-2 mb-3 font-weight-normal">ログイン</h1><br><br>
                         <label for="code" class="sr-only"></label>
                         <input class="form-control" id="username" type="text" name="user_name" value="${user_name}" placeholder="ユーザ名" required autofocus />
                         <label for="password" class="sr-only"></label>
