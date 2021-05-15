@@ -43,7 +43,7 @@
                         <ul class="navbar-nav">
                             <c:if test="${sessionScope.login_user != null}">
                                 <li class="nav-item">
-                                    <c:out value="${sessionScope.login_user.user_name}" />&nbsp;さん&nbsp;&nbsp;&nbsp;
+                                    <p class="text-light"><c:out value="${sessionScope.login_user.user_name}" />さん</p>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<c:url value='/logout' />">ログアウト</a>
