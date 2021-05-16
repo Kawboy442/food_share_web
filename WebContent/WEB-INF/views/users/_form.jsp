@@ -17,7 +17,7 @@
                         <label class="input-group-btn">
                             <span class="btn btn-primary">
                                 Choose File<input type="file" id="thumbnailPhoto" accept=".png, .jpg, .jpeg"
-                                    style="display:none" class="uploadFile" onchange="uploadthumbnail(this)">
+                                    style="display:none" class="uploadFile" onchange="uploadthumbnail()">
                             </span>
                         </label>
                         <input type="text" class="form-control" readonly>
