@@ -34,13 +34,16 @@
                 <option value="5" <c:if test="${post.evaluation == 5}">
                     </c:if>>⭐⭐⭐⭐⭐</option>
             </select>
-            <br /><br />
+            </div>
+            <br>
 
             <input hidden id="user_name" value="${sessionScope.login_user.user_name}" />
 
+			<div class="col-md-6">
             <label for="images1">写真その1</label><br />
+            </div>
             <div class="container page-header">
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <div class="imagePreview"></div>
                     <div class="input-group">
                         <label class="input-group-btn">
@@ -53,10 +56,13 @@
                     </div>
                 </div>
             </div>
+            <br>
 
+			<div class="col-md-6">
             <label for="images2">写真その2</label><br />
+            </div>
             <div class="container page-header">
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <div class="imagePreview"></div>
                     <div class="input-group">
                         <label class="input-group-btn">
@@ -69,6 +75,7 @@
                     </div>
                 </div>
             </div>
+            <br>
 
             <input hidden id="photoUrl1" name="photoUrl1" />
             <input hidden id="photoUrl2" name="photoUrl2" />
