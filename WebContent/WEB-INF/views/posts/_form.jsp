@@ -91,7 +91,10 @@
 
             <div class="col-md-6">
                 <label for="content">内容</label>
-                <textarea name="content" class="form-control" rows="10" cols="50">${post.content}</textarea>
+                <textarea name="content" class="form-control" rows="10" cols="50" required>${post.content}</textarea>
+                <div class="invalid-feedback">
+                    内容を入力してください。
+                </div>
             </div>
             <br>
 
