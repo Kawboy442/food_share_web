@@ -4,7 +4,9 @@
             <c:param name="content">
                 <c:choose>
                     <c:when test="${user.id != sessionScope.login_user.id && sessionScope.login_user.admin_flag == 0}">
-                        <h2>異なるユーザー情報にはアクセスできません。</h2>
+                        <div class="alert alert-primary" role="alert">
+                            異なるユーザー情報にはアクセスできません。
+                        </div>
                     </c:when>
                     <c:when test="${user != null}">
                         <h2>${user.user_name}のユーザー情報編集ページ</h2>
