@@ -9,7 +9,7 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-function uploadthumbnail(target) {
+function uploadthumbnail() {
 	$(document).on('change', ':file', function() {
 	    var input = $(this),
 	    numFiles = input.get(0).files ? input.get(0).files.length : 1,
