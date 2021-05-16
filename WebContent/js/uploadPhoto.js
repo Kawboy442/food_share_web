@@ -1,5 +1,5 @@
 // Firebaseアップロード: https://kido0617.github.io/js/2019-12-01-firebase-form-upload/
-// 画像プレビュー: https://www.memory-lovers.blog/entry/2019/12/12/170000
+// 画像プレビュー: https://qiita.com/gsk3beta/items/46d44793827920282f75
 
 //firebase初期化
 var firebaseConfig = {
