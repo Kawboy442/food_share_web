@@ -21,7 +21,7 @@
 
 			<div class="col-md-6">
             <label for="evaluation">評価</label><br />
-            <select name="evaluation">
+            <select class="form-control" name="evaluation">
                 <option value="0" <c:if test="${post.evaluation == 0}"> selected</c:if>>選択してください</option>
                 <option value="1" <c:if test="${post.evaluation == 1}">
                     </c:if>>⭐</option>
