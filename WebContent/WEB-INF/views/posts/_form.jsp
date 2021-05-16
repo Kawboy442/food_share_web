@@ -62,7 +62,7 @@
                         <label class="input-group-btn">
                             <span class="btn btn-primary">
                                 Choose File<input type="file" id="images2" accept=".png, .jpg, .jpeg"
-                                    style="display:none" class="uploadFile" onchange="uploadPhoto1()">
+                                    style="display:none" class="uploadFile" onchange="uploadPhoto2()">
                             </span>
                         </label>
                         <input type="text" class="form-control" readonly>
