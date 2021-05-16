@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <c:if test="${errors != null}">
-            <div id="flush_error">
+            <div class="alert alert-danger" role="alert">
                 入力内容にエラーがあります。<br />
                 <c:forEach var="error" items="${errors}">
                     ・
