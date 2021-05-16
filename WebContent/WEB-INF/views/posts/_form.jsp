@@ -33,34 +33,36 @@
 
             <input hidden id="user_name" value="${sessionScope.login_user.user_name}" />
 
-			<label for="images1">写真その1</label><br />
-			<div class="container page-header">
-            <div class="col-sm-4">
-            <div class="imagePreview"></div>
-            <div class="input-group">
-                <label class="input-group-btn">
-                    <span class="btn btn-primary">
-                        Choose File<input type="file" id="images1" accept=".png, .jpg, .jpeg" style="display:none" class="uploadFile" onchange="uploadPhoto1(this)">
-                    </span>
-                </label>
-                <input type="text" class="form-control" readonly>
-            </div>
-            </div>
+            <label for="images1">写真その1</label><br />
+            <div class="container page-header">
+                <div class="col-sm-4">
+                    <div class="imagePreview"></div>
+                    <div class="input-group">
+                        <label class="input-group-btn">
+                            <span class="btn btn-primary">
+                                Choose File<input type="file" id="images1" accept=".png, .jpg, .jpeg"
+                                    style="display:none" class="uploadFile" onchange="uploadPhoto1(this)">
+                            </span>
+                        </label>
+                        <input type="text" class="form-control" readonly>
+                    </div>
+                </div>
             </div>
 
             <label for="images2">写真その2</label><br />
             <div class="container page-header">
-            <div class="col-sm-4">
-            <div class="imagePreview"></div>
-            <div class="input-group">
-                <label class="input-group-btn">
-                    <span class="btn btn-primary">
-                        Choose File<input type="file" id="images2" accept=".png, .jpg, .jpeg" style="display:none" class="uploadFile" onchange="uploadPhoto1(this)">
-                    </span>
-                </label>
-                <input type="text" class="form-control" readonly>
-            </div>
-            </div>
+                <div class="col-sm-4">
+                    <div class="imagePreview"></div>
+                    <div class="input-group">
+                        <label class="input-group-btn">
+                            <span class="btn btn-primary">
+                                Choose File<input type="file" id="images2" accept=".png, .jpg, .jpeg"
+                                    style="display:none" class="uploadFile" onchange="uploadPhoto1(this)">
+                            </span>
+                        </label>
+                        <input type="text" class="form-control" readonly>
+                    </div>
+                </div>
             </div>
 
             <input hidden id="photoUrl1" name="photoUrl1" />
