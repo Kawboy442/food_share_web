@@ -9,10 +9,17 @@
                     </c:forEach>
                 </div>
             </c:if>
-            <label for="store_name">店名</label><br />
-            <input type="text" name="store_name" value="${post.store_name}" />
-            <br /><br />
 
+            <div class="col-md-6">
+                <label for="store_name">店名</label>
+                <input type="text" class="form-control" name="store_name" placeholder="例: 天随飯店" value="${post.store_name}" required>
+                <div class="invalid-feedback">
+                    店名を入力してください。
+                </div>
+            </div>
+            <br>
+
+			<div class="col-md-6">
             <label for="evaluation">評価</label><br />
             <select name="evaluation">
                 <option value="0" <c:if test="${post.evaluation == 0}"> selected</c:if>>選択してください</option>
@@ -66,16 +73,26 @@
             <input hidden id="photoUrl1" name="photoUrl1" />
             <input hidden id="photoUrl2" name="photoUrl2" />
 
-            <label for="title">タイトル</label><br />
-            <input type="text" name="title" value="${post.title}" />
-            <br /><br />
+            <div class="col-md-6">
+                <label for="title">タイトル</label>
+                <input type="text" class="form-control" name="title" placeholder="おすすめの担々麺!" value="${post.title}" required>
+                <div class="invalid-feedback">
+                    タイトルを入力してください。
+                </div>
+            </div>
+            <br>
 
-            <label for="content">内容</label><br />
-            <textarea name="content" rows="10" cols="50">${post.content}</textarea>
-            <br /><br />
+            <div class="col-md-6">
+                <label for="content">内容</label>
+                <textarea name="content" class="form-control" rows="10" cols="50">${post.content}</textarea>
+            </div>
+            <br>
 
+			<div class="col-md-6">
             <input type="hidden" name="_token" value="${_token}" />
-            <button type="submit" id="post">投稿</button>
+            <button class="form-control" type="submit" id="post">投稿</button>
+            </div>
+            <br>
 
             <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
             <script src='https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js'></script>
