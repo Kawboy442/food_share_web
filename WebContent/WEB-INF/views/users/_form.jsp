@@ -10,11 +10,20 @@
         </c:if>
 
         <label for="thumbnail">ユーザー画像</label><br />
-        <input type="file" id="thumbnailPhoto" accept=".png, .jpg, .jpeg" onchange="uploadthumbnail(this)" onclick="this.value = '';" />
-        <br /><br />
-
-        <img id="thumbnail" class="imgPreview">
-        <br /><br />
+            <div class="container page-header">
+                <div class="col-sm-4">
+                    <div class="thumbnailPreview"></div>
+                    <div class="input-group">
+                        <label class="input-group-btn">
+                            <span class="btn btn-primary">
+                                Choose File<input type="file" id="thumbnailPhoto" accept=".png, .jpg, .jpeg"
+                                    style="display:none" class="uploadFile" onchange="uploadthumbnail(this)">
+                            </span>
+                        </label>
+                        <input type="text" class="form-control" readonly>
+                    </div>
+                </div>
+            </div>
 
         <input hidden id="thumbnailUrl" name="thumbnailUrl" />
 
