@@ -43,7 +43,7 @@
                         Choose File<input type="file" id="images1" accept=".png, .jpg, .jpeg" style="display:none" class="uploadFile" onchange="uploadPhoto1(this)">
                     </span>
                 </label>
-                <input type="text" class="form-control" readonly="">
+                <input type="text" class="form-control" readonly>
             </div>
             </div>
             </div>
@@ -58,7 +58,7 @@
                         Choose File<input type="file" id="images2" accept=".png, .jpg, .jpeg" style="display:none" class="uploadFile" onchange="uploadPhoto1(this)">
                     </span>
                 </label>
-                <input type="text" class="form-control" readonly="">
+                <input type="text" class="form-control" readonly>
             </div>
             </div>
             </div>
