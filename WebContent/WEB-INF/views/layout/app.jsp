@@ -12,7 +12,7 @@
             <link rel="stylesheet" href="<c:url value='/css/style.css' />">
         </head>
 
-        <body>
+        <body class="text-left">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container">
                     <a class="navbar-brand " href="<c:url value='/' />">食べ物シェア</a>
