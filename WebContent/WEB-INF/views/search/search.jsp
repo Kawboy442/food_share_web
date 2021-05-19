@@ -19,20 +19,21 @@
 
                     <div class="col-md-6">
                         <label for="evaluation">評価</label><br />
-                        <select id="evaluation" name="eval">
-							<option value="0" <c:if test="${post.evaluation == 0}">selected</c:if>>選択してください</option>
-							<option value="1" <c:if test="${post.evaluation == 1}">
-								</c:if>>⭐</option>
-							<option value="2" <c:if test="${post.evaluation == 2}">
-								</c:if>>⭐⭐</option>
-							<option value="3" <c:if test="${post.evaluation == 3}">
-								</c:if>>⭐⭐⭐</option>
-							<option value="4" <c:if test="${post.evaluation == 4}">
-								</c:if>>⭐⭐⭐⭐</option>
-							<option value="5" <c:if test="${post.evaluation == 5}">
-								</c:if>>⭐⭐⭐⭐⭐</option>
-						</select>
-                        <br /><br />
+                        <select class="form-control" id="evaluation" name="evaluation">
+                            <option value=0 <c:if test="${post.evaluation == 0}"> selected</c:if>>選択してください</option>
+                            <option value=1 <c:if test="${post.evaluation == 1}">
+                                </c:if>>⭐</option>
+                            <option value=2 <c:if test="${post.evaluation == 2}">
+                                </c:if>>⭐⭐</option>
+                            <option value=3 <c:if test="${post.evaluation == 3}">
+                                </c:if>>⭐⭐⭐</option>
+                            <option value=4 <c:if test="${post.evaluation == 4}">
+                                </c:if>>⭐⭐⭐⭐</option>
+                            <option value=5 <c:if test="${post.evaluation == 5}">
+                                </c:if>>⭐⭐⭐⭐⭐</option>
+                        </select>
+                    </div>
+                    <br>
 
                     <div class="col-md-6">
                         <button class="form-control" type="submit" id="search_btn" disabled>検索</button>

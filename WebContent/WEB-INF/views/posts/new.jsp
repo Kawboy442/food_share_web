@@ -26,16 +26,16 @@
                     <div class="col-md-6">
                         <label for="evaluation">評価</label><br />
                         <select class="form-control" name="evaluation">
-                            <option value="0" <c:if test="${post.evaluation == 0}"> selected</c:if>>選択してください</option>
-                            <option value="1" <c:if test="${post.evaluation == 1}">
+                            <option value=0 <c:if test="${post.evaluation == 0}"> selected</c:if>>選択してください</option>
+                            <option value=1 <c:if test="${post.evaluation == 1}">
                                 </c:if>>⭐</option>
-                            <option value="2" <c:if test="${post.evaluation == 2}">
+                            <option value=2 <c:if test="${post.evaluation == 2}">
                                 </c:if>>⭐⭐</option>
-                            <option value="3" <c:if test="${post.evaluation == 3}">
+                            <option value=3 <c:if test="${post.evaluation == 3}">
                                 </c:if>>⭐⭐⭐</option>
-                            <option value="4" <c:if test="${post.evaluation == 4}">
+                            <option value=4 <c:if test="${post.evaluation == 4}">
                                 </c:if>>⭐⭐⭐⭐</option>
-                            <option value="5" <c:if test="${post.evaluation == 5}">
+                            <option value=5 <c:if test="${post.evaluation == 5}">
                                 </c:if>>⭐⭐⭐⭐⭐</option>
                         </select>
                     </div>
