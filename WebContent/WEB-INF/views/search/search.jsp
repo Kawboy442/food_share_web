@@ -4,14 +4,20 @@
             <c:import url="/WEB-INF/views/layout/app.jsp">
                 <c:param name="content">
                     <form method="POST" action="<c:url value='/search/result' />" id="search_form" name="search_form">
-                        <label for="store_name">店名</label><br />
-                        <input type="text" id="store_name" name="store" />
-                        <br /><br />
 
-                        <label for="user_name">ユーザー名</label><br />
-                        <input type="text" id="user_name" name="user" />
-                        <br /><br />
+                    <div class="col-md-6">
+                        <label for="store_name">店名</label>
+                        <input type="text" class="form-control" id="store_name" name="store" placeholder="例: 天随飯店" value="${post.store_name}">
+                    </div>
+                    <br>
 
+                    <div class="col-md-6">
+                        <label for="username">ユーザー名</label>
+                        <input type="text" class="form-control" id="user_name" name="user" placeholder="例: kawboy442" value="${user.user_name}">
+                    </div>
+                    <br>
+
+                    <div class="col-md-6">
                         <label for="evaluation">評価</label><br />
                         <select id="evaluation" name="eval">
 							<option value="0" <c:if test="${post.evaluation == 0}">selected</c:if>>選択してください</option>
@@ -28,8 +34,12 @@
 						</select>
                         <br /><br />
 
-                        <button type="submit" id="search_btn" disabled>検索</button>
-                        <script src="/food_share_web/js/search.js"></script>
+                    <div class="col-md-6">
+                        <button class="form-control" type="submit" id="search_btn" disabled>検索</button>
+                    </div>
+                    <br>
+
+                    <script src="/food_share_web/js/search.js"></script>
                     </form>
                 </c:param>
             </c:import>
