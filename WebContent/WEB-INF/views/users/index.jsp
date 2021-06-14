@@ -7,6 +7,8 @@
                 		<c:out value="${flush}"></c:out>
                 	</div>
                 </c:if>
+
+                <div class="col-auto">
                 <h2>ユーザー一覧</h2>
                 <table class="table table-striped">
                 	<thead class="thead-dark">
@@ -49,6 +51,7 @@
                     </c:forEach>
                 </div>
                 <p><a href="<c:url value='/users/new' />">新規ユーザー登録</a></p>
+                </div>
 
             </c:param>
         </c:import>
