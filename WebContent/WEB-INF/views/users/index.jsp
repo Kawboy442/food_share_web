@@ -8,12 +8,11 @@
                 	</div>
                 </c:if>
                 <h2>ユーザー一覧</h2>
-                <table id="user_list">
+                <table class="table table-striped">
+                	<thead class="thead-dark">
+            			<tr><th>ユーザー名</th><th>操作</th></tr>
+          			</thead>
                     <tbody>
-                        <tr>
-                            <th>ユーザー名</th>
-                            <th>操作</th>
-                        </tr>
                         <c:forEach var="user" items="${users}" varStatus="status">
                             <tr class="row${status.count % 2}">
                                 <td>
@@ -22,10 +21,10 @@
                                 <td>
                                     <c:choose>
                                         <c:when test="${user.delete_flag == 1}">
-                                            （削除済み）
+                                            <span class="text-danger">（削除済み）</span>
                                         </c:when>
                                         <c:otherwise>
-                                            <a href="<c:url value='/users/show?id=${user.id}' />">詳細を表示</a>
+                                            <a class="btn btn-outline-primary btn-sm" href="<c:url value='/users/show?id=${user.id}' />">詳細</a>
                                         </c:otherwise>
                                     </c:choose>
                                 </td>
