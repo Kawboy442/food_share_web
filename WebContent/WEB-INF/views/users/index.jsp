@@ -29,7 +29,7 @@
                                                 <span class="text-danger">（削除済み）</span>
                                             </c:when>
                                             <c:otherwise>
-                                                <a class="btn btn-outline-primary btn-sm" href="<c:url value='/users/show?id=${user.id}' />">詳細</a>
+                                                <a class="btn btn-outline-primary btn-sm" href="<c:url value='/users/edit?id=${user.id}' />">詳細</a>
                                             </c:otherwise>
                                         </c:choose>
                                     </td>
