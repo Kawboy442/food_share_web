@@ -23,7 +23,7 @@
 			</select>
 			<br /><br />
 
-			<button type="submit">検索</button>
+			<button type="submit" id="search_btn" disabled>検索</button>
 			<script src="/food_share_web/js/search.js"></script>
 		</form>
     </c:param>
