@@ -5,11 +5,11 @@
                 <c:param name="content">
                     <form method="POST" action="<c:url value='/search/result' />" id="search_form" name="search_form">
                         <label for="store_name">店名</label><br />
-                        <input type="text" id="store_name" name="store" />
+                        <input type="text" id="store_name" name="store" value="${post.store_name}" />
                         <br /><br />
 
                         <label for="user_name">ユーザー名</label><br />
-                        <input type="text" id="user_name" name="user" />
+                        <input type="text" id="user_name" name="user" value="${post.user_name}" />
                         <br /><br />
 
                         <label for="evaluation">評価</label><br />
