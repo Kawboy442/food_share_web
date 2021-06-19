@@ -13,7 +13,7 @@
 
                     <div class="col-md-6">
                         <label for="username">ユーザー名</label>
-                        <input type="text" class="form-control" id="user_name" name="user_name" placeholder="例: kawboy442" value="${user.user_name}">
+                        <input type="text" class="form-control" id="user_name" name="user_name" placeholder="例: kawboy442" value="${post.user_name}">
                     </div>
                     <br>
 
