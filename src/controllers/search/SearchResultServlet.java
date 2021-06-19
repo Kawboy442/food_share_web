@@ -54,7 +54,6 @@ public class SearchResultServlet extends HttpServlet {
 		} else if (evaluation != 0) {
 			postQueryBuilder.append("AND p.evaluation = " + evaluation + " ");
 		}
-		postQueryBuilder.append("ORDER BY p.id DESC");
 		String postQuery = postQueryBuilder.toString();
 
 		List<Post> posts = em.createQuery(postQuery, Post.class)
