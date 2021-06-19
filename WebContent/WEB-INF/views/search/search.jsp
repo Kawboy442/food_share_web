@@ -24,6 +24,7 @@
 			<br /><br />
 
 			<button type="submit">検索</button>
+			<script src="/food_share_web/js/search.js"></script>
 		</form>
     </c:param>
 </c:import>
