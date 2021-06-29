@@ -197,6 +197,10 @@ pre {
   border-top-right-radius: 0;
 }
 
+/*/////////////////////////////////////////////////
+//twitter風チャット画面(会話方式)を記事に表示する方法
+//引用元: https://nakox.jp/web/coding/chat_twitter_css
+/////////////////////////////////////////////////*/
 .twitter__container {
   padding: 0;
   background: #ffffff;
