@@ -9,6 +9,7 @@
                         </div>
                     </c:if>
                     <c:forEach var="post" items="${posts}" varStatus="status">
+                    <div class="twitter__container">
                         <div class="twitter__block">
                             <figure>
                                 <img src="<c:url value=" ${post.user.thumbnailUrl} " />" />
@@ -27,6 +28,7 @@
                                 </div>
                             </div>
                         </div>
+                     </div>
                     </c:forEach>
 
 
