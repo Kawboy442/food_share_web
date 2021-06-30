@@ -16,7 +16,7 @@
                             </figure>
                             <div class="twitter__block-text">
                                 <div class="name">
-                                    <c:out value="${post.store_name}" />
+                                    <a href="<c:url value='/posts/show?id=${post.id}' />"><c:out value="${post.store_name}" /></a>
                                     <c:choose>
                                             <c:when test="${post.evaluation == 1}"><img src="<c:url value='/images/star.png'  />" height=12 /></c:when>
                                             <c:when test="${post.evaluation == 2}"><img src="<c:url value='/images/star_double.png'  />" height=12 />
