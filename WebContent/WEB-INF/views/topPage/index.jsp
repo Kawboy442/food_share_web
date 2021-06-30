@@ -35,10 +35,10 @@
                                     <c:out value="${post.content}" />
                                     <div class="in-pict">
                                     	<c:if test="${post.photoUrl1 != null}">
-                                        	<img src="<c:url value=" ${post.photoUrl1} " />" />
+                                        	<a href="<c:url value="${post.photoUrl1}" />" data-lightbox="group"><img src="<c:url value="${post.photoUrl1}" />"></a>
                                         </c:if>
                                         <c:if test="${post.photoUrl2 != null}">
-                                        	<img src="<c:url value=" ${post.photoUrl2} " />" />
+                                        	<a href="<c:url value="${post.photoUrl2}" />" data-lightbox="group"><img src="<c:url value="${post.photoUrl2}" />"></a>
                                         </c:if>
                                     </div>
                                 </div>
