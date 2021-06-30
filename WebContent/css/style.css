@@ -335,6 +335,7 @@ pre {
 /* 画像を貼る場合 */
 
 .twitter__container .twitter__block-text .text .in-pict img {
+	display: inline-block;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
