@@ -342,7 +342,7 @@ pre {
     margin: 5px 0;
     width: 40%;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 
