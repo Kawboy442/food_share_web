@@ -8,17 +8,8 @@
                             <c:out value="${flush}"></c:out>
                         </div>
                     </c:if>
-                    <h2>みんなの投稿一覧</h2>
                     <table id="post_list">
                         <tbody>
-                            <tr>
-                                <th class="post_store_name">店名</th>
-                                <th class="post_created_at">投稿日時</th>
-                                <th class="post_evaluation">評価</th>
-                                <th class="post_title">タイトル</th>
-                                <th class="post_photo">写真</th>
-                                <th class="post_action">操作</th>
-                            </tr>
                             <c:forEach var="post" items="${posts}" varStatus="status">
                                 <tr class="row${status.count % 2}">
                                     <td class="post_store_name">
