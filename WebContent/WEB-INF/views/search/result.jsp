@@ -21,14 +21,14 @@
                                             <c:out value="${post.store_name}" />
                                         </a>
                                         <c:choose>
-                                            <c:when test="${post.evaluation == 1}"><img src="<c:url value='/images/star.png'  />" height=12 /></c:when>
-                                            <c:when test="${post.evaluation == 2}"><img src="<c:url value='/images/star_double.png'  />" height=12 />
+                                            <c:when test="${post.evaluation == 1}"><img src="<c:url value='/images/star/star.png'  />" height=12 /></c:when>
+                                            <c:when test="${post.evaluation == 2}"><img src="<c:url value='/images/star/star_double.png'  />" height=12 />
                                             </c:when>
-                                            <c:when test="${post.evaluation == 3}"><img src="<c:url value='/images/star_triple.png'  />" height=12 />
+                                            <c:when test="${post.evaluation == 3}"><img src="<c:url value='/images/star/star_triple.png'  />" height=12 />
                                             </c:when>
-                                            <c:when test="${post.evaluation == 4}"><img src="<c:url value='/images/star_fourfold.png'  />" height=12 />
+                                            <c:when test="${post.evaluation == 4}"><img src="<c:url value='/images/star/star_fourfold.png'  />" height=12 />
                                             </c:when>
-                                            <c:when test="${post.evaluation == 5}"><img src="<c:url value='/images/star_fivetimes.png'  />" height=12 />
+                                            <c:when test="${post.evaluation == 5}"><img src="<c:url value='/images/star/star_fivetimes.png'  />" height=12 />
                                             </c:when>
                                         </c:choose>
                                         <span class="name_reply">@
