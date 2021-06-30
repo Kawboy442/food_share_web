@@ -1,5 +1,5 @@
 // Firebaseアップロード: https://kido0617.github.io/js/2019-12-01-firebase-form-upload/
-// 画像プレビュー: https://www.memory-lovers.blog/entry/2019/12/12/170000
+// 画像プレビュー: https://qiita.com/gsk3beta/items/46d44793827920282f75
 
 //firebase初期化
 var firebaseConfig = {
@@ -9,12 +9,23 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-function uploadPhoto1(target) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        document.querySelector("#preview1").setAttribute("src", e.target.result);
-    };
-    reader.readAsDataURL(target.files[0]);
+function uploadPhoto1() {
+	$(document).on('change', ':file', function() {
+	    var input = $(this),
+	    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+	    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+	    input.parent().parent().next(':text').val(label);
+
+	    var files = !!this.files ? this.files : [];
+	    if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+	    if (/^image/.test( files[0].type)){ // only image file
+	        var reader = new FileReader(); // instance of the FileReader
+	        reader.readAsDataURL(files[0]); // read the local file
+	        reader.onloadend = function(){ // set image data as background of div
+	            input.parent().parent().parent().prev('.imagePreview').css("background-image", "url("+this.result+")");
+	        }
+	    }
+	});
 
     const uploads = [];
     for (const file of document.querySelector("#images1").files) {
@@ -34,12 +45,23 @@ function uploadPhoto1(target) {
     });
 }
 
-function uploadPhoto2(target) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        document.querySelector("#preview2").setAttribute("src", e.target.result);
-    };
-    reader.readAsDataURL(target.files[0]);
+function uploadPhoto2() {
+	$(document).on('change', ':file', function() {
+	    var input = $(this),
+	    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+	    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+	    input.parent().parent().next(':text').val(label);
+
+	    var files = !!this.files ? this.files : [];
+	    if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+	    if (/^image/.test( files[0].type)){ // only image file
+	        var reader = new FileReader(); // instance of the FileReader
+	        reader.readAsDataURL(files[0]); // read the local file
+	        reader.onloadend = function(){ // set image data as background of div
+	            input.parent().parent().parent().prev('.imagePreview').css("background-image", "url("+this.result+")");
+	        }
+	    }
+	});
 
     const uploads = [];
     for (const file of document.querySelector("#images2").files) {

@@ -4,58 +4,49 @@
             <c:import url="/WEB-INF/views/layout/app.jsp">
                 <c:param name="content">
                     <c:if test="${flush != null}">
-                        <div id="flush_success">
+                        <div class="alert alert-primary" role="alert">
                             <c:out value="${flush}"></c:out>
                         </div>
                     </c:if>
-                    <h2>自分の投稿一覧</h2>
-                    <table id="post_list">
-                        <tbody>
-                            <tr>
-                                <th class="post_store_name">店名</th>
-                                <th class="post_created_at">投稿日時</th>
-                                <th class="post_evaluation">評価</th>
-                                <th class="post_title">タイトル</th>
-                                <th class="post_photo">写真</th>
-                                <th class="post_action">操作</th>
-                            </tr>
-                            <c:forEach var="post" items="${posts}" varStatus="status">
-                                <tr class="row${status.count % 2}">
-                                    <td class="post_store_name">
-                                        <c:out value="${post.store_name}" />
-                                    </td>
-                                    <td class="post_created_at">
-                                        <fmt:formatDate value='${post.created_at}' pattern='yyyy-MM-dd HH:mm' />
-                                    </td>
-                                    <td class="post_evaluation">
-                                        <c:choose>
-                                            <c:when test="${post.evaluation == 1}"><img src="<c:url value='/images/star.png'  />" height=25 /></c:when>
-                                            <c:when test="${post.evaluation == 2}"><img src="<c:url value='/images/star_double.png'  />" height=25 />
+                    <h2>@<c:out value="${post.user.user_name}" />の投稿一覧</h2>
+                    <c:forEach var="post" items="${posts}" varStatus="status">
+                    <div class="twitter__container">
+                        <div class="twitter__block">
+                            <figure>
+                                <img src="<c:url value=" ${post.user.thumbnailUrl} " />" />
+                            </figure>
+                            <div class="twitter__block-text">
+                                <div class="name">
+                                    <a href="<c:url value='/posts/show?id=${post.id}' />"><c:out value="${post.store_name}" /></a>
+                                    <c:choose>
+                                            <c:when test="${post.evaluation == 1}"><img src="<c:url value='/images/star.png'  />" height=12 /></c:when>
+                                            <c:when test="${post.evaluation == 2}"><img src="<c:url value='/images/star_double.png'  />" height=12 />
                                             </c:when>
-                                            <c:when test="${post.evaluation == 3}"><img src="<c:url value='/images/star_triple.png'  />" height=25 />
+                                            <c:when test="${post.evaluation == 3}"><img src="<c:url value='/images/star_triple.png'  />" height=12 />
                                             </c:when>
-                                            <c:when test="${post.evaluation == 4}"><img src="<c:url value='/images/star_fourfold.png'  />" height=25 />
+                                            <c:when test="${post.evaluation == 4}"><img src="<c:url value='/images/star_fourfold.png'  />" height=12 />
                                             </c:when>
-                                            <c:when test="${post.evaluation == 5}"><img src="<c:url value='/images/star_fivetimes.png'  />" height=25 />
+                                            <c:when test="${post.evaluation == 5}"><img src="<c:url value='/images/star_fivetimes.png'  />" height=12 />
                                             </c:when>
-                                        </c:choose>
-                                    </td>
-                                    <td class="post_title">${post.title}</td>
-                                    <td class="post_photo"><img class="imgPreview" src="<c:url value=" ${post.photoUrl1} " />" /></td>
-                                    <td>
-                                        <c:choose>
-                                            <c:when test="${post.delete_flag == 1}">
-                                                （削除済み）
-                                            </c:when>
-                                            <c:otherwise>
-                                                <a href="<c:url value='/posts/show?id=${post.id}' />">詳細を表示</a>
-                                            </c:otherwise>
-                                        </c:choose>
-                                    </td>
-                                </tr>
-                            </c:forEach>
-                        </tbody>
-                    </table>
+                                     </c:choose>
+                                     <span class="name_reply">@<c:out value="${post.user.user_name}" /></span>
+                                </div>
+                                <div class="date">1時間前</div>
+                                <div class="text">
+                                    <c:out value="${post.content}" />
+                                    <div class="in-pict">
+                                    	<c:if test="${post.photoUrl1 != null}">
+                                        	<a href="<c:url value="${post.photoUrl1}" />" data-lightbox="group"><img src="<c:url value="${post.photoUrl1}" />"></a>
+                                        </c:if>
+                                        <c:if test="${post.photoUrl2 != null}">
+                                        	<a href="<c:url value="${post.photoUrl2}" />" data-lightbox="group"><img src="<c:url value="${post.photoUrl2}" />"></a>
+                                        </c:if>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                    </c:forEach>
 
                     <div id="pagination">
                         （全 ${posts_count} 件）<br />
