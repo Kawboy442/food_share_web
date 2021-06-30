@@ -22,8 +22,12 @@
                                 <div class="text">
                                     <c:out value="${post.content}" />
                                     <div class="in-pict">
-                                        <img src="<c:url value=" ${post.photoUrl1} " />" />
-                                        <img src="<c:url value=" ${post.photoUrl2} " />" />
+                                    	<c:if test="${post.photoUrl1 != null}">
+                                        	<img src="<c:url value=" ${post.photoUrl1} " />" />
+                                        </c:if>
+                                        <c:if test="${post.photoUrl2 != null}">
+                                        	<img src="<c:url value=" ${post.photoUrl2} " />" />
+                                        </c:if>
                                     </div>
                                 </div>
                             </div>
