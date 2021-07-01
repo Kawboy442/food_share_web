@@ -9,7 +9,7 @@
                             <div class="twitter__container">
                                 <div class="twitter__block">
                                     <figure>
-                                        <img src="<c:url value=" ${post.user.thumbnailUrl} " />" />
+                                        <a href="<c:url value='/posts/index?id=${post.user.id}' />"><img src="<c:url value=" ${post.user.thumbnailUrl} " />" /></a>
                                     </figure>
                                     <div class="twitter__block-text">
                                         <div class="name">
@@ -27,9 +27,7 @@
                                                 <c:when test="${post.evaluation == 5}"><img src="<c:url value='/images/star/star_fivetimes.png'  />" height=12 />
                                                 </c:when>
                                             </c:choose>
-                                            <span class="name_reply">@
-                                                <c:out value="${post.user.user_name}" />
-                                            </span>
+                                            <span class="name_reply"><a href="<c:url value='/posts/index?id=${post.user.id}' />">@<c:out value="${post.user.user_name}" /></a></span>
                                         </div>
                                         <div class="date">1時間前</div>
                                         <div class="text">
