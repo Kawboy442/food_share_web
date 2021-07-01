@@ -36,7 +36,7 @@
                                     <a class="nav-link" href="<c:url value='/users/edit?id=${sessionScope.login_user.id}' />">ユーザー情報管理</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<c:url value='/posts/index' />">投稿管理</a>
+                                    <a class="nav-link" href="<c:url value='/posts/index?id=${sessionScope.login_user.id}' />">投稿管理</a>
                                 </li>
                             </c:if>
                         </ul>
