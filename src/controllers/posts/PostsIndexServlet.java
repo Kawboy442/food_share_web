@@ -43,7 +43,7 @@ public class PostsIndexServlet extends HttpServlet {
 			page = 1;
 		}
 
-		User u = (User)(request.getSession().getAttribute("login_user"));
+		User u = em.find(User.class, Integer.parseInt(request.getParameter("id")));
 
 		List<Post> posts = em.createNamedQuery("getAllMyActivePosts", Post.class)
 				.setParameter("user_id", u.getId())
