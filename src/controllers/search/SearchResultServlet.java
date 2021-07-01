@@ -64,16 +64,20 @@ public class SearchResultServlet extends HttpServlet {
 
 		StringBuilder postCountQueryBuilder = new StringBuilder("SELECT COUNT(p) FROM Post AS p WHERE p.delete_flag = 0 ");
 		if(!storeName.equals("")) {
-			postQueryBuilder.append("AND p.store_name LIKE '%" + storeName + "%'");
+			postCountQueryBuilder.append("AND p.store_name LIKE '%" + storeName + "%'");
 		} else if(!userName.equals("")) {
-			postQueryBuilder.append("AND p.user.user_name LIKE  '%" + userName + "%'");
+			postCountQueryBuilder.append("AND p.user.user_name LIKE  '%" + userName + "%'");
 		} else if (evaluation != 0) {
-			postQueryBuilder.append("AND p.evaluation = " + evaluation + " ");
+			postCountQueryBuilder.append("AND p.evaluation = " + evaluation + " ");
 		}
 		String postCountQuery = postCountQueryBuilder.toString();
 
 		long posts_count = (long)em.createQuery(postCountQuery, Long.class)
 				.getSingleResult();
+
+		if(posts_count == 0){
+			request.getSession().setAttribute("flush", "検索結果は0件でした。");
+		}
 
 		em.close();
 
