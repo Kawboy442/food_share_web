@@ -75,6 +75,10 @@ public class SearchResultServlet extends HttpServlet {
 		long posts_count = (long)em.createQuery(postCountQuery, Long.class)
 				.getSingleResult();
 
+		if(posts_count == 0){
+			request.getSession().setAttribute("flush", "検索結果は0件でした。");
+		}
+
 		em.close();
 
 		request.setAttribute("posts", posts);
