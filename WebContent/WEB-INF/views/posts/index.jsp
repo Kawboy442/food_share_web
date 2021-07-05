@@ -8,7 +8,7 @@
                             <c:out value="${flush}"></c:out>
                         </div>
                     </c:if>
-                    <h2>@<c:out value="${post.user.user_name}" />の投稿一覧</h2>
+                    <h2>@<c:out value="${user.user_name}" />の投稿一覧</h2>
                     <c:forEach var="post" items="${posts}" varStatus="status">
                     <div class="twitter__container">
                         <div class="twitter__block">
