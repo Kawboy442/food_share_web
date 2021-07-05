@@ -29,12 +29,10 @@ function uploadPhoto1() {
 
     const uploads = [];
     for (const file of document.querySelector("#images1").files) {
-        // ユーザー名のフォルダに置き、ファイル名はファイル追加時刻+ファイル名としてアップロード
+    	// ユーザー名のフォルダに置き、ファイルはユーザー名/アップロード時刻の構成でアップロード
         const userName = document.querySelector("#user_name").value;
         const date = new Date();
-        const storageRef = firebase
-            .storage()
-            .ref(userName + "/" + date.toLocaleString() + "_" + file.name);
+        const storageRef = firebase.storage().ref(userName + "/" + date.toLocaleString());
         uploads.push(storageRef.put(file));
         const url = "https://storage.googleapis.com/" + storageRef;
         document.querySelector("#photoUrl1").value = url;
@@ -65,12 +63,10 @@ function uploadPhoto2() {
 
     const uploads = [];
     for (const file of document.querySelector("#images2").files) {
-        // ユーザー名のフォルダに置き、ファイル名はファイル追加時刻+ファイル名としてアップロード
+        // ユーザー名のフォルダに置き、ファイルはユーザー名/アップロード時刻の構成でアップロード
         const userName = document.querySelector("#user_name").value;
         const date = new Date();
-        const storageRef = firebase
-            .storage()
-            .ref(userName + "/" + date.toLocaleString() + "_" + file.name);
+        const storageRef = firebase.storage().ref(userName + "/" + date.toLocaleString());
         uploads.push(storageRef.put(file));
         const url = "https://storage.googleapis.com/" + storageRef;
         document.querySelector("#photoUrl2").value = url;

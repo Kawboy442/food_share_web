@@ -34,7 +34,7 @@
 
                     <div class="col-md-6">
                         <label for="username">ユーザー名</label>
-                        <input type="text" class="form-control" name="user_name" placeholder="例: kawboy442" value="${user.user_name}" required>
+                        <input type="text" class="form-control" id="user_name" name="user_name" placeholder="例: kawboy442" value="${user.user_name}" required>
                         <div class="invalid-feedback">
                             ユーザー名を入力してください。
                         </div>
@@ -67,6 +67,7 @@
 
                     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
                     <script src='https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js'></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/chance/1.1.7/chance.min.js" integrity="sha512-dELYIOEzIECWdvsEdoywFOB4qKDmtQee33yD0dQnzAE7eBGKJ984VQXRLs/vlsP4Sb3VchbQL7iAy4NWqetCsw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                     <script src="/food_share_web/js/uploadthumbnail.js"></script>
                 </form>
 
