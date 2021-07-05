@@ -12,7 +12,7 @@
                     <div class="twitter__container">
                         <div class="twitter__block">
                             <figure>
-                                <a href="<c:url value='/posts/show?id=${post.id}' />"><img src="<c:url value=" ${post.user.thumbnailUrl} " />" /></a>
+                                <a href="<c:url value='/posts/index?id=${post.user.id}' />"><img src="<c:url value=" ${post.user.thumbnailUrl} " />" /></a>
                             </figure>
                             <div class="twitter__block-text">
                                 <div class="name">

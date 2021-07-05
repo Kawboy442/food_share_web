@@ -57,6 +57,7 @@ public class PostsIndexServlet extends HttpServlet {
 
 		em.close();
 
+		request.setAttribute("user", u);
 		request.setAttribute("posts", posts);
 		request.setAttribute("posts_count", posts_count);
 		request.setAttribute("page", page);

@@ -8,12 +8,12 @@
                             <c:out value="${flush}"></c:out>
                         </div>
                     </c:if>
-                    <h2>@<c:out value="${post.user.user_name}" />の投稿一覧</h2>
+                    <h2>@<c:out value="${user.user_name}" />の投稿一覧</h2>
                     <c:forEach var="post" items="${posts}" varStatus="status">
                     <div class="twitter__container">
                         <div class="twitter__block">
                             <figure>
-                                <a href="<c:url value='/posts/show?id=${post.id}' />"><img src="<c:url value=" ${post.user.thumbnailUrl} " />" /></a>
+                                <a href="<c:url value='/posts/index?id=${post.user.id}' />"><img src="<c:url value=" ${post.user.thumbnailUrl} " />" /></a>
                             </figure>
                             <div class="twitter__block-text">
                                 <div class="name">
