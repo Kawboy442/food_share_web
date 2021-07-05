@@ -12,7 +12,12 @@
                     <div class="twitter__container">
                         <div class="twitter__block">
                             <figure>
-                                <a href="<c:url value='/posts/index?id=${post.user.id}' />"><img src="<c:url value=" ${post.user.thumbnailUrl} " />" /></a>
+                            	<c:if test="${post.user.thumbnailUrl == null}">
+                            		<img src="<c:url value='/images/thumbnail/human.png'/>" />
+                            	</c:if>
+                            	<c:if test="${post.user.thumbnailUrl != null}">
+                                	<a href="<c:url value='/posts/index?id=${post.user.id}' />"><img src="<c:url value=" ${post.user.thumbnailUrl} " />" /></a>
+                                </c:if>
                             </figure>
                             <div class="twitter__block-text">
                                 <div class="name">
