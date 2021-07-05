@@ -52,19 +52,13 @@
 
                             <div class="col-md-6">
                                 <label for="password">パスワード</label>
-                                <input type="password" class="form-control" name="password" required>
-                                <div class="invalid-feedback">
-                                    パスワードを入力してください。
-                                </div>
+                                <input type="password" class="form-control" name="password">
                             </div>
                             <br>
 
                             <div class="col-md-6">
                                 <label for="password_again">パスワード(再入力)</label>
-                                <input type="password" class="form-control" name="password_again" required>
-                                <div class="invalid-feedback">
-                                    パスワードを入力してください。
-                                </div>
+                                <input type="password" class="form-control" name="password_again">
                             </div>
                             <br>
 
