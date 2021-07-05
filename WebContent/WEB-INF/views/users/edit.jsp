@@ -38,6 +38,7 @@
                                 </div>
                             </div>
 
+                            <input hidden id="user_name" value="${user.user_name}" />
                             <input hidden id="thumbnailUrl" name="thumbnailUrl" />
 
                             <div class="col-md-6">
