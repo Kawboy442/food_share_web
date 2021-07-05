@@ -10,8 +10,6 @@
                     </c:when>
                     <c:when test="${user != null}">
                         <h2>${user.user_name}のユーザー情報編集ページ</h2>
-                        <p hidden>${user.id} </p>
-                        <p hidden>${sessionScope.login_user.id} </p>
                         <p>（パスワードは変更する場合のみ入力してください）</p>
                         <form method="POST" action="<c:url value='/users/update' />">
                             <c:if test="${errors != null}">
