@@ -24,7 +24,12 @@
                             <label for="thumbnail">ユーザー画像</label><br />
                             <div class="container page-header">
                                 <div class="col-sm-6">
-                                    <div class="thumbnailPreview" style="background-image:url(${user.thumbnailUrl});"></div>
+                                	<c:if test="${user.thumbnailUrl == null}">
+                                    	<div class="thumbnailPreview" style="background-image:url(<c:url value='/images/thumbnail/human.png'/>);"></div>
+                                    </c:if>
+                                    <c:if test="${user.thumbnailUrl != null}">
+                                    	<div class="thumbnailPreview" style="background-image:url(${user.thumbnailUrl});"></div>
+                                    </c:if>
                                     <div class="input-group">
                                         <label class="input-group-btn">
                                             <span class="btn btn-primary">
