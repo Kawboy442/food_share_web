@@ -29,8 +29,13 @@ function uploadthumbnail() {
 
     const uploads = [];
     for (const file of document.querySelector("#thumbnailPhoto").files) {
-        // ユーザー名のフォルダに置き、ファイルはthumbnail/(ユーザー名)/ファイル名の構成でアップロード
-        const storageRef = firebase.storage().ref("thumbnail" + "/" + file.name);
+        // ファイルはthumbnail/ユーザー名/8桁の乱数の構成でアップロード
+        const userName = document.querySelector("#user_name").value;
+        const randomStr = chance.string({
+        	  length: 8,
+        	  pool: '0123456789abcdef',
+        	});
+    	const storageRef = firebase.storage().ref("thumbnail/" + userName + "/" + randomStr);
         uploads.push(storageRef.put(file));
         const url = "https://storage.googleapis.com/" + storageRef;
         document.querySelector("#thumbnailUrl").value = url;
