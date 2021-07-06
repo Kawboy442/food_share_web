@@ -47,11 +47,8 @@
                             <input hidden id="thumbnailUrl" name="thumbnailUrl" />
 
                             <div class="col-md-6">
-                                <label for="username">ユーザー名</label>
-                                <input type="text" class="form-control" name="user_name" placeholder="例: kawboy442" value="${user.user_name}" required>
-                                <div class="invalid-feedback">
-                                    ユーザー名を入力してください。
-                                </div>
+                                <label for="username">ユーザー名</label><br>
+                                ${user.user_name}
                             </div>
                             <br>
 
