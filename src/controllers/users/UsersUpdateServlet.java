@@ -42,14 +42,8 @@ public class UsersUpdateServlet extends HttpServlet {
 
 			User u = em.find(User.class, (Integer)(request.getSession().getAttribute("user_id")));
 
-			// 現在の値と異なるユーザー名が入力されていたら
-			// 重複チェックを行う指定をする
-			Boolean userNameDuplicateCheckFlag = true;
-			if(u.getUser_name().equals(request.getParameter("user_name"))) {
-				userNameDuplicateCheckFlag = false;
-			} else {
-				u.setUser_name(request.getParameter("user_name"));
-			}
+			// ユーザー名は固定のため、ユーザー名のバリデーションは行わない
+			Boolean userNameDuplicateCheckFlag = false;
 
 			if(request.getParameter("thumbnailUrl") != null){
 				u.setThumbnailUrl(request.getParameter("thumbnailUrl").replace("gs://", ""));
@@ -71,7 +65,6 @@ public class UsersUpdateServlet extends HttpServlet {
 						);
 			}
 
-			u.setUser_name(request.getParameter("user_name"));
 			u.setUpdated_at(new Timestamp(System.currentTimeMillis()));
 			u.setDelete_flag(0);
 
