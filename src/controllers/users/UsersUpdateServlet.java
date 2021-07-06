@@ -51,7 +51,9 @@ public class UsersUpdateServlet extends HttpServlet {
 				u.setUser_name(request.getParameter("user_name"));
 			}
 
-			u.setThumbnailUrl(request.getParameter("thumbnailUrl").replace("gs://", ""));
+			if(request.getParameter("thumbnailUrl") != null){
+				u.setThumbnailUrl(request.getParameter("thumbnailUrl").replace("gs://", ""));
+			}
 
 			// パスワード欄に入力があったら
 			// パスワードの入力値チェックを行う指定をする
