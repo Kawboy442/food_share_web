@@ -44,7 +44,7 @@
                             </div>
 
                             <input hidden id="user_name" value="${user.user_name}" />
-                            <input hidden id="thumbnailUrl" name="thumbnailUrl" />
+                            <input hidden id="thumbnailUrl" name="thumbnailUrl" value="${user.thumbnailUrl}" />
 
                             <div class="col-md-6">
                                 <label for="username">ユーザー名</label><br>
