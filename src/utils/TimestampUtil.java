@@ -21,6 +21,8 @@ public class TimestampUtil {
 
 		if(year > 1){
 			return String.valueOf(year) + "年前";
+		} else if(month == 12) {
+			return "1年前";
 		} else if(month > 1) {
 			return String.valueOf(month) + "ヶ月前";
 		} else if(day > 1) {
