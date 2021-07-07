@@ -40,8 +40,8 @@ public class TimestampUtilTest {
 
 	@Test
 	public void testDayDiff() throws ParseException {
-		String dayCheck = TimestampUtil.TimestampDiff(todayString, dayCheckString);
-		assertEquals("3日前", dayCheck);
+		String dayDiff = TimestampUtil.TimestampDiff(todayString, dayCheckString);
+		assertEquals("3日前", dayDiff);
 	}
 
 	@Test
