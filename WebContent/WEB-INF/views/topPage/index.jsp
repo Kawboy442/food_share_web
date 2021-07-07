@@ -35,7 +35,11 @@
                                      </c:choose>
                                      <span class="name_reply"><a href="<c:url value='/posts/index?id=${post.user.id}' />">@<c:out value="${post.user.user_name}" /></a></span>
                                 </div>
-                                <div class="date">1時間前</div>
+                                <div class="date">
+                                	<%@ page import = "utils.TimestampUtil" %>
+                                	<% String timeDiff = TimestampUtil.TimestampDiff("${post.created_at}"); %>
+                                	<%= timeDiff %>
+                                </div>
                                 <div class="text">
                                     <c:out value="${post.content}" />
                                     <div class="in-pict">
