@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
@@ -41,6 +42,12 @@ public class TimestampUtil {
 		SimpleDateFormat sdf = new SimpleDateFormat(format);
 		Date formatDate = sdf.parse(date);
 		return LocalDateTime.ofInstant(formatDate.toInstant(), ZoneId.systemDefault());
+	}
+
+	// LocalDateTimeを日時のStringへ変換するメソッド (参考: https://qiita.com/riekure/items/d83d4ea5d8a19a267453)
+	public static String toStr(LocalDateTime localDateTime, String format) {
+		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(format);
+		return localDateTime.format(dateTimeFormatter);
 	}
 
 }
