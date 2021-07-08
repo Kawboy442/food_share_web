@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import utils.TimestampUtil;
 
-public class TimestampUtilTest {
+public class TestTimestampUtil {
 
 	String format = "yyyy-MM-dd HH:mm:ss.S";
 
