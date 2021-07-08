@@ -10,6 +10,7 @@ import utils.TimestampUtil;
 
 public class TimestampUtilTest {
 
+	String format = "yyyy-MM-dd HH:mm:ss.S";
 
 	String todayString = "2021-07-07 21:00:00.0";
 
@@ -23,43 +24,43 @@ public class TimestampUtilTest {
 
 	@Test
 	public void testYearDiff() throws ParseException {
-		String yearDiff = TimestampUtil.TimestampDiff(todayString, yearCheckString);
+		String yearDiff = TimestampUtil.TimestampDiff(todayString, yearCheckString, format);
 		assertEquals("10年前", yearDiff);
 	}
 
 	@Test
 	public void testOneYearDiff() throws ParseException {
-		String oneYearDiff = TimestampUtil.TimestampDiff(todayString, oneYearCheckString);
+		String oneYearDiff = TimestampUtil.TimestampDiff(todayString, oneYearCheckString, format);
 		assertEquals("1年前", oneYearDiff);
 	}
 
 	@Test
 	public void testMonthDiff() throws ParseException {
-		String monthDiff = TimestampUtil.TimestampDiff(todayString, monthCheckString);
+		String monthDiff = TimestampUtil.TimestampDiff(todayString, monthCheckString, format);
 		assertEquals("2ヶ月前", monthDiff);
 	}
 
 	@Test
 	public void testDayDiff() throws ParseException {
-		String dayDiff = TimestampUtil.TimestampDiff(todayString, dayCheckString);
+		String dayDiff = TimestampUtil.TimestampDiff(todayString, dayCheckString, format);
 		assertEquals("3日前", dayDiff);
 	}
 
 	@Test
 	public void testHourDiff() throws ParseException {
-		String hourDiff = TimestampUtil.TimestampDiff(todayString, hourCheckString);
+		String hourDiff = TimestampUtil.TimestampDiff(todayString, hourCheckString, format);
 		assertEquals("4時間前", hourDiff);
 	}
 
 	@Test
 	public void testMinuteDiff() throws ParseException {
-		String minuteDiff = TimestampUtil.TimestampDiff(todayString, minuteCheckString);
+		String minuteDiff = TimestampUtil.TimestampDiff(todayString, minuteCheckString, format);
 		assertEquals("50分前", minuteDiff);
 	}
 
 	@Test
 	public void testSecondDiff() throws ParseException {
-		String secondDiff = TimestampUtil.TimestampDiff(todayString, secondCheckString);
+		String secondDiff = TimestampUtil.TimestampDiff(todayString, secondCheckString, format);
 		assertEquals("59秒前", secondDiff);
 	}
 
