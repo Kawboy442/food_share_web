@@ -47,20 +47,20 @@ public class TimestampUtil {
 	}
 
 	// 日時のStringをLocalDateTimeへ変換するメソッド (参考: https://qiita.com/riekure/items/d83d4ea5d8a19a267453)
-	public static LocalDateTime toLocalDateTime(String date, String format) throws ParseException {
+	public static LocalDateTime stringToLocalDateTime(String date, String format) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat(format);
 		Date formatDate = sdf.parse(date);
 		return LocalDateTime.ofInstant(formatDate.toInstant(), ZoneId.systemDefault());
 	}
 
 	// LocalDateTimeを日時のStringへ変換するメソッド (参考: https://qiita.com/riekure/items/d83d4ea5d8a19a267453)
-	public static String toStr(LocalDateTime localDateTime, String format) {
+	public static String localDateTimeToString(LocalDateTime localDateTime, String format) {
 		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(format);
 		return localDateTime.format(dateTimeFormatter);
 	}
 
 	// Timestampを日時のStringへ変換するメソッド (参考: https://qiita.com/SE-studying-now/items/a635a0d465cf035946ed)
-	public static String toStringTimestamp (Timestamp timestamp, String format) {
+	public static String timestampToString (Timestamp timestamp, String format) {
 		LocalDateTime ldt = timestamp.toLocalDateTime();
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern(format);
 		return dtf.format(ldt);
