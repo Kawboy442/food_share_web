@@ -45,10 +45,10 @@
                                 	<%
                                 	String format = "yyyy-MM-dd HH:mm:ss.S";
 
-                                	String today = TimestampUtil.toStr(LocalDateTime.now(), format);
+                                	String today = TimestampUtil.localDateTimeToString(LocalDateTime.now(), format);
 
                                 	Post post = (Post)(pageContext.findAttribute("post"));
-                                	String postDate = TimestampUtil.toStringTimestamp(post.getCreated_at(), format);
+                                	String postDate = TimestampUtil.timestampToString(post.getCreated_at(), format);
 
                                 	String timeDiff = TimestampUtil.TimestampDiff(today, postDate, format);
                                 	%>

@@ -11,8 +11,8 @@ import java.util.Date;
 
 public class TimestampUtil {
 	public static String TimestampDiff(String todayString, String postDateString, String format) throws ParseException {
-		LocalDateTime today = toLocalDateTime(todayString, format);
-		LocalDateTime postDate = toLocalDateTime(postDateString, format);
+		LocalDateTime today = stringToLocalDateTime(todayString, format);
+		LocalDateTime postDate = stringToLocalDateTime(postDateString, format);
 
 		long year = ChronoUnit.YEARS.between(postDate, today);
 		long month = ChronoUnit.MONTHS.between(postDate, today);
