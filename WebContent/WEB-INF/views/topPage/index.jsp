@@ -37,7 +37,20 @@
                                 </div>
                                 <div class="date">
                                 	<%@ page import = "utils.TimestampUtil" %>
-                                	<% String timeDiff = TimestampUtil.TimestampDiff("${post.created_at}"); %>
+                                	<%@ page import = "models.Post" %>
+                                	<%@ page import = "java.time.LocalDateTime" %>
+                                	<%@ page import = "java.sql.Timestamp" %>
+
+                                	<%
+                                	String format = "yyyy-MM-dd HH:mm:ss.S";
+
+                                	String today = TimestampUtil.toStr(LocalDateTime.now(), format);
+
+                                	Post post = (Post)(pageContext.findAttribute("post"));
+                                	String postDate = TimestampUtil.toStringTimestamp(post.getCreated_at(), format);
+
+                                	String timeDiff = TimestampUtil.TimestampDiff(today, postDate, format);
+                                	%>
                                 	<%= timeDiff %>
                                 </div>
                                 <div class="text">
