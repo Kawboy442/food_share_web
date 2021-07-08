@@ -1,5 +1,6 @@
 package utils;
 
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -48,6 +49,13 @@ public class TimestampUtil {
 	public static String toStr(LocalDateTime localDateTime, String format) {
 		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(format);
 		return localDateTime.format(dateTimeFormatter);
+	}
+
+	// Timestampを日時のStringへ変換するメソッド (参考: https://qiita.com/SE-studying-now/items/a635a0d465cf035946ed)
+	public static String toStringTimestamp (Timestamp timestamp, String format) {
+		LocalDateTime ldt = timestamp.toLocalDateTime();
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern(format);
+		return dtf.format(ldt);
 	}
 
 }
