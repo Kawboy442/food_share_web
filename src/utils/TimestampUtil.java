@@ -10,9 +10,9 @@ import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 public class TimestampUtil {
-	public static String TimestampDiff(String todayString, String postDateString) throws ParseException {
-		LocalDateTime today = toLocalDateTime(todayString, "yyyy-MM-dd HH:mm:ss");
-		LocalDateTime postDate = toLocalDateTime(postDateString, "yyyy-MM-dd HH:mm:ss");
+	public static String TimestampDiff(String todayString, String postDateString, String format) throws ParseException {
+		LocalDateTime today = toLocalDateTime(todayString, format);
+		LocalDateTime postDate = toLocalDateTime(postDateString, format);
 
 		long year = ChronoUnit.YEARS.between(postDate, today);
 		long month = ChronoUnit.MONTHS.between(postDate, today);
