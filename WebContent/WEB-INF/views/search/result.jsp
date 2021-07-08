@@ -38,7 +38,24 @@
                                         </c:choose>
                                         <span class="name_reply"><a href="<c:url value='/posts/index?id=${post.user.id}' />">@<c:out value="${post.user.user_name}" /></a></span>
                                     </div>
-                                    <div class="date">1時間前</div>
+                                	<div class="date">
+                                		<%@ page import = "utils.TimestampUtil" %>
+                                		<%@ page import = "models.Post" %>
+                                		<%@ page import = "java.time.LocalDateTime" %>
+                                		<%@ page import = "java.sql.Timestamp" %>
+
+                                		<%
+                                		String format = "yyyy-MM-dd HH:mm:ss.S";
+
+                                		String today = TimestampUtil.localDateTimeToString(LocalDateTime.now(), format);
+
+                                		Post post = (Post)(pageContext.findAttribute("post"));
+                                		String postDate = TimestampUtil.timestampToString(post.getCreated_at(), format);
+
+                                		String timeDiff = TimestampUtil.TimestampDiff(today, postDate, format);
+                                		%>
+                                		<%= timeDiff %>
+                                	</div>
                                     <div class="text">
                                         <c:out value="${post.content}" />
                                         <div class="in-pict">
