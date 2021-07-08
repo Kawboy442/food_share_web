@@ -10,15 +10,16 @@ import utils.TimestampUtil;
 
 public class TimestampUtilTest {
 
-	String todayString = "2021-07-07 21:00:00";
 
-	String yearCheckString = "2011-07-07 21:00:00";
-	String oneYearCheckString = "2020-07-07 21:00:00";
-	String monthCheckString = "2021-05-07 21:00:00";
-	String dayCheckString = "2021-07-04 21:00:00";
-	String hourCheckString = "2021-07-07 17:00:00";
-	String minuteCheckString = "2021-07-07 20:10:00";
-	String secondCheckString = "2021-07-07 20:59:01";
+	String todayString = "2021-07-07 21:00:00.0";
+
+	String yearCheckString = "2011-07-07 21:00:00.0";
+	String oneYearCheckString = "2020-07-07 21:00:00.0";
+	String monthCheckString = "2021-05-07 21:00:00.0";
+	String dayCheckString = "2021-07-04 21:00:00.0";
+	String hourCheckString = "2021-07-07 17:00:00.0";
+	String minuteCheckString = "2021-07-07 20:10:00.0";
+	String secondCheckString = "2021-07-07 20:59:01.0";
 
 	@Test
 	public void testYearDiff() throws ParseException {
