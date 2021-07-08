@@ -27,13 +27,21 @@ public class TimestampUtil {
 			return "1年前";
 		} else if(month > 1) {
 			return String.valueOf(month) + "ヶ月前";
+		} else if(day >= 30 && day < 60) {
+			return "1ヶ月前";
 		} else if(day > 1) {
 			return String.valueOf(day) + "日前";
+		} else if(hour >= 24 && hour < 48){
+			return "1日前";
 		} else if(hour > 1) {
 			return String.valueOf(hour) + "時間前";
+		} else if(minute >= 60 && minute < 120){
+			return "1時間前";
 		} else if(minute > 1) {
 			return String.valueOf(minute) + "分前";
-		} else {
+		} else if(second >= 60 && second < 120){
+			return "1分前";
+		}else {
 			return String.valueOf(second) + "秒前";
 		}
 	}
