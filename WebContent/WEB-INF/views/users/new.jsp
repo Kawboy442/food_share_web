@@ -21,7 +21,7 @@
                             <div class="input-group">
                                 <label class="input-group-btn">
                                     <span class="btn btn-primary">
-                                        Choose File<input type="file" id="thumbnailPhoto" accept=".png, .jpg, .jpeg"
+                                        Choose File<input type="file" id="thumbnailPhoto" accept=".png, .jpg, .jpeg, .webp"
                                             style="display:none" class="uploadFile" onchange="uploadthumbnail()">
                                     </span>
                                 </label>
