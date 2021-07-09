@@ -44,6 +44,19 @@
                                                 <c:out value="${post.user.user_name}" />
                                             </a></span>
                                     </div>
+                                    <div class="text">
+                                        <c:out value="${post.content}" />
+                                        <div class="in-pict">
+                                            <c:if test="${post.photoUrl1 != null}">
+                                                <a href="<c:url value=" ${post.photoUrl1} " />" data-lightbox="${post.id}" data-title="${post.title}"><img
+                                                    src="<c:url value=" ${post.photoUrl1}" />"></a>
+                                            </c:if>
+                                            <c:if test="${post.photoUrl2 != null}">
+                                                <a href="<c:url value=" ${post.photoUrl2} " />" data-lightbox="${post.id}" data-title="${post.title}"><img
+                                                    src="<c:url value=" ${post.photoUrl2}" />"></a>
+                                            </c:if>
+                                        </div>
+                                    </div>
                                     <div class="date">
                                         <%@ page import="utils.TimestampUtil" %>
                                             <%@ page import="models.Post" %>
@@ -58,19 +71,6 @@
                                                             format); String timeDiff=TimestampUtil.TimestampDiff(today,
                                                             postDate, format); %>
                                                             <%= timeDiff %>
-                                    </div>
-                                    <div class="text">
-                                        <c:out value="${post.content}" />
-                                        <div class="in-pict">
-                                            <c:if test="${post.photoUrl1 != null}">
-                                                <a href="<c:url value=" ${post.photoUrl1} " />" data-lightbox="${post.id}" data-title="${post.title}"><img
-                                                    src="<c:url value=" ${post.photoUrl1}" />"></a>
-                                            </c:if>
-                                            <c:if test="${post.photoUrl2 != null}">
-                                                <a href="<c:url value=" ${post.photoUrl2} " />" data-lightbox="${post.id}" data-title="${post.title}"><img
-                                                    src="<c:url value=" ${post.photoUrl2}" />"></a>
-                                            </c:if>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

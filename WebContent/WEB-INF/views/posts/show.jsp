@@ -38,16 +38,6 @@
                                                 <c:out value="${post.user.user_name}" />
                                             </a></span>
                                     </div>
-                                    <div class="date">
-                                        <%@ page import="utils.TimestampUtil" %>
-                                            <%@ page import="models.Post" %>
-
-                                                <% String format="yyyy年MM月dd日 HH時mm分" ; Post
-                                                   post=(Post)(pageContext.findAttribute("post")); String
-                                                   postDateDisplay=TimestampUtil.timestampToString(post.getCreated_at(),
-                                                   format); %>
-                                                <%= postDateDisplay %>
-                                    </div>
                                     <div class="text">
                                         <c:out value="${post.content}" />
                                         <div class="in-pict">
@@ -60,6 +50,16 @@
                                                     src="<c:url value=" ${post.photoUrl2}" />"></a>
                                             </c:if>
                                         </div>
+                                       <div class="date">
+                                        <%@ page import="utils.TimestampUtil" %>
+                                            <%@ page import="models.Post" %>
+
+                                                <% String format="yyyy年MM月dd日 HH時mm分" ; Post
+                                                   post=(Post)(pageContext.findAttribute("post")); String
+                                                   postDateDisplay=TimestampUtil.timestampToString(post.getCreated_at(),
+                                                   format); %>
+                                                <%= postDateDisplay %>
+                                    	</div>
                                     </div>
                                 </div>
                             </div>
