@@ -34,7 +34,18 @@
                                             </c:choose>
                                             <span class="name_reply"><a href="<c:url value='/posts/index?id=${post.user.id}' />">@<c:out value="${post.user.user_name}" /></a></span>
                                         </div>
-                                        <div class="date">1時間前</div>
+                                        <div class="date">
+                                		<%@ page import = "utils.TimestampUtil" %>
+                                		<%@ page import = "models.Post" %>
+
+                                		<%
+                                		String format = "yyyy年MM月dd日 HH時mm分";
+
+                                		Post post = (Post)(pageContext.findAttribute("post"));
+                                		String postDateDisplay = TimestampUtil.timestampToString(post.getCreated_at(), format);
+                                		%>
+                                		<%= postDateDisplay %>
+                                		</div>
                                         <div class="text">
                                             <c:out value="${post.content}" />
                                             </div>
