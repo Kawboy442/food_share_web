@@ -47,6 +47,7 @@
                                         </span>
                                     </div>
                                     <div class="text">
+                                    	<b><c:out value="${post.title}" /></b><br>
                                         <c:out value="${post.content}" />
                                         <div class="in-pict">
                                             <c:if test="${post.photoUrl1 != null}">
