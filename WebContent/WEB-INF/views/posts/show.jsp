@@ -57,7 +57,6 @@
                                         	<a href="<c:url value="${post.photoUrl2}" />" data-lightbox="${post.id}" data-title="${post.title}"><img src="<c:url value="${post.photoUrl2}" />"></a>
                                         </c:if>
                                         </div>
-                                       </div>
                                     </div>
                                 </div>
                             </div>
