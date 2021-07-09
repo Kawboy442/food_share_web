@@ -24,11 +24,12 @@
                             <label for="thumbnail">ユーザー画像</label><br />
                             <div class="container page-header">
                                 <div class="col-sm-6">
-                                	<c:if test="${user.thumbnailUrl == null}">
-                                    	<div class="thumbnailPreview" style="background-image:url(<c:url value='/images/thumbnail/human.png'/>);"></div>
+                                    <c:if test="${user.thumbnailUrl == null}">
+                                        <div class="thumbnailPreview" style="background-image:url(<c:url value='/images/thumbnail/human.png'/>);">
+                                        </div>
                                     </c:if>
                                     <c:if test="${user.thumbnailUrl != null}">
-                                    	<div class="thumbnailPreview" style="background-image:url(${user.thumbnailUrl});"></div>
+                                        <div class="thumbnailPreview" style="background-image:url(${user.thumbnailUrl});"></div>
                                     </c:if>
                                     <div class="input-group">
                                         <label class="input-group-btn">
@@ -46,8 +47,7 @@
                             <input hidden id="thumbnailUrl" name="thumbnailUrl" value="${user.thumbnailUrl}" />
 
                             <div class="col-md-6">
-                                <label for="username">ユーザー名</label><br>
-                                ${user.user_name}
+                                <label for="username">ユーザー名</label><br> ${user.user_name}
                             </div>
                             <br>
 
