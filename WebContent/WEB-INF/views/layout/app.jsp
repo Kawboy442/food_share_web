@@ -33,6 +33,9 @@
                                     </li>
                                 </c:if>
                                 <li class="nav-item">
+                                    <a class="nav-link" href="<c:url value='/posts/new' />">新規投稿</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="<c:url value='/users/edit?id=${sessionScope.login_user.id}' />">ユーザー情報管理</a>
                                 </li>
                                 <li class="nav-item">
