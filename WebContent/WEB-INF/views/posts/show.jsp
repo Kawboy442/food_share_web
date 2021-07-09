@@ -87,9 +87,12 @@
                         </c:otherwise>
                     </c:choose>
 
-                    <c:if test="${sessionScope.login_user != null}">
-                        <p><a href="<c:url value=" /posts/index " />">自分の投稿一覧に戻る</a></p>
+                    <c:if test="${sessionScope.login_user.id == post.user.id}">
+                        <p><a href="<c:url value="/posts/index?id=${sessionScope.login_user.id}"/>">自分の投稿一覧に戻る</a></p>
                     </c:if>
-                    <p><a href="<c:url value=" /index.html " />">トップに戻る</a></p>
+                    <c:if test="${sessionScope.login_user.id != post.user.id}">
+                        <p><a href="<c:url value="/posts/index?id=${post.user.id}"/>">ユーザーのタイムラインに戻る</a></p>
+                    </c:if>
+                    <p><a href="<c:url value="/index.html"/>">トップに戻る</a></p>
                 </c:param>
             </c:import>
