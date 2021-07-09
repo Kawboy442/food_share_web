@@ -52,7 +52,7 @@
                             <div class="input-group">
                                 <label class="input-group-btn">
                                     <span class="btn btn-primary">
-                                        Choose File<input type="file" id="images1" accept=".png, .jpg, .jpeg"
+                                        Choose File<input type="file" id="images1" accept=".png, .jpg, .jpeg, .webp"
                                             style="display:none" class="uploadFile" onchange="uploadPhoto1()">
                                     </span>
                                 </label>
@@ -71,7 +71,7 @@
                             <div class="input-group">
                                 <label class="input-group-btn">
                                     <span class="btn btn-primary">
-                                        Choose File<input type="file" id="images2" accept=".png, .jpg, .jpeg"
+                                        Choose File<input type="file" id="images2" accept=".png, .jpg, .jpeg, .webp"
                                             style="display:none" class="uploadFile" onchange="uploadPhoto2()">
                                     </span>
                                 </label>
