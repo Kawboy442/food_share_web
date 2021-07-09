@@ -29,17 +29,17 @@
                             <c:if test="${sessionScope.login_user != null}">
                                 <c:if test="${sessionScope.login_user.admin_flag == 1}">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="<c:url value='/users/index' />">ユーザー管理</a>
+                                        <a class="nav-link" href="<c:url value='/users/index' />">全ユーザー管理</a>
                                     </li>
                                 </c:if>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<c:url value='/posts/new' />">新規投稿</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<c:url value='/users/edit?id=${sessionScope.login_user.id}' />">ユーザー情報管理</a>
+                                    <a class="nav-link" href="<c:url value='/users/edit?id=${sessionScope.login_user.id}' />">ユーザー情報</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<c:url value='/posts/index?id=${sessionScope.login_user.id}' />">投稿管理</a>
+                                    <a class="nav-link" href="<c:url value='/posts/index?id=${sessionScope.login_user.id}' />">投稿一覧</a>
                                 </li>
                             </c:if>
                         </ul>
