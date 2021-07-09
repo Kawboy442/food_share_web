@@ -113,6 +113,6 @@
                     <script src="/food_share_web/js/uploadPhoto.js"></script>
                 </form>
 
-                <p><a href="<c:url value='/posts/index' />">投稿一覧に戻る</a></p>
+                <p><a href="<c:url value='/posts/index?id=${sessionScope.login_user.id}'/>">投稿一覧に戻る</a></p>
             </c:param>
         </c:import>
