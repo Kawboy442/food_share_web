@@ -16,8 +16,9 @@
                                         <img src="<c:url value='/images/thumbnail/human.png'/>" />
                                     </c:if>
                                     <c:if test="${post.user.thumbnailUrl != null}">
-                                        <a href="<c:url value='/posts/index?id=${post.user.id}' />"><img
-                                                src="<c:url value=" ${post.user.thumbnailUrl} " />" /></a>
+                                        <a href="<c:url value='/posts/index?id=${post.user.id}' />">
+                                        	<img src="<c:url value=" ${post.user.thumbnailUrl} " />" />
+                                        </a>
                                     </c:if>
                                 </figure>
                                 <div class="twitter__block-text">
@@ -36,10 +37,11 @@
                                             <c:when test="${post.evaluation == 5}"><img src="<c:url value='/images/star/star_fivetimes.png'  />" height=12 />
                                             </c:when>
                                         </c:choose>
-                                        <span class="name_reply"><a
-                                                href="<c:url value='/posts/index?id=${post.user.id}' />">@
-                                                <c:out value="${post.user.user_name}" />
-                                            </a></span>
+                                        <span class="name_reply">
+                                        	<a href="<c:url value='/posts/index?id=${post.user.id}' />">
+                                        		@<c:out value="${post.user.user_name}" />
+                                            </a>
+                                        </span>
                                     </div>
                                     <div class="text">
                                         <c:out value="${post.content}" />
