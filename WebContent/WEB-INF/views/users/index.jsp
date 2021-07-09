@@ -38,7 +38,7 @@
                         </tbody>
                     </table>
 
-                    <div id="pagination">
+                    <div class="col-md-6" id="pagination">
                         （全 ${users_count} 件）<br />
                         <c:forEach var="i" begin="1" end="${((users_count - 1) / 15) + 1}" step="1">
                             <c:choose>
@@ -53,7 +53,10 @@
                             </c:choose>
                         </c:forEach>
                     </div>
-                    <p><a href="<c:url value='/users/new' />">新規ユーザー登録</a></p>
+
+                    <div class="col-md-6">
+                    	<p><a href="<c:url value='/users/new' />">新規ユーザー登録</a></p>
+                    </div>
                 </div>
 
             </c:param>

@@ -75,7 +75,7 @@
                         </div>
                     </c:forEach>
 
-                    <div id="pagination">
+                    <div class="col-md-6" id="pagination">
                         （全 ${posts_count} 件）<br />
                         <c:forEach var="i" begin="1" end="${((posts_count - 1) / 15) + 1}" step="1">
                             <c:choose>
@@ -90,7 +90,10 @@
                             </c:choose>
                         </c:forEach>
                     </div>
-                    <p><a href="<c:url value='/search' />">検索画面へ戻る</a></p>
+
+                    <div class="col-md-6">
+                    	<p><a href="<c:url value='/search' />">検索画面へ戻る</a></p>
+                    </div>
 
                 </c:param>
             </c:import>

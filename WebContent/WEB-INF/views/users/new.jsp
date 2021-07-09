@@ -71,6 +71,8 @@
                     <script src="/food_share_web/js/uploadthumbnail.js"></script>
                 </form>
 
-                <p><a href="<c:url value='/index.html' />">一覧に戻る</a></p>
+				<div class="col-md-6">
+                	<p><a href="<c:url value='/index.html' />">一覧に戻る</a></p>
+                </div>
             </c:param>
         </c:import>

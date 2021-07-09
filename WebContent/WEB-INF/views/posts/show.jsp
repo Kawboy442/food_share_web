@@ -64,6 +64,8 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-md-6">
                             <c:if test="${sessionScope.login_user != null}">
                                 <c:if test="${sessionScope.login_user.id == post.user.id}">
                                     <p><a href="#" onclick="confirmDestroy();">この投稿を削除する</a></p>
@@ -80,18 +82,22 @@
                                     </script>
                                 </c:if>
                             </c:if>
+                          </div>
                         </c:when>
                         <c:otherwise>
+                        <div class="col-md-6">
                             <h2>お探しのデータは見つかりませんでした。</h2>
+                        </div>
                         </c:otherwise>
                     </c:choose>
-
-                    <c:if test="${sessionScope.login_user.id == post.user.id}">
-                        <p><a href="<c:url value="/posts/index?id=${sessionScope.login_user.id}"/>">自分の投稿一覧に戻る</a></p>
-                    </c:if>
-                    <c:if test="${sessionScope.login_user.id != post.user.id}">
-                        <p><a href="<c:url value="/posts/index?id=${post.user.id}"/>">ユーザーのタイムラインに戻る</a></p>
-                    </c:if>
-                    <p><a href="<c:url value="/index.html"/>">トップに戻る</a></p>
+					<div class="col-md-6">
+                    	<c:if test="${sessionScope.login_user.id == post.user.id}">
+                        	<p><a href="<c:url value="/posts/index?id=${sessionScope.login_user.id}"/>">自分の投稿一覧に戻る</a></p>
+                    	</c:if>
+                    	<c:if test="${sessionScope.login_user.id != post.user.id}">
+                        	<p><a href="<c:url value="/posts/index?id=${post.user.id}"/>">ユーザーのタイムラインに戻る</a></p>
+                    	</c:if>
+                    	<p><a href="<c:url value="/index.html"/>">トップに戻る</a></p>
+                    </div>
                 </c:param>
             </c:import>
