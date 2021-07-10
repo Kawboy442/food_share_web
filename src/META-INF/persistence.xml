@@ -6,13 +6,14 @@
 		<class>models.Post</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/food_share?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8"/>
-			<property name="javax.persistence.jdbc.user" value="repuser"/>
-			<property name="javax.persistence.jdbc.password" value="reppass"/>
-			<property name="javax.persistence.schema-generation.database.action" value="create"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://us-cdbr-east-04.cleardb.com/heroku_fcabbc2c27e5380?reconnect=true&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&amp;characterSetResults=utf8"/>
+			<property name="javax.persistence.jdbc.user" value="b01032b0d1119a"/>
+			<property name="javax.persistence.jdbc.password" value="863b11a2"/>
+			<property name="javax.persistence.schema-generation.database.action" value="none"/>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
 			<property name="hibernate.show_sql" value="true"/>
 			<property name="hibernate.format_sql" value="true"/>
+			<property name="javax.persistence.schema-generation.scripts.action" value="none"/>
 		</properties>
 	</persistence-unit>
 </persistence>
