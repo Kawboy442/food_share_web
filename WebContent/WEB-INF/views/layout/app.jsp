@@ -29,14 +29,17 @@
                             <c:if test="${sessionScope.login_user != null}">
                                 <c:if test="${sessionScope.login_user.admin_flag == 1}">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="<c:url value='/users/index' />">ユーザー管理</a>
+                                        <a class="nav-link" href="<c:url value='/users/index' />">全ユーザー管理</a>
                                     </li>
                                 </c:if>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<c:url value='/users/edit?id=${sessionScope.login_user.id}' />">ユーザー情報管理</a>
+                                    <a class="nav-link" href="<c:url value='/posts/new' />">新規投稿</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<c:url value='/posts/index?id=${sessionScope.login_user.id}' />">投稿管理</a>
+                                    <a class="nav-link" href="<c:url value='/users/edit?id=${sessionScope.login_user.id}' />">ユーザー情報</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<c:url value='/posts/index?id=${sessionScope.login_user.id}' />">投稿一覧</a>
                                 </li>
                             </c:if>
                         </ul>
@@ -67,7 +70,7 @@
             <div id="content">
                 ${param.content}
             </div>
-            <div id="footer">
+            <div class="col-md-6" id="footer">
                 by Ryosuke Ito.
             </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

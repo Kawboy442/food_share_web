@@ -12,14 +12,16 @@
                     <c:forEach var="post" items="${posts}" varStatus="status">
                         <div class="twitter__container">
                             <div class="twitter__block">
-                            	<figure>
-                            		<c:if test="${post.user.thumbnailUrl == null}">
-                            			<img src="<c:url value='/images/thumbnail/human.png'/>" />
-                            		</c:if>
-                            		<c:if test="${post.user.thumbnailUrl != null}">
-                                		<a href="<c:url value='/posts/index?id=${post.user.id}' />"><img src="<c:url value=" ${post.user.thumbnailUrl} " />" /></a>
-                                	</c:if>
-                            	</figure>
+                                <figure>
+                                    <c:if test="${post.user.thumbnailUrl == null}">
+                                        <img src="<c:url value='/images/thumbnail/human.png'/>" />
+                                    </c:if>
+                                    <c:if test="${post.user.thumbnailUrl != null}">
+                                        <a href="<c:url value='/posts/index?id=${post.user.id}' />">
+                                        	<img src="<c:url value=" ${post.user.thumbnailUrl} " />" />
+                                        </a>
+                                    </c:if>
+                                </figure>
                                 <div class="twitter__block-text">
                                     <div class="name">
                                         <a href="<c:url value='/posts/show?id=${post.id}' />">
@@ -36,43 +38,47 @@
                                             <c:when test="${post.evaluation == 5}"><img src="<c:url value='/images/star/star_fivetimes.png'  />" height=12 />
                                             </c:when>
                                         </c:choose>
-                                        <span class="name_reply"><a href="<c:url value='/posts/index?id=${post.user.id}' />">@<c:out value="${post.user.user_name}" /></a></span>
+                                        <span class="name_reply">
+                                        	<a href="<c:url value='/posts/index?id=${post.user.id}' />">
+                                        		@<c:out value="${post.user.user_name}" />
+                                            </a>
+                                        </span>
                                     </div>
-                                	<div class="date">
-                                		<%@ page import = "utils.TimestampUtil" %>
-                                		<%@ page import = "models.Post" %>
-                                		<%@ page import = "java.time.LocalDateTime" %>
-                                		<%@ page import = "java.sql.Timestamp" %>
-
-                                		<%
-                                		String format = "yyyy-MM-dd HH:mm:ss.S";
-
-                                		String today = TimestampUtil.localDateTimeToString(LocalDateTime.now(), format);
-
-                                		Post post = (Post)(pageContext.findAttribute("post"));
-                                		String postDate = TimestampUtil.timestampToString(post.getCreated_at(), format);
-
-                                		String timeDiff = TimestampUtil.TimestampDiff(today, postDate, format);
-                                		%>
-                                		<%= timeDiff %>
-                                	</div>
                                     <div class="text">
+                                    	<b><c:out value="${post.title}" /></b><br>
                                         <c:out value="${post.content}" />
                                         <div class="in-pict">
                                             <c:if test="${post.photoUrl1 != null}">
-                                                <a href="<c:url value="${post.photoUrl1}" />" data-lightbox="${post.id}" data-title="${post.title}"><img src="<c:url value="${post.photoUrl1}" />"></a>
+                                                <a href="<c:url value=" ${post.photoUrl1} " />" data-lightbox="${post.id}" data-title="${post.title}"><img
+                                                    src="<c:url value=" ${post.photoUrl1}" />"></a>
                                             </c:if>
                                             <c:if test="${post.photoUrl2 != null}">
-                                                <a href="<c:url value="${post.photoUrl2}" />" data-lightbox="${post.id}" data-title="${post.title}"><img src="<c:url value="${post.photoUrl2}" />"></a>
+                                                <a href="<c:url value=" ${post.photoUrl2} " />" data-lightbox="${post.id}" data-title="${post.title}"><img
+                                                    src="<c:url value=" ${post.photoUrl2}" />"></a>
                                             </c:if>
                                         </div>
+                                    </div>
+                                    <div class="date">
+                                        <%@ page import="utils.TimestampUtil" %>
+                                            <%@ page import="models.Post" %>
+                                                <%@ page import="java.time.LocalDateTime" %>
+                                                    <%@ page import="java.sql.Timestamp" %>
+
+                                                        <% String format="yyyy-MM-dd HH:mm:ss.S" ; String
+                                                            today=TimestampUtil.localDateTimeToString(LocalDateTime.now(),
+                                                            format); Post
+                                                            post=(Post)(pageContext.findAttribute("post")); String
+                                                            postDate=TimestampUtil.timestampToString(post.getCreated_at(),
+                                                            format); String timeDiff=TimestampUtil.TimestampDiff(today,
+                                                            postDate, format); %>
+                                                            <%= timeDiff %>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </c:forEach>
 
-                    <div id="pagination">
+                    <div class="col-md-6" id="pagination">
                         （全 ${posts_count} 件）<br />
                         <c:forEach var="i" begin="1" end="${((posts_count - 1) / 15) + 1}" step="1">
                             <c:choose>
@@ -87,7 +93,10 @@
                             </c:choose>
                         </c:forEach>
                     </div>
-                    <p><a href="<c:url value='/search' />">検索画面へ戻る</a></p>
+
+                    <div class="col-md-6">
+                    	<p><a href="<c:url value='/search' />">検索画面へ戻る</a></p>
+                    </div>
 
                 </c:param>
             </c:import>

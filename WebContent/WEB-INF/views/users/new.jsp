@@ -21,7 +21,7 @@
                             <div class="input-group">
                                 <label class="input-group-btn">
                                     <span class="btn btn-primary">
-                                        Choose File<input type="file" id="thumbnailPhoto" accept=".png, .jpg, .jpeg"
+                                        Choose File<input type="file" id="thumbnailPhoto" accept=".png, .jpg, .jpeg, .webp"
                                             style="display:none" class="uploadFile" onchange="uploadthumbnail()">
                                     </span>
                                 </label>
@@ -71,6 +71,8 @@
                     <script src="/food_share_web/js/uploadthumbnail.js"></script>
                 </form>
 
-                <p><a href="<c:url value='/index.html' />">一覧に戻る</a></p>
+				<div class="col-md-6">
+                	<p><a href="<c:url value='/index.html' />">一覧に戻る</a></p>
+                </div>
             </c:param>
         </c:import>

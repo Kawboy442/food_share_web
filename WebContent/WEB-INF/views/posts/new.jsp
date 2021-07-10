@@ -52,7 +52,7 @@
                             <div class="input-group">
                                 <label class="input-group-btn">
                                     <span class="btn btn-primary">
-                                        Choose File<input type="file" id="images1" accept=".png, .jpg, .jpeg"
+                                        Choose File<input type="file" id="images1" accept=".png, .jpg, .jpeg, .webp"
                                             style="display:none" class="uploadFile" onchange="uploadPhoto1()">
                                     </span>
                                 </label>
@@ -71,7 +71,7 @@
                             <div class="input-group">
                                 <label class="input-group-btn">
                                     <span class="btn btn-primary">
-                                        Choose File<input type="file" id="images2" accept=".png, .jpg, .jpeg"
+                                        Choose File<input type="file" id="images2" accept=".png, .jpg, .jpeg, .webp"
                                             style="display:none" class="uploadFile" onchange="uploadPhoto2()">
                                     </span>
                                 </label>
@@ -113,6 +113,8 @@
                     <script src="/food_share_web/js/uploadPhoto.js"></script>
                 </form>
 
-                <p><a href="<c:url value='/posts/index' />">投稿一覧に戻る</a></p>
+				<div class="col-md-6">
+                	<p><a href="<c:url value='/posts/index?id=${sessionScope.login_user.id}'/>">投稿一覧に戻る</a></p>
+                </div>
             </c:param>
         </c:import>

@@ -24,17 +24,18 @@
                             <label for="thumbnail">ユーザー画像</label><br />
                             <div class="container page-header">
                                 <div class="col-sm-6">
-                                	<c:if test="${user.thumbnailUrl == null}">
-                                    	<div class="thumbnailPreview" style="background-image:url(<c:url value='/images/thumbnail/human.png'/>);"></div>
+                                    <c:if test="${user.thumbnailUrl == null}">
+                                        <div class="thumbnailPreview" style="background-image:url(<c:url value='/images/thumbnail/human.png'/>);">
+                                        </div>
                                     </c:if>
                                     <c:if test="${user.thumbnailUrl != null}">
-                                    	<div class="thumbnailPreview" style="background-image:url(${user.thumbnailUrl});"></div>
+                                        <div class="thumbnailPreview" style="background-image:url(${user.thumbnailUrl});"></div>
                                     </c:if>
                                     <div class="input-group">
                                         <label class="input-group-btn">
                                             <span class="btn btn-primary">
                                                 Choose File<input type="file" id="thumbnailPhoto"
-                                                    accept=".png, .jpg, .jpeg" style="display:none" class="uploadFile"
+                                                    accept=".png, .jpg, .jpeg, .webp" style="display:none" class="uploadFile"
                                                     onchange="uploadthumbnail()">
                                             </span>
                                         </label>
@@ -46,8 +47,7 @@
                             <input hidden id="thumbnailUrl" name="thumbnailUrl" value="${user.thumbnailUrl}" />
 
                             <div class="col-md-6">
-                                <label for="username">ユーザー名</label><br>
-                                ${user.user_name}
+                                <label for="username">ユーザー名</label><br> ${user.user_name}
                             </div>
                             <br>
 
@@ -75,23 +75,27 @@
                             <script src="/food_share_web/js/uploadthumbnail.js"></script>
                         </form>
 
-                        <p><a href="#" onclick="confirmDestroy();">このユーザーを削除する</a></p>
-                        <form method="POST" action="<c:url value='/users/destroy' />">
-                            <input type="hidden" name="_token" value="${_token}" />
-                        </form>
-                        <script>
-                            function confirmDestroy() {
-                                if (confirm("本当に削除してよろしいですか？")) {
-                                    document.forms[1].submit();
-                                }
-                            }
-                        </script>
+                        <div class="col-md-6">
+                        	<p><a href="#" onclick="confirmDestroy();">このユーザーを削除する</a></p>
+                        	<form method="POST" action="<c:url value='/users/destroy' />">
+                          	  <input type="hidden" name="_token" value="${_token}" />
+                        	</form>
+                        	<script>
+                        	    function confirmDestroy() {
+                       	    	     if (confirm("本当に削除してよろしいですか？")) {
+                                	    document.forms[1].submit();
+                                	}
+                            	}
+                        	</script>
+                        </div>
                     </c:when>
                     <c:otherwise>
                         <h2>お探しのデータは見つかりませんでした。</h2>
                     </c:otherwise>
                 </c:choose>
 
+            <div class="col-md-6">
                 <p><a href="<c:url value='/index.html' />">トップに戻る</a></p>
+            </div>
             </c:param>
         </c:import>

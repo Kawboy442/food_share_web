@@ -86,7 +86,7 @@ public class UsersUpdateServlet extends HttpServlet {
 
 				request.getSession().removeAttribute("user_id");
 
-				response.sendRedirect(request.getContextPath() + "/users/index");
+				response.sendRedirect(request.getContextPath() + "/");
 			}
 		}
 	}

@@ -43,7 +43,7 @@ public class PostsDestroyServlet extends HttpServlet {
 			em.close();
 			request.getSession().setAttribute("flush", "削除が完了しました。");
 
-			response.sendRedirect(request.getContextPath() + "/posts/index");
+			response.sendRedirect(request.getContextPath() + "/");
 		}
 	}
 
