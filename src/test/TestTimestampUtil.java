@@ -6,7 +6,7 @@ import java.text.ParseException;
 
 import org.junit.Test;
 
-import utils.TimestampUtil;
+import time.TimestampUtil;
 
 public class TestTimestampUtil {
 
