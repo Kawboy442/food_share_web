@@ -6,6 +6,8 @@ import java.text.ParseException;
 
 import org.junit.Test;
 
+import javax.servlet.http.*;
+
 import time.TimestampUtil;
 
 public class TestTimestampUtil {
