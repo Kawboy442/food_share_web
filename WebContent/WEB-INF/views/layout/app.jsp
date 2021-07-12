@@ -29,6 +29,9 @@
                             <c:if test="${sessionScope.login_user != null}">
                                 <c:if test="${sessionScope.login_user.admin_flag == 1}">
                                     <li class="nav-item">
+                                        <a class="nav-link" href="<c:url value='/develop' />">開発者モード</a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="nav-link" href="<c:url value='/users/index' />">全ユーザー管理</a>
                                     </li>
                                 </c:if>

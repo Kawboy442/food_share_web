@@ -4,9 +4,11 @@ import static org.junit.Assert.*;
 
 import java.text.ParseException;
 
-import org.junit.Test;
+import org.junit.*;
 
-import utils.TimestampUtil;
+import javax.servlet.http.*;
+
+import time.TimestampUtil;
 
 public class TestTimestampUtil {
 

@@ -56,7 +56,7 @@
                                             </c:if>
                                         </div>
                                        <div class="date">
-                                        <%@ page import="utils.TimestampUtil" %>
+                                        <%@ page import="time.TimestampUtil" %>
                                             <%@ page import="models.Post" %>
 
                                                 <% String format="yyyy年MM月dd日 HH時mm分" ; Post
