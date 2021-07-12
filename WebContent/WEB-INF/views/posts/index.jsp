@@ -63,7 +63,7 @@
                                         </div>
                                     </div>
                                     <div class="date">
-                                        <%@ page import="utils.TimestampUtil" %>
+                                        <%@ page import="time.TimestampUtil" %>
                                             <%@ page import="models.Post" %>
                                                 <%@ page import="java.time.LocalDateTime" %>
                                                     <%@ page import="java.sql.Timestamp" %>
