@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import java.text.ParseException;
 
-import org.junit.Test;
+import org.junit.*;
 
 import javax.servlet.http.*;
 
