@@ -2,10 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>jp.example</groupId>
   <artifactId>food_share_web</artifactId>
-  <version>${revision}</version>
-  <properties>
-    <revision>1.0.0</revision>
-  </properties>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <build>
     <sourceDirectory>src</sourceDirectory>
@@ -25,39 +22,8 @@
           <warSourceDirectory>WebContent</warSourceDirectory>
         </configuration>
       </plugin>
-      <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <executions>
-                <execution>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>jar</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <executions>
-                <execution>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>jar</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
     </plugins>
   </build>
-  <distributionManagement>
-    <repository>
-        <id>github</id>
-        <name>GitHub OWNER Apache Maven Packages</name>
-        <url>https://maven.pkg.github.com/kawboy442/food_share_web</url>
-    </repository>
-  </distributionManagement>
   <dependencies>
   	<dependency>
   		<groupId>mysql</groupId>
