@@ -2,6 +2,8 @@
 // 画像プレビュー: https://www.memory-lovers.blog/entry/2019/12/12/170000
 // サムネイル仮画像 出典元: http://kumiho.sakura.ne.jp/twegg/index2.html
 
+'use strict';
+
 //firebase初期化
 var firebaseConfig = {
     apiKey: "AIzaSyBZHohuKk5NhVMjA1spuJEkU30ZBcLUcb4",

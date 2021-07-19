@@ -1,3 +1,5 @@
+'use strict';
+
 // 各種タグの取得
 const storeName = document.querySelector("#store_name");
 const userName = document.querySelector("#user_name");

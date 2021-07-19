@@ -1,6 +1,8 @@
 // Firebaseアップロード: https://kido0617.github.io/js/2019-12-01-firebase-form-upload/
 // 画像プレビュー: https://qiita.com/gsk3beta/items/46d44793827920282f75
 
+'use strict';
+
 //firebase初期化
 var firebaseConfig = {
     apiKey: "AIzaSyBZHohuKk5NhVMjA1spuJEkU30ZBcLUcb4",
