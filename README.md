@@ -27,7 +27,7 @@ https://foodshareweb.herokuapp.com/
 - [Firebase-app](https://firebase.google.com/?hl=ja), [Firebase-storage](https://firebase.google.com/docs/storage?hl=ja) 8.3.2 (画像アップロード)
 - [Chance.js](https://chancejs.com/) 1.1.7 (乱数生成)
 
-
-
+データベース ER図
+---
 ![食べ物シェア ER図](https://user-images.githubusercontent.com/53920598/126127774-31f783fd-cff0-4a0d-9af9-6389dad582fa.png)
 
