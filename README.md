@@ -14,7 +14,7 @@ https://foodshareweb.herokuapp.com/
 使用環境
 ---
 - macOS Big Sur 11.4
-- Eclipse 4.6.3
+- Eclipse([Pleiades](https://mergedoc.osdn.jp/)) 4.6.3
 
 使用ソフトウェア・ライブラリ一覧 (使用用途)
 ---
