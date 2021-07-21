@@ -45,3 +45,15 @@ URL: https://foodshareweb.herokuapp.com/
 導入方法
 ---
 
+1. [Pleiades 公式サイト](https://mergedoc.osdn.jp/) より、Eclipse 4.6 Neonをダウンロードし、PCにインストールする。
+2. GitHubよりこのレポジトリをクローンする。推奨保存先は下記の様にEclipse内の`Contents > Workspace` 内に適当なフォルダを作成(下記画像の例では`food_share_web`で作成)し、作成したフォルダにクローンする。
+![プロジェクト保存先](https://user-images.githubusercontent.com/53920598/126457417-f74c456c-1604-431e-8b56-9e336336bbbe.png)
+![フォルダ作成](https://user-images.githubusercontent.com/53920598/126458322-b54a8e2a-cf5d-466f-95b5-16c378224a5d.png)
+3. Eclipseを開き、メニューから`ファイル > ファイル・システムからプロジェクトを開く...`を選択する。
+
+![Eclipseメニュー](https://user-images.githubusercontent.com/53920598/126458584-d9e71fd7-cb6f-47a7-958d-6e8fa9fa520d.png)
+
+4. 下記のような画面が開いたら、画像内の赤丸で覆った、`ディレクトリー...`を押し、クローンしたプロジェクトの保存先ディレクトリを選択し、
+画面下にある`完了`をクリックする。
+
+![ファイル・システムまたはアーカイブからプロジェクトをインポート](https://user-images.githubusercontent.com/53920598/126461121-b71ac121-fd86-47eb-9a44-399697209d76.png)
