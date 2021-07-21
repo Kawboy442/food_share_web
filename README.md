@@ -1,12 +1,10 @@
 # 食べ物シェア
 
+URL: https://foodshareweb.herokuapp.com/
+
 お店で食べた食事を写真や評価とともにシェアし、内容を共有出来るサービスです。
 
 ![FireShot Capture 229 - 食べ物シェア - localhost](https://user-images.githubusercontent.com/53920598/126440762-53af1fe1-1868-45ba-8f2d-6443c15605fd.png)
-
-URL
----
-https://foodshareweb.herokuapp.com/
 
 サイトマップ
 ---
