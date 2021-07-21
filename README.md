@@ -31,6 +31,7 @@ https://foodshareweb.herokuapp.com/
 - Tomcat 8.0.43 (Java 8)
 - Servlet 3.1
 - JSP 2.3
+- JUnit 4
 - [JQuery](https://jquery.com/) 3.5.1
 - [Bootstrap](https://getbootstrap.jp/) 4.5.3 (レスポンシブデザイン対応)
 - [Lightbox](https://lokeshdhakar.com/projects/lightbox2/) 2.11.3 (画像ポップアップ表示)
