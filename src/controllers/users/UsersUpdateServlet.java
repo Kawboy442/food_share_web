@@ -65,8 +65,8 @@ public class UsersUpdateServlet extends HttpServlet {
 						);
 			}
 
-			u.setUpdated_at(new Timestamp(System.currentTimeMillis()));
-			u.setDelete_flag(0);
+			u.setUpdatedAt(new Timestamp(System.currentTimeMillis()));
+			u.setDeleteFlag(0);
 
 			List<String> errors = UserValidator.validate(u, password, againPassword, userNameDuplicateCheckFlag, passwordCheckFlag);
 			if(errors.size() > 0) {

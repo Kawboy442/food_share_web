@@ -9,7 +9,7 @@ public class PostValidator {
 	public static List<String> validate(Post p) {
 		List<String> errors = new ArrayList<String>();
 
-		String store_name_error = _validateStoreName(p.getStore_name());
+		String store_name_error = _validateStoreName(p.getStoreName());
 		if(!store_name_error.equals("")) {
 			errors.add(store_name_error);
 		}
@@ -32,8 +32,8 @@ public class PostValidator {
 		return errors;
 	}
 
-	private static String _validateStoreName(String store_name) {
-		if(store_name == null || store_name.equals("")) {
+	private static String _validateStoreName(String storeName) {
+		if(storeName == null || storeName.equals("")) {
 			return "店名を入力してください。";
 		}
 

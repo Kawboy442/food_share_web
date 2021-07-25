@@ -42,7 +42,7 @@ public class UsersCreateServlet extends HttpServlet {
 
 			User u = new User();
 
-			u.setUser_name(request.getParameter("user_name"));
+			u.setUserName(request.getParameter("user_name"));
 
 			if(request.getParameter("thumbnailUrl") != null){
 				u.setThumbnailUrl(request.getParameter("thumbnailUrl").replace("gs://", ""));
@@ -57,12 +57,12 @@ public class UsersCreateServlet extends HttpServlet {
 							)
 					);
 
-			u.setAdmin_flag(0);
+			u.setAdminFlag(0);
 
 			Timestamp currentTime = new Timestamp(System.currentTimeMillis());
-			u.setCreated_at(currentTime);
-			u.setUpdated_at(currentTime);
-			u.setDelete_flag(0);
+			u.setCreatedAt(currentTime);
+			u.setUpdatedAt(currentTime);
+			u.setDeleteFlag(0);
 
 			List<String> errors = UserValidator.validate(u, password, againPassword, true, true);
 			if(errors.size() > 0) {

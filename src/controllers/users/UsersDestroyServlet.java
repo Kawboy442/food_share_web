@@ -37,8 +37,8 @@ public class UsersDestroyServlet extends HttpServlet {
 			EntityManager em = DBUtil.createEntityManager();
 
 			User u = em.find(User.class, (Integer)(request.getSession().getAttribute("user_id")));
-			u.setDelete_flag(1);
-			u.setUpdated_at(new Timestamp(System.currentTimeMillis()));
+			u.setDeleteFlag(1);
+			u.setUpdatedAt(new Timestamp(System.currentTimeMillis()));
 
 			em.getTransaction().begin();
 			em.getTransaction().commit();

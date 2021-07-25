@@ -44,7 +44,7 @@ public class PostsCreateServlet extends HttpServlet {
 
 			p.setUser((User)request.getSession().getAttribute("login_user"));
 
-			p.setStore_name(request.getParameter("store_name"));
+			p.setStoreName(request.getParameter("store_name"));
 			p.setTitle(request.getParameter("title"));
 			p.setContent(request.getParameter("content"));
 
@@ -54,9 +54,9 @@ public class PostsCreateServlet extends HttpServlet {
 			p.setPhotoUrl2(request.getParameter("photoUrl2").replace("gs://", ""));
 
 			Timestamp currentTime = new Timestamp(System.currentTimeMillis());
-			p.setCreated_at(currentTime);
+			p.setCreatedAt(currentTime);
 
-			p.setDelete_flag(0);
+			p.setDeleteFlag(0);
 
 			List<String> errors = PostValidator.validate(p);
 			if(errors.size() > 0) {

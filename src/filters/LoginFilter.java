@@ -60,7 +60,7 @@ public class LoginFilter implements Filter {
 			case "users/index":
 			case "users/show":
 				if(u != null) {
-					if(u.getAdmin_flag() == 0) {
+					if(u.getAdminFlag() == 0) {
 						((HttpServletResponse)response).sendRedirect(context_path + "/");
 						return;
 					}
