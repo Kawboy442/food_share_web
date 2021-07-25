@@ -26,19 +26,19 @@ import javax.persistence.Table;
 			),
 	@NamedQuery(
 			name = "getAllActivePosts",
-			query = "SELECT p FROM Post AS p WHERE p.delete_flag = 0 ORDER BY p.id DESC"
+			query = "SELECT p FROM Post AS p WHERE p.deleteFlag = 0 ORDER BY p.id DESC"
 			),
 	@NamedQuery(
 			name = "getActivePostsCount",
-			query = "SELECT COUNT(p) FROM Post AS p WHERE p.delete_flag = 0"
+			query = "SELECT COUNT(p) FROM Post AS p WHERE p.deleteFlag = 0"
 			),
 	@NamedQuery(
 			name = "getAllMyActivePosts",
-			query = "SELECT p FROM Post AS p WHERE p.delete_flag = 0 AND p.user.id = :user_id ORDER BY p.id DESC"
+			query = "SELECT p FROM Post AS p WHERE p.deleteFlag = 0 AND p.user.id = :user_id ORDER BY p.id DESC"
 			),
 	@NamedQuery(
 			name = "getMyActivePostsCount",
-			query = "SELECT COUNT(p) FROM Post AS p WHERE p.delete_flag = 0 AND p.user.id = :user_id"
+			query = "SELECT COUNT(p) FROM Post AS p WHERE p.deleteFlag = 0 AND p.user.id = :user_id"
 			)
 })
 @Entity

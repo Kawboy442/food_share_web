@@ -23,11 +23,11 @@ import javax.persistence.Table;
 			),
 	@NamedQuery(
 			name = "checkRegisteredUser",
-			query = "SELECT COUNT(u) FROM User AS u WHERE u.user_name = :name"
+			query = "SELECT COUNT(u) FROM User AS u WHERE u.userName = :name"
 			),
 	@NamedQuery(
 			name = "checkUserNameAndPassword",
-			query = "SELECT u FROM User AS u WHERE u.delete_flag = 0 AND u.user_name = :name AND u.password = :pass"
+			query = "SELECT u FROM User AS u WHERE u.deleteFlag = 0 AND u.userName = :name AND u.password = :pass"
 			)
 })
 @Entity
