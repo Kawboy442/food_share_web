@@ -54,23 +54,23 @@ public class LoginServlet extends HttpServlet {
 		 // 認証結果を格納する変数
         Boolean check_result = false;
 
-        String user_name = request.getParameter("user_name");
-        String plain_pass = request.getParameter("password");
+        String userName = request.getParameter("userName");
+        String plainPass = request.getParameter("password");
 
         User u = null;
 
-        if(user_name != null && !user_name.equals("") && plain_pass != null && !plain_pass.equals("")) {
+        if(userName != null && !userName.equals("") && plainPass != null && !plainPass.equals("")) {
             EntityManager em = DBUtil.createEntityManager();
 
             String password = EncryptUtil.getPasswordEncrypt(
-                    plain_pass,
+                    plainPass,
                     (String)this.getServletContext().getAttribute("pepper")
                     );
 
             // ユーザー名とパスワードが正しいかチェックする
             try {
                 u = em.createNamedQuery("checkUserNameAndPassword", User.class)
-                      .setParameter("name", user_name)
+                      .setParameter("name", userName)
                       .setParameter("pass", password)
                       .getSingleResult();
             } catch(NoResultException ex) {}
@@ -86,7 +86,7 @@ public class LoginServlet extends HttpServlet {
             // 認証できなかったらログイン画面に戻る
             request.setAttribute("_token", request.getSession().getId());
             request.setAttribute("hasError", true);
-            request.setAttribute("name", user_name);
+            request.setAttribute("name", userName);
 
             RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/login/login.jsp");
             rd.forward(request, response);

@@ -55,7 +55,7 @@ public class PostsIndexServlet extends HttpServlet {
 				.setParameter("user_id", u.getId())
 				.getSingleResult();
 
-		if(posts_count == 0){
+		if(postsCount == 0){
 			request.getSession().setAttribute("flush", "まだ投稿がありません。");
 		}
 
@@ -63,7 +63,7 @@ public class PostsIndexServlet extends HttpServlet {
 
 		request.setAttribute("user", u);
 		request.setAttribute("posts", posts);
-		request.setAttribute("posts_count", posts_count);
+		request.setAttribute("posts_count", postsCount);
 		request.setAttribute("page", page);
 		if(request.getSession().getAttribute("flush") != null) {
 			request.setAttribute("flush", request.getSession().getAttribute("flush"));

@@ -49,7 +49,7 @@ public class UsersCreateServlet extends HttpServlet {
 			}
 
 			String password = request.getParameter("password");
-			String againPassword = request.getParameter("password_again");
+			String againPassword = request.getParameter("passwordAgain");
 			u.setPassword(
 					EncryptUtil.getPasswordEncrypt(
 							request.getParameter("password"),

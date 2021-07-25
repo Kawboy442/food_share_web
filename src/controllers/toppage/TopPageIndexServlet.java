@@ -57,7 +57,7 @@ public class TopPageIndexServlet extends HttpServlet {
 		em.close();
 
 		request.setAttribute("posts", posts);
-		request.setAttribute("posts_count", posts_count);
+		request.setAttribute("postsCount", postsCount);
 		request.setAttribute("page", page);
 		if(request.getSession().getAttribute("flush") != null) {
 			request.setAttribute("flush", request.getSession().getAttribute("flush"));

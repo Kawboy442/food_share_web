@@ -42,8 +42,8 @@ public class SearchResultServlet extends HttpServlet {
 			page = 1;
 		}
 
-		String storeName = request.getParameter("store_name");
-		String userName = request.getParameter("user_name");
+		String storeName = request.getParameter("storeName");
+		String userName = request.getParameter("userName");
 		int evaluation = Integer.parseInt(request.getParameter("evaluation"));
 
 		StringBuilder postQueryBuilder = new StringBuilder("SELECT p FROM Post AS p WHERE p.deleteFlag = 0 ");
@@ -75,14 +75,14 @@ public class SearchResultServlet extends HttpServlet {
 		long posts_count = (long)em.createQuery(postCountQuery, Long.class)
 				.getSingleResult();
 
-		if(posts_count == 0){
+		if(postsCount == 0){
 			request.getSession().setAttribute("flush", "検索結果は0件でした。");
 		}
 
 		em.close();
 
 		request.setAttribute("posts", posts);
-		request.setAttribute("posts_count", posts_count);
+		request.setAttribute("posts_count", postsCount);
 		request.setAttribute("page", page);
 		if(request.getSession().getAttribute("flush") != null) {
 			request.setAttribute("flush", request.getSession().getAttribute("flush"));
