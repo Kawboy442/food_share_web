@@ -46,11 +46,11 @@ public class SearchResultServlet extends HttpServlet {
 		String userName = request.getParameter("user_name");
 		int evaluation = Integer.parseInt(request.getParameter("evaluation"));
 
-		StringBuilder postQueryBuilder = new StringBuilder("SELECT p FROM Post AS p WHERE p.delete_flag = 0 ");
+		StringBuilder postQueryBuilder = new StringBuilder("SELECT p FROM Post AS p WHERE p.deleteFlag = 0 ");
 		if(!storeName.equals("")) {
-			postQueryBuilder.append("AND p.store_name LIKE '%" + storeName + "%'");
+			postQueryBuilder.append("AND p.storeName LIKE '%" + storeName + "%'");
 		} else if(!userName.equals("")) {
-			postQueryBuilder.append("AND p.user.user_name LIKE  '%" + userName + "%'");
+			postQueryBuilder.append("AND p.user.userName LIKE  '%" + userName + "%'");
 		} else if (evaluation != 0) {
 			postQueryBuilder.append("AND p.evaluation = " + evaluation + " ");
 		}
@@ -62,11 +62,11 @@ public class SearchResultServlet extends HttpServlet {
 				.setMaxResults(15)
 				.getResultList();
 
-		StringBuilder postCountQueryBuilder = new StringBuilder("SELECT COUNT(p) FROM Post AS p WHERE p.delete_flag = 0 ");
+		StringBuilder postCountQueryBuilder = new StringBuilder("SELECT COUNT(p) FROM Post AS p WHERE p.deleteFlag = 0 ");
 		if(!storeName.equals("")) {
-			postCountQueryBuilder.append("AND p.store_name LIKE '%" + storeName + "%'");
+			postCountQueryBuilder.append("AND p.storeName LIKE '%" + storeName + "%'");
 		} else if(!userName.equals("")) {
-			postCountQueryBuilder.append("AND p.user.user_name LIKE  '%" + userName + "%'");
+			postCountQueryBuilder.append("AND p.user.userName LIKE  '%" + userName + "%'");
 		} else if (evaluation != 0) {
 			postCountQueryBuilder.append("AND p.evaluation = " + evaluation + " ");
 		}
