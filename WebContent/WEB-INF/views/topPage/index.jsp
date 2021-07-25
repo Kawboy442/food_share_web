@@ -24,7 +24,7 @@
                                 <div class="twitter__block-text">
                                     <div class="name">
                                         <a href="<c:url value='/posts/show?id=${post.id}' />">
-                                            <c:out value="${post.store_name}" />
+                                            <c:out value="${post.storeName}" />
                                         </a>
                                         <c:choose>
                                             <c:when test="${post.evaluation == 1}"><img src="<c:url value='/images/star/star.png'  />" height=12 /></c:when>
@@ -39,7 +39,7 @@
                                         </c:choose>
                                         <span class="name_reply">
                                         	<a href="<c:url value='/posts/index?id=${post.user.id}' />">
-                                        		@<c:out value="${post.user.user_name}" />
+                                        		@<c:out value="${post.user.userName}" />
                                             </a>
                                         </span>
                                     </div>
@@ -69,7 +69,7 @@
                                                             today=TimestampUtil.localDateTimeToString(LocalDateTime.now(),
                                                             format); Post
                                                             post=(Post)(pageContext.findAttribute("post")); String
-                                                            postDate=TimestampUtil.timestampToString(post.getCreated_at(),
+                                                            postDate=TimestampUtil.timestampToString(post.getCreatedAt(),
                                                             format); String timeDiff=TimestampUtil.TimestampDiff(today,
                                                             postDate, format); %>
                                                             <%= timeDiff %>

@@ -16,7 +16,7 @@
 
                     <div class="col-md-6">
                         <label for="store_name">店名</label>
-                        <input type="text" class="form-control" name="store_name" placeholder="例: 天随飯店" value="${post.store_name}" required>
+                        <input type="text" class="form-control" name="store_name" placeholder="例: 天随飯店" value="${post.storeName}" required>
                         <div class="invalid-feedback">
                             店名を入力してください。
                         </div>
@@ -41,7 +41,7 @@
                     </div>
                     <br>
 
-                    <input hidden id="user_name" value="${sessionScope.login_user.user_name}" />
+                    <input hidden id="user_name" value="${sessionScope.login_user.userName}" />
 
                     <div class="col-md-6">
                         <label for="images1">写真その1</label><br />

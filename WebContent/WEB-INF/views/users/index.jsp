@@ -21,11 +21,11 @@
                             <c:forEach var="user" items="${users}" varStatus="status">
                                 <tr class="row${status.count % 2}">
                                     <td>
-                                        <c:out value="${user.user_name}" />
+                                        <c:out value="${user.userName}" />
                                     </td>
                                     <td>
                                         <c:choose>
-                                            <c:when test="${user.delete_flag == 1}">
+                                            <c:when test="${user.deleteFlag == 1}">
                                                 <span class="text-danger">（削除済み）</span>
                                             </c:when>
                                             <c:otherwise>
@@ -40,7 +40,7 @@
 
                     <div class="col-md-6" id="pagination">
                         （全 ${users_count} 件）<br />
-                        <c:forEach var="i" begin="1" end="${((users_count - 1) / 15) + 1}" step="1">
+                        <c:forEach var="i" begin="1" end="${((usersCount - 1) / 15) + 1}" step="1">
                             <c:choose>
                                 <c:when test="${i == page}">
                                     <c:out value="${i}" />&nbsp;

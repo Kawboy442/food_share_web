@@ -3,7 +3,7 @@
         <c:import url="/WEB-INF/views/layout/app.jsp">
             <c:param name="content">
                 <c:choose>
-                    <c:when test="${user.id != sessionScope.login_user.id && sessionScope.login_user.admin_flag == 0}">
+                    <c:when test="${user.id != sessionScope.login_user.id && sessionScope.login_user.adminFlag == 0}">
                         <div class="alert alert-primary" role="alert">
                             異なるユーザー情報にはアクセスできません。
                         </div>
@@ -47,7 +47,7 @@
                             <input hidden id="thumbnailUrl" name="thumbnailUrl" value="${user.thumbnailUrl}" />
 
                             <div class="col-md-6">
-                                <label for="username">ユーザー名</label><br> ${user.user_name}
+                                <label for="userName">ユーザー名</label><br> ${user.userName}
                             </div>
                             <br>
 

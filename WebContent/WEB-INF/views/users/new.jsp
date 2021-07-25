@@ -34,7 +34,7 @@
 
                     <div class="col-md-6">
                         <label for="username">ユーザー名</label>
-                        <input type="text" class="form-control" id="user_name" name="user_name" placeholder="例: kawboy442" value="${user.user_name}" required>
+                        <input type="text" class="form-control" id="userName" name="userName" placeholder="例: kawboy442" value="${user.userName}" required>
                         <div class="invalid-feedback">
                             ユーザー名を入力してください。
                         </div>
@@ -52,7 +52,7 @@
 
                     <div class="col-md-6">
                         <label for="password_again">パスワード(再入力)</label>
-                        <input type="password" class="form-control" name="password_again" required>
+                        <input type="password" class="form-control" name="passwordAgain" required>
                         <div class="invalid-feedback">
                             パスワードを入力してください。
                         </div>

@@ -20,7 +20,7 @@
                     <form class="form-signin" action="<c:url value='/login' />" method="post">
                         <h1 class="h3 mt-2 mb-3 font-weight-normal">ログイン</h1><br><br>
                         <label for="code" class="sr-only"></label>
-                        <input class="form-control" id="username" type="text" name="user_name" value="${user_name}" placeholder="ユーザ名" required autofocus />
+                        <input class="form-control" id="userName" type="text" name="userName" value="${userName}" placeholder="ユーザ名" required autofocus />
                         <label for="password" class="sr-only"></label>
                         <input class="form-control" id="password" type="password" name="password" placeholder="パスワード" required />
                         <input type="hidden" name="_token" value="${_token}" />

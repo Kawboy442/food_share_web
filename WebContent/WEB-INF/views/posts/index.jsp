@@ -9,7 +9,7 @@
                         </div>
                     </c:if>
                     <h2>
-                    	@<c:out value="${user.user_name}" />の投稿一覧
+                    	@<c:out value="${user.userName}" />の投稿一覧
                     </h2>
                     <c:forEach var="post" items="${posts}" varStatus="status">
                         <div class="twitter__container">
@@ -27,7 +27,7 @@
                                 <div class="twitter__block-text">
                                     <div class="name">
                                         <a href="<c:url value='/posts/show?id=${post.id}' />">
-                                            <c:out value="${post.store_name}" />
+                                            <c:out value="${post.storeName}" />
                                         </a>
                                         <c:choose>
                                             <c:when test="${post.evaluation == 1}"><img src="<c:url value='/images/star/star.png'  />" height=12 /></c:when>
@@ -42,7 +42,7 @@
                                         </c:choose>
                                         <span class="name_reply">
                                         	<a href="<c:url value='/posts/index?id=${post.user.id}' />">
-                                        		@<c:out value="${post.user.user_name}" />
+                                        		@<c:out value="${post.user.userName}" />
                                             </a>
                                         </span>
                                     </div>
@@ -72,7 +72,7 @@
                                                             today=TimestampUtil.localDateTimeToString(LocalDateTime.now(),
                                                             format); Post
                                                             post=(Post)(pageContext.findAttribute("post")); String
-                                                            postDate=TimestampUtil.timestampToString(post.getCreated_at(),
+                                                            postDate=TimestampUtil.timestampToString(post.getCreatedAt(),
                                                             format); String timeDiff=TimestampUtil.TimestampDiff(today,
                                                             postDate, format); %>
                                                             <%= timeDiff %>
@@ -84,7 +84,7 @@
 
                     <div class="col-md-6" id="pagination">
                         （全 ${posts_count} 件）<br />
-                        <c:forEach var="i" begin="1" end="${((posts_count - 1) / 15) + 1}" step="1">
+                        <c:forEach var="i" begin="1" end="${((postsCount - 1) / 15) + 1}" step="1">
                             <c:choose>
                                 <c:when test="${i == page}">
                                     <c:out value="${i}" />&nbsp;

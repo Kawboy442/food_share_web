@@ -3,17 +3,17 @@
         <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
             <c:import url="/WEB-INF/views/layout/app.jsp">
                 <c:param name="content">
-                    <form method="POST" action="<c:url value='/search/result' />" id="search_form" name="search_form">
+                    <form method="POST" action="<c:url value='/search/result' />" id="searchForm" name="searchForm">
 
                         <div class="col-md-6">
                             <label for="store_name">店名</label>
-                            <input type="text" class="form-control" id="store_name" name="store_name" placeholder="例: 天随飯店" value="${post.store_name}">
+                            <input type="text" class="form-control" id="storeName" name="storeName" placeholder="例: 天随飯店" value="${post.storeName}">
                         </div>
                         <br>
 
                         <div class="col-md-6">
                             <label for="username">ユーザー名</label>
-                            <input type="text" class="form-control" id="user_name" name="user_name" placeholder="例: kawboy442" value="${post.user_name}">
+                            <input type="text" class="form-control" id="userName" name="userName" placeholder="例: kawboy442" value="${post.userName}">
                         </div>
                         <br>
 

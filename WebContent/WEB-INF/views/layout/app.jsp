@@ -27,7 +27,7 @@
                                 <a class="nav-link" href="<c:url value='/search' />">検索</a>
                             </li>
                             <c:if test="${sessionScope.login_user != null}">
-                                <c:if test="${sessionScope.login_user.admin_flag == 1}">
+                                <c:if test="${sessionScope.login_user.adminFlag == 1}">
                                     <li class="nav-item">
                                         <a class="nav-link" href="<c:url value='/develop' />">開発者モード</a>
                                     </li>
