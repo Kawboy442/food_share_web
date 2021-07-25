@@ -53,7 +53,7 @@ public class Post {
 	private User user;
 
 	@Column(name = "store_name", length = 255, nullable = false)
-	private String store_name;
+	private String storeName;
 
 	@Column(name = "title", length = 255, nullable = false)
 	private String title;
@@ -72,10 +72,10 @@ public class Post {
 	private String photoUrl2;
 
 	@Column(name = "created_at", nullable = false)
-	private Timestamp created_at;
+	private Timestamp createdAt;
 
 	@Column(name = "delete_flag", nullable = false)
-	private Integer delete_flag;
+	private Integer deleteFlag;
 
 	public Integer getId() {
 		return id;
@@ -94,11 +94,11 @@ public class Post {
 	}
 
 	public String getStore_name() {
-		return store_name;
+		return storeName;
 	}
 
 	public void setStore_name(String store_name) {
-		this.store_name = store_name;
+		this.storeName = store_name;
 	}
 
 	public String getTitle() {
@@ -142,19 +142,19 @@ public class Post {
 	}
 
 	public Timestamp getCreated_at() {
-		return created_at;
+		return createdAt;
 	}
 
 	public void setCreated_at(Timestamp created_at) {
-		this.created_at = created_at;
+		this.createdAt = created_at;
 	}
 
 	public Integer getDelete_flag() {
-		return delete_flag;
+		return deleteFlag;
 	}
 
 	public void setDelete_flag(Integer delete_flag) {
-		this.delete_flag = delete_flag;
+		this.deleteFlag = delete_flag;
 	}
 
 }

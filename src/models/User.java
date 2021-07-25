@@ -38,7 +38,7 @@ public class User {
 	private Integer id;
 
 	@Column(name = "user_name", nullable = false)
-	private String user_name;
+	private String userName;
 
 	@Column(name = "thumbnailUrl", length = 1000, nullable = true)
 	private String thumbnailUrl;
@@ -47,16 +47,16 @@ public class User {
 	private String password;
 
 	@Column(name = "admin_flag", nullable = false)
-	private Integer admin_flag;
+	private Integer adminFlag;
 
 	@Column(name = "created_at", nullable = false)
-	private Timestamp created_at;
+	private Timestamp createdAt;
 
 	@Column(name = "updated_at", nullable = false)
-	private Timestamp updated_at;
+	private Timestamp updatedAt;
 
 	@Column(name = "delete_flag", nullable = false)
-	private Integer delete_flag;
+	private Integer deleteFlag;
 
 	public Integer getId() {
 		return id;
@@ -67,11 +67,11 @@ public class User {
 	}
 
 	public String getUser_name() {
-		return user_name;
+		return userName;
 	}
 
 	public void setUser_name(String user_name) {
-		this.user_name = user_name;
+		this.userName = user_name;
 	}
 
 	public String getThumbnailUrl() {
@@ -91,35 +91,35 @@ public class User {
 	}
 
 	public Integer getAdmin_flag() {
-		return admin_flag;
+		return adminFlag;
 	}
 
 	public void setAdmin_flag(Integer admin_flag) {
-		this.admin_flag = admin_flag;
+		this.adminFlag = admin_flag;
 	}
 
 	public Timestamp getCreated_at() {
-		return created_at;
+		return createdAt;
 	}
 
 	public void setCreated_at(Timestamp created_at) {
-		this.created_at = created_at;
+		this.createdAt = created_at;
 	}
 
 	public Timestamp getUpdated_at() {
-		return updated_at;
+		return updatedAt;
 	}
 
 	public void setUpdated_at(Timestamp updated_at) {
-		this.updated_at = updated_at;
+		this.updatedAt = updated_at;
 	}
 
 	public Integer getDelete_flag() {
-		return delete_flag;
+		return deleteFlag;
 	}
 
 	public void setDelete_flag(Integer delete_flag) {
-		this.delete_flag = delete_flag;
+		this.deleteFlag = delete_flag;
 	}
 
 }
