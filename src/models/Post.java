@@ -93,12 +93,12 @@ public class Post {
 		this.user = user;
 	}
 
-	public String getStore_name() {
+	public String getStoreName() {
 		return storeName;
 	}
 
-	public void setStore_name(String store_name) {
-		this.storeName = store_name;
+	public void setStoreName(String storeName) {
+		this.storeName = storeName;
 	}
 
 	public String getTitle() {
@@ -141,20 +141,20 @@ public class Post {
 		this.photoUrl2 = photoUrl2;
 	}
 
-	public Timestamp getCreated_at() {
+	public Timestamp getCreatedAt() {
 		return createdAt;
 	}
 
-	public void setCreated_at(Timestamp created_at) {
-		this.createdAt = created_at;
+	public void setCreatedAt(Timestamp createdAt) {
+		this.createdAt = createdAt;
 	}
 
-	public Integer getDelete_flag() {
+	public Integer getDeleteFlag() {
 		return deleteFlag;
 	}
 
-	public void setDelete_flag(Integer delete_flag) {
-		this.deleteFlag = delete_flag;
+	public void setDeleteFlag(Integer deleteFlag) {
+		this.deleteFlag = deleteFlag;
 	}
 
 }

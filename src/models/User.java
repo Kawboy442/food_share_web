@@ -66,12 +66,12 @@ public class User {
 		this.id = id;
 	}
 
-	public String getUser_name() {
+	public String getUserName() {
 		return userName;
 	}
 
-	public void setUser_name(String user_name) {
-		this.userName = user_name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getThumbnailUrl() {
@@ -90,36 +90,36 @@ public class User {
 		this.password = password;
 	}
 
-	public Integer getAdmin_flag() {
+	public Integer getAdminFlag() {
 		return adminFlag;
 	}
 
-	public void setAdmin_flag(Integer admin_flag) {
-		this.adminFlag = admin_flag;
+	public void setAdminFlag(Integer adminFlag) {
+		this.adminFlag = adminFlag;
 	}
 
-	public Timestamp getCreated_at() {
+	public Timestamp getCreatedAt() {
 		return createdAt;
 	}
 
-	public void setCreated_at(Timestamp created_at) {
-		this.createdAt = created_at;
+	public void setCreatedAt(Timestamp createdAt) {
+		this.createdAt = createdAt;
 	}
 
-	public Timestamp getUpdated_at() {
+	public Timestamp getUpdatedAt() {
 		return updatedAt;
 	}
 
-	public void setUpdated_at(Timestamp updated_at) {
-		this.updatedAt = updated_at;
+	public void setUpdatedAt(Timestamp updatedAt) {
+		this.updatedAt = updatedAt;
 	}
 
-	public Integer getDelete_flag() {
+	public Integer getDeleteFlag() {
 		return deleteFlag;
 	}
 
-	public void setDelete_flag(Integer delete_flag) {
-		this.deleteFlag = delete_flag;
+	public void setDeleteFlag(Integer deleteFlag) {
+		this.deleteFlag = deleteFlag;
 	}
 
 }
