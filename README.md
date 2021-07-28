@@ -20,7 +20,7 @@ URL: https://foodshareweb.herokuapp.com/
 - 投稿内容検索(店名・ユーザー名・評価)機能
 - 投稿画像・ユーザーサムネイル画像アップロード機能 (Cloud Storage for Firebase)
 - ユニットテスト (JUnit)
-- CI(継続的インテグレーション) (GitHub Actions)
+- CI(継続的インテグレーション)による自動テスト、自動ビルド (GitHub Actions)
 
 使用環境
 ---
