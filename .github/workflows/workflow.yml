@@ -23,3 +23,6 @@ jobs:
         distribution: 'adopt'
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Deploy for Heroku
+      run: mvn clean heroku:deploy
+    
