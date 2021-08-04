@@ -25,4 +25,3 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Deploy for Heroku
       run: mvn -B clean heroku:deploy-war
-    
