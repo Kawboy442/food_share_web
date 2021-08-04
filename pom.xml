@@ -29,7 +29,7 @@
 				<artifactId>heroku-maven-plugin</artifactId>
 				<version>3.0.4</version>
 				<configuration>
-					<appName>${heroku.appName}</appName>
+					<appName>foodshareweb</appName>
 				</configuration>
 			</plugin>
 		</plugins>
