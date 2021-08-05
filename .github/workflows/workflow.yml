@@ -24,4 +24,4 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Deploy for Heroku
-      run: mvn -X clean heroku:deploy-war
+      run: mvn -X clean heroku:deploy
